@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit
 
 interface ApiInterface {
 
-    @GET("curated?per_page=10&page=1")
+    @GET("curated?per_page=20&page=1")
     @Headers(
         "Authorization:" + Constant.apiKey,
         "Content-type:application/json"
