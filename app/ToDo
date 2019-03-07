@@ -1,0 +1,43 @@
+
+DAtabase
+
+http://www.androidtutorialshub.com/android-kotlin-login-register-with-sqlite-database-tutorial/
+
+
+Multipart request 2.0
+
+
+For RetroFit 2 Use the following method
+RetroFit 2.0 ( This was a workaround for an issue in RetroFit 2 which is fixed now, for the correct method refer jimmy0251's answer)
+API Interface:
+
+public interface ApiInterface {
+    @Multipart
+    @POST("/api/Accounts/editaccount")
+    Call<User> editUser (@Header("Authorization") String authorization, @Part("file\"; filename=\"pp.png\" ") RequestBody file , @Part("FirstName") RequestBody fname, @Part("Id") RequestBody id);
+}
+Use it like:
+
+File file = new File(imageUri.getPath());
+RequestBody fbody = RequestBody.create(MediaType.parse("image/*"), file);
+RequestBody name = RequestBody.create(MediaType.parse("text/plain"), firstNameField.getText().toString());
+RequestBody id = RequestBody.create(MediaType.parse("text/plain"), AZUtils.getUserId(this));
+Call<User> call = client.editUser(AZUtils.getToken(this), fbody, name, id);
+call.enqueue(new Callback<User>() {
+    @Override
+    public void onResponse(retrofit.Response<User> response, Retrofit retrofit) {
+        AZUtils.printObject(response.body());
+    }
+
+    @Override
+    public void onFailure(Throwable t) {
+        t.printStackTrace();
+    }
+});
+
+/////////////////TEST-ACCOUNTS//////////////////
+//////////GMAIL//////////
+username- testyourprojectsmatrix@gmail.com
+password- matrix321
+/////////INSTAGRAM///////
+

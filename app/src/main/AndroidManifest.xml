@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="app.matrix.wallpaperpexels">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+            android:name=".application.App"
+            android:allowBackup="true"
+            android:icon="@drawable/kotlin_feature"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/kotlin_feature"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:hardwareAccelerated="true"
+            tools:ignore="GoogleAppIndexingWarning">
+        <activity
+                android:name=".imagedetails.ImageDetails"
+                android:label="@string/title_activity_image_details">
+        </activity>
+        <activity
+                android:name=".home.Home"
+                android:label="@string/title_activity_home_main"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".registration.RegistrationActivity">
+        </activity>
+        <activity android:name=".login.LoginActivity">
+        </activity> <!-- Service for checking connection -->
+        <receiver
+                android:name=".network.basenetwork.ConnectivityReceiver"
+                android:label="NetworkChangeReceiver">
+            <intent-filter>
+                <action
+                        android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                        tools:ignore="BatteryLife"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".aftersplash.AfterSplash"/>
+        <activity android:name=".splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"/>
+    </application>
+
+</manifest>
