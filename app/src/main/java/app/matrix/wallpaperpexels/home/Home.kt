@@ -29,6 +29,8 @@ import kotlinx.android.synthetic.main.app_bar_home_main.*
 import retrofit2.Call
 import retrofit2.Response
 
+
+
 class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ClickedItem {
 
 
@@ -45,6 +47,8 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
 
     private val TAG: String = Home::class.java.simpleName
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_main)
@@ -58,6 +62,9 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         ButterKnife.bind(this@Home)
         //initialize retrofit
         mAPIService = ApiInterface.CreateRetrofit.apiService
+        //initiate Unspalsh
+
+
         //intiate arraylist
         imgList = ArrayList()
 
@@ -84,6 +91,8 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         }*/
     }
 
+
+
     private fun signOut() {
         val mainIntent = Intent(this@Home, LoginActivity::class.java)
         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -94,7 +103,7 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
             FirebaseAuth.getInstance().signOut()
     }
 
-    fun showData() {
+    private fun showData() {
 
 
         mAPIService!!.getDetails().enqueue(object : retrofit2.Callback<Random> {

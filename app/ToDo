@@ -1,21 +1,5 @@
 
-DAtabase
 
-http://www.androidtutorialshub.com/android-kotlin-login-register-with-sqlite-database-tutorial/
-
-
-Multipart request 2.0
-
-
-For RetroFit 2 Use the following method
-RetroFit 2.0 ( This was a workaround for an issue in RetroFit 2 which is fixed now, for the correct method refer jimmy0251's answer)
-API Interface:
-
-public interface ApiInterface {
-    @Multipart
-    @POST("/api/Accounts/editaccount")
-    Call<User> editUser (@Header("Authorization") String authorization, @Part("file\"; filename=\"pp.png\" ") RequestBody file , @Part("FirstName") RequestBody fname, @Part("Id") RequestBody id);
-}
 Use it like:
 
 File file = new File(imageUri.getPath());
@@ -40,4 +24,13 @@ call.enqueue(new Callback<User>() {
 username- testyourprojectsmatrix@gmail.com
 password- matrix321
 /////////INSTAGRAM///////
+
+
+Firebase Authentication Registration / Login / Forgot Password
+
+http://appsdeveloperblog.com/firebase-authentication-example-kotlin/
+
+//Welcome ViewPager
+
+https://www.raywenderlich.com/324-viewpager-tutorial-getting-started-in-kotlin
 

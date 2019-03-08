@@ -54,9 +54,13 @@ project.ext {
 
     firebaseAuth = '16.1.0'
 
+    firebaseDatabase = '16.1.0'
+
     httpIntaceptor = '3.9.0'
 
     materialDesign = '1.0.0-rc01'
+
+    unsplashLib = '1.0.4'
 
 }
 
@@ -121,6 +125,8 @@ dependencies {
 
     //ButterKnife
     implementation "com.jakewharton:butterknife:$project.butterknife_version"
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     kapt "com.jakewharton:butterknife-compiler:$project.butterknife_version"
 
     //Multidex
@@ -160,11 +166,14 @@ dependencies {
     //Firebase
     implementation "com.google.firebase:firebase-core:$project.firebaseCore"
     implementation "com.google.firebase:firebase-auth:$project.firebaseAuth"
+    implementation "com.google.firebase:firebase-database:$project.firebaseDatabase"
 
     //Testing
     testImplementation "junit:junit:$project.jUnit"
     androidTestImplementation "androidx.test:runner:$project.testRunner"
     androidTestImplementation "androidx.test.espresso:espresso-core:$project.expressoCore"
+
+
 }
 
 
