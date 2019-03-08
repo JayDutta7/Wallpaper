@@ -125,8 +125,6 @@ dependencies {
 
     //ButterKnife
     implementation "com.jakewharton:butterknife:$project.butterknife_version"
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     kapt "com.jakewharton:butterknife-compiler:$project.butterknife_version"
 
     //Multidex
@@ -137,8 +135,8 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$project.glidE"
 
     //RxKotlin & RxAndroid
-    /*implementation "io.reactivex.rxjava2:rxkotlin:$project.rxKotlin"
-    implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroid"*/
+    implementation "io.reactivex.rxjava2:rxkotlin:$project.rxKotlin"
+    implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroid"
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$project.retrofit"
