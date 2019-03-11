@@ -6,63 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
-project.ext {
 
-
-    appCompatX = '1.0.2'
-    appCompatXviewPager = '1.0.0'
-
-    appCompatCoreKtx = '1.1.0-alpha04'
-
-    constainLayout = '1.1.3'
-
-    jUnit = '4.12'
-
-    testRunner = '1.1.2-alpha01'
-
-    expressoCore = '3.1.2-alpha01'
-
-    butterknife_version = '10.0.0'
-
-    multidex = '1.0.3'
-
-    glidE = '4.8.0'
-
-    retrofit = '2.5.0'
-
-    googleGson = '2.8.5'
-
-    retrofit2Gson = '2.4.0'
-
-    photoView = '2.1.3'
-
-    rxKotlin = '2.2.0'
-
-    rxAndroid = '2.0.2'
-
-    dimenLib = '1.0.6'
-
-    dexterPermissionLib = '5.0.0'
-
-    circleImageView = '3.0.0'
-
-    gmsPlayServiceAuth = '16.0.1'
-
-    gmsMobileAd = '17.1.3'
-
-    firebaseCore = '16.0.7'
-
-    firebaseAuth = '16.1.0'
-
-    firebaseDatabase = '16.1.0'
-
-    httpIntaceptor = '3.9.0'
-
-    materialDesign = '1.0.0-rc01'
-
-    unsplashLib = '1.0.4'
-
-}
 
 android {
     signingConfigs {
@@ -116,60 +60,62 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:$project.appCompatX"
-    implementation "androidx.core:core-ktx:$project.appCompatCoreKtx"
-    implementation "androidx.constraintlayout:constraintlayout:$project.constainLayout"
-    implementation "com.google.android.material:material:$project.materialDesign"
-    implementation "androidx.viewpager:viewpager:$project.appCompatXviewPager"
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompatX"
+    implementation "androidx.core:core:$rootProject.ext.appCompatCoreKtx"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.ext.constainLayout"
+    implementation "com.google.android.material:material:$rootProject.ext.materialDesign"
+    implementation "androidx.viewpager:viewpager:$rootProject.ext.appCompatXviewPager"
     /*Material Components*/
 
+
+
     //ButterKnife
-    implementation "com.jakewharton:butterknife:$project.butterknife_version"
-    kapt "com.jakewharton:butterknife-compiler:$project.butterknife_version"
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknife_version"
+    kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife_version"
 
     //Multidex
-    implementation "com.android.support:multidex:$project.multidex"
+    implementation "com.android.support:multidex:$rootProject.ext.multidex"
 
     //Glide
-    implementation "com.github.bumptech.glide:glide:$project.glidE"
-    annotationProcessor "com.github.bumptech.glide:compiler:$project.glidE"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glidE"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glidE"
 
     //RxKotlin & RxAndroid
-    implementation "io.reactivex.rxjava2:rxkotlin:$project.rxKotlin"
-    implementation "io.reactivex.rxjava2:rxandroid:$project.rxAndroid"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.ext.rxKotlin"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroid"
 
     //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$project.retrofit"
-    implementation "com.google.code.gson:gson:$project.googleGson"
-    implementation "com.squareup.retrofit2:converter-gson:$project.retrofit2Gson"
-    implementation "com.squareup.okhttp3:logging-interceptor:$project.httpIntaceptor"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
+    implementation "com.google.code.gson:gson:$rootProject.ext.googleGson"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit2Gson"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.httpIntaceptor"
 
     //Photozooom
-    implementation "com.github.chrisbanes:PhotoView:$project.photoView"
+    implementation "com.github.chrisbanes:PhotoView:$rootProject.ext.photoView"
 
     //Dimen Lib
-    implementation "com.intuit.sdp:sdp-android:$project.dimenLib"
+    implementation "com.intuit.sdp:sdp-android:$rootProject.ext.dimenLib"
 
     //Dexter Permission Runtime
-    implementation "com.karumi:dexter:$project.dexterPermissionLib"
+    implementation "com.karumi:dexter:$rootProject.ext.dexterPermissionLib"
 
     //CircleImageview
-    implementation "de.hdodenhof:circleimageview:$project.circleImageView"
+    implementation "de.hdodenhof:circleimageview:$rootProject.ext.circleImageView"
 
     //Google sign in
-    implementation "com.google.android.gms:play-services-auth:$project.gmsPlayServiceAuth"
+    implementation "com.google.android.gms:play-services-auth:$rootProject.ext.gmsPlayServiceAuth"
     //Google mobile Ad
     //implementation "com.google.android.gms:play-services-ads:$project.gmsMobileAd"
 
     //Firebase
-    implementation "com.google.firebase:firebase-core:$project.firebaseCore"
-    implementation "com.google.firebase:firebase-auth:$project.firebaseAuth"
-    implementation "com.google.firebase:firebase-database:$project.firebaseDatabase"
+    implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseCore"
+    implementation "com.google.firebase:firebase-auth:$rootProject.ext.firebaseAuth"
+    implementation "com.google.firebase:firebase-database:$rootProject.ext.firebaseDatabase"
 
     //Testing
-    testImplementation "junit:junit:$project.jUnit"
-    androidTestImplementation "androidx.test:runner:$project.testRunner"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$project.expressoCore"
+    testImplementation "junit:junit:$rootProject.ext.jUnit"
+    androidTestImplementation "androidx.test:runner:$rootProject.ext.testRunner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.expressoCore"
 
 
 }

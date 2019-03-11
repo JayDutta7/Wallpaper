@@ -1,7 +1,6 @@
 package app.matrix.wallpaperpexels.login
 
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,6 +13,8 @@ import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.home.Home
 import app.matrix.wallpaperpexels.localdatabase.DatabaseHelper
 import app.matrix.wallpaperpexels.localdatabase.pojo.UserDetailsData
+import app.matrix.wallpaperpexels.login.contract.ContractLoginInterface
+import app.matrix.wallpaperpexels.login.presenter.LoginPresenter
 import app.matrix.wallpaperpexels.registration.RegistrationActivity
 import app.matrix.wallpaperpexels.utility.InputValidation
 import butterknife.BindView
@@ -32,7 +33,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener {
+class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginInterface.View {
 
 
     @BindView(R.id.textInputEditTextEmail)
@@ -76,36 +77,68 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var firebaseAuth: FirebaseAuth
 
+    private var presenter: LoginPresenter? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        presenter = LoginPresenter(this)
 
-        initiaLizeID()
 
         /* var getDataFromSQLite = GetDataFromSQLite()
          getDataFromSQLite.execute()*/
 
     }
 
-    private fun configureGoogleSignIn() {
+    override fun init() {
+        ButterKnife.bind(this)
+
+        //Initialization new class
+        inputValidation = InputValidation(this@LoginActivity)
+        databaseHelper = DatabaseHelper(this@LoginActivity)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+
+
+        listUsers = ArrayList()
+        //set SignIn
+        googleSignIn.setSize(SignInButton.SIZE_STANDARD)
+
+        //Configure Google Signin
+        configureGoogleSignIn()
+
+        //Initialize onClick
+        loginButton.setOnClickListener(this)
+        textViewClick.setOnClickListener(this)
+        textViewForgotPassword.setOnClickListener(this)
+        googleSignIn.setOnClickListener(this)
+    }
+
+
+    override fun configureGoogleSignIn() {
         mGoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("741256386904-ecoo1tb2l3q7o3dg4s10cvdknjjp4o8k.apps.googleusercontent.com")
+            .requestIdToken("741256386904-8cv1alu7qvflus1mhtitejqn2g6qs2mi.apps.googleusercontent.com")
             .requestEmail()
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(this, mGoogleSignInOptions)
     }
 
-    override fun onStart() {
-        super.onStart()
+
+    override fun isalrdylogin() {
         val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
             val mainIntent = Intent(this@LoginActivity, Home::class.java)
             mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(mainIntent)
         }
+    }
 
+    /*Android super method*/
+    override fun onStart() {
+        super.onStart()
+        isalrdylogin()
     }
 
 
@@ -122,7 +155,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+    override fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
@@ -143,8 +176,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    /*To Get All Data from Database Sqlite*/
 
-    inner class GetDataFromSQLite : AsyncTask<Void, Void, List<UserDetailsData>>() {
+    /*inner class GetDataFromSQLite : AsyncTask<Void, Void, List<UserDetailsData>>() {
 
         override fun doInBackground(vararg p0: Void?): List<UserDetailsData> {
             return databaseHelper.getAllUser()
@@ -157,63 +191,33 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             listUsers.addAll(result!!)
         }
 
-    }
+    }*/
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.textViewLinkRegister -> clickToRegistrationPage()
+            R.id.textViewLinkRegister -> presenter?.clickedregistration()
 
-            R.id.appCompatButtonLogin -> funLogin()
+            R.id.appCompatButtonLogin -> presenter?.loginbuttonclicked()
 
-            R.id.sign_in_button -> googleSignIn()
+            R.id.sign_in_button -> presenter?.googlesigninclicked()
 
         }
     }
 
-    private fun initiaLizeID() {
-        ButterKnife.bind(this)
-
-        //Initialization new class
-        initObjects()
-
-        //Configure Google Signin
-        configureGoogleSignIn()
-
-        //Initialize onClick
-        loginButton.setOnClickListener(this)
-        textViewClick.setOnClickListener(this)
-        textViewForgotPassword.setOnClickListener(this)
-        googleSignIn.setOnClickListener(this)
-
-    }
-
-    private fun initObjects() {
-        inputValidation = InputValidation(this@LoginActivity)
-        databaseHelper = DatabaseHelper(this@LoginActivity)
-
-        firebaseAuth = FirebaseAuth.getInstance()
-
-
-        listUsers = ArrayList()
-        //set SignIn
-        googleSignIn.setSize(SignInButton.SIZE_STANDARD)
-
-    }
-
-    private fun clickToRegistrationPage() {
+    override fun clickToRegistrationPage() {
 
         val mainIntent = Intent(this@LoginActivity, RegistrationActivity::class.java)
         startActivity(mainIntent)
 
     }
 
-    private fun googleSignIn() {
+    override fun clickgoogleSignIn() {
 
         val signInIntent: Intent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
-    private fun funLogin() {
+    override fun clickLogin() {
 
         if (!inputValidation.isInputEditTextFilled(
                 emailEditText,

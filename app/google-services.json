@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "741256386904-l0537scf1q2ehdnruepu8l86nba0nmol.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "app.matrix.wallpaperpexels",
-            "certificate_hash": "430b8f44bd02b521f9f69053caa2503e7eac3ffc"
-          }
-        },
-        {
           "client_id": "741256386904-8cv1alu7qvflus1mhtitejqn2g6qs2mi.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "741256386904-8cv1alu7qvflus1mhtitejqn2g6qs2mi.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
