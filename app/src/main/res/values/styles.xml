@@ -10,12 +10,12 @@
         <item name="android:textColorHint">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
         <item name="colorControlActivated">@color/white</item>
-        <!--Status Bar Transparent-->
+        <!--Status Bar & Navigation Bar Transparent-->
         <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+       <!-- <item name="android:windowTranslucentNavigation">true</item>-->
         <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
-        <item name="android:navigationBarColor" tools:targetApi="lollipop">@android:color/transparent</item>
+        <!--<item name="android:navigationBarColor" tools:targetApi="lollipop">@android:color/transparent</item>-->
 
     </style>
     <style name="AppTheme.NoActionBar">

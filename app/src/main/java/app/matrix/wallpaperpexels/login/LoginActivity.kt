@@ -160,14 +160,13 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginIn
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
 
-                val email = acct.email
-                val name = acct.displayName
+                Log.d(TAG,"Name" + acct.email + "Email" + acct.displayName + "Image" +acct.photoUrl)
 
-                Log.e(TAG, "Name" + name + "Email" + email)
 
                 val mainIntent = Intent(this@LoginActivity, Home::class.java)
-                //mainIntent.putExtra("email",Email)
-                // mainIntent.putExtra("Name",Name)
+                mainIntent.putExtra("email",acct.email)
+                mainIntent.putExtra("Name",acct.displayName)
+                mainIntent.putExtra("image",acct.photoUrl)
                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 startActivity(mainIntent)
             } else {

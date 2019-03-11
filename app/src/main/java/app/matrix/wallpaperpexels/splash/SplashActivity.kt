@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import app.matrix.wallpaperpexels.R
+import app.matrix.wallpaperpexels.aftersplash.AfterSplash
 import app.matrix.wallpaperpexels.login.LoginActivity
 import app.matrix.wallpaperpexels.splash.contract.ContractSplashInterface
 import app.matrix.wallpaperpexels.splash.presenter.SplashPresenter
@@ -15,13 +16,11 @@ class SplashActivity : AppCompatActivity(), ContractSplashInterface.View {
     private var presenter: SplashPresenter? = null
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        presenter= SplashPresenter(this)
+        presenter = SplashPresenter(this)
 
     }
 
@@ -29,8 +28,8 @@ class SplashActivity : AppCompatActivity(), ContractSplashInterface.View {
 
         Handler().postDelayed(
             {
-                val mainIntent = Intent(this@SplashActivity, LoginActivity::class.java)
-               // val mainIntent = Intent(this@SplashActivity, Home::class.java)
+                val mainIntent = Intent(this@SplashActivity, AfterSplash::class.java)
+                // val mainIntent = Intent(this@SplashActivity, Home::class.java)
                 startActivity(mainIntent)
                 finish()
             },

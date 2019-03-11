@@ -93,4 +93,6 @@ ext {
     materialDesign = '1.0.0-rc01'
 
     unsplashLib = '1.0.4'
+
+    timber='4.7.1'
 }
