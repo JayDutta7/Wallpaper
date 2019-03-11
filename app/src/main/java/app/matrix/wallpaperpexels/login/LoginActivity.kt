@@ -160,7 +160,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginIn
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
 
-                Log.d(TAG,"Name" + acct.email + "Email" + acct.displayName + "Image" +acct.photoUrl)
+                Log.d(TAG,"Name" + acct.displayName + "Email" + acct.email + "Image" +acct.photoUrl)
 
 
                 val mainIntent = Intent(this@LoginActivity, Home::class.java)

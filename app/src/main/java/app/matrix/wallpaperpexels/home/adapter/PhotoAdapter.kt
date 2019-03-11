@@ -18,18 +18,18 @@ class PhotoAdapter(
     private val context: Context,
     private val dataList: MutableList<Photos>,
     private val clickPos: ClickedItem
-) : RecyclerView.Adapter<PhotoAdapter.viewHolder>() {
+) : RecyclerView.Adapter<PhotoAdapter.viewholder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
-        return viewHolder(LayoutInflater.from(context).inflate(R.layout.photo_row, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewholder {
+        return viewholder(LayoutInflater.from(context).inflate(R.layout.photo_row, parent, false))
     }
 
     override fun getItemCount(): Int {
         return dataList.size
     }
 
-    override fun onBindViewHolder(holder: viewHolder, position: Int) {
+    override fun onBindViewHolder(holder: viewholder, position: Int) {
 
         holder.photoView.setOnClickListener {
             clickPos.clickpostion(position)
@@ -50,15 +50,17 @@ class PhotoAdapter(
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.photoView)
 
+        holder.photographerName.text = dataList[position].photographer
+
 
     }
 
 
-    class viewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class viewholder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val photoView = view.photo_view
-        val photographerName = view.photographer_name
-        val imageSize = view.image_size
+        val photoView = view.photo_view!!
+        val photographerName = view.photographer_name!!
+        val imageSize = view.image_size!!
 
 
     }
