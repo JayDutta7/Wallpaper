@@ -77,7 +77,9 @@ dependencies {
 
     //Glide
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glidE"
-    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glidE"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.ext.glidE"//annotaionationprocessor for java kapt for kotlin
+    kapt "com.github.bumptech.glide:annotations:$rootProject.ext.glidE"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$rootProject.ext.glidE"
 
     //RxKotlin & RxAndroid
     /*implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.ext.rxKotlin"

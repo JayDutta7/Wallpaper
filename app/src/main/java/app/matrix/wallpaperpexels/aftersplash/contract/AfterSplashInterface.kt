@@ -7,11 +7,14 @@ interface AfterSplashInterface {
 
         fun loginClicked()
         fun registrationClicked()
+
+
     }
 
     interface Presenter {
         fun clickLogin()
         fun clickRegistration()
+
     }
 
     interface Model {

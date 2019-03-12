@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import app.matrix.wallpaperpexels.GlideApp
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.home.interfaces.ClickedItem
 import app.matrix.wallpaperpexels.home.pojo.Photos
 import com.bumptech.glide.Glide
+import com.bumptech.glide.GlideBuilder
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
@@ -38,8 +40,20 @@ class PhotoAdapter(
         holder.imageSize.text =
             StringBuilder().append(dataList[position].height!!).append(" * ").append(dataList[position].width!!)
 
-        Glide.with(context)
 
+        GlideApp.with(context)
+            .applyDefaultRequestOptions(
+                RequestOptions()
+                    .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                    .placeholder(R.drawable.placeloader)
+                    .error(R.mipmap.ic_launcher)
+                    .dontAnimate()
+            )
+            .load(dataList[position].src.original)
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(holder.photoView)
+
+        /*Glide.with(context)
             .applyDefaultRequestOptions(
                 RequestOptions()
                     .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
@@ -48,7 +62,7 @@ class PhotoAdapter(
                     .dontAnimate()
             ).load(dataList[position].src.original)
             .transition(DrawableTransitionOptions.withCrossFade())
-            .into(holder.photoView)
+            .into(holder.photoView)*/
 
         holder.photographerName.text = dataList[position].photographer
 

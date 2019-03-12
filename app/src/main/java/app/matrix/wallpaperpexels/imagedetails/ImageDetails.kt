@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import app.matrix.wallpaperpexels.GlideApp
 import app.matrix.wallpaperpexels.R
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.github.chrisbanes.photoview.PhotoView
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -41,8 +43,11 @@ class ImageDetails : AppCompatActivity() {
 
         Log.e(TAG, ImgLink)
 
-        Glide.with(this).applyDefaultRequestOptions(RequestOptions().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC))
-            .load(ImgLink).into(photo_view)
+        GlideApp.with(this)
+            .applyDefaultRequestOptions(RequestOptions().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC))
+            .load(ImgLink)
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(photo_view)
 
 
     }

@@ -58,7 +58,7 @@ ext {
 
     multidex = '1.0.3'
 
-    glidE = '4.8.0'
+    glidE = '4.9.0'
 
     retrofit = '2.5.0'
 

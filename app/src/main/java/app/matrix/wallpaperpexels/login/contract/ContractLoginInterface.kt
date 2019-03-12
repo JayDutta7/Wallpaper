@@ -29,6 +29,9 @@ interface ContractLoginInterface {
         fun clickLogin()
 
 
+        fun uselocaldatabase()
+
+
     }
 
     interface Model{
@@ -44,6 +47,8 @@ interface ContractLoginInterface {
         fun googlesigninclicked()
 
         fun loginbuttonclicked()
+
+        fun uselocaldatabase()
 
     }
 

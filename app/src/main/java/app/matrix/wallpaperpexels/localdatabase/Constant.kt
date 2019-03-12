@@ -13,7 +13,7 @@ class Constant{
 
 
         /* Shared prefrence key's*/
-        val UserId:String="UserID"
+        const val UserEmail:String=""
 
 
     }

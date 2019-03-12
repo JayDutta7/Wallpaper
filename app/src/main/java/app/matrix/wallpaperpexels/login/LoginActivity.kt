@@ -11,7 +11,9 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.widget.NestedScrollView
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.home.Home
+import app.matrix.wallpaperpexels.localdatabase.Constant
 import app.matrix.wallpaperpexels.localdatabase.DatabaseHelper
+import app.matrix.wallpaperpexels.localdatabase.LocalSharedPreference
 import app.matrix.wallpaperpexels.localdatabase.pojo.UserDetailsData
 import app.matrix.wallpaperpexels.login.contract.ContractLoginInterface
 import app.matrix.wallpaperpexels.login.presenter.LoginPresenter
@@ -34,6 +36,12 @@ import com.google.firebase.auth.GoogleAuthProvider
 
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginInterface.View {
+
+    override fun uselocaldatabase() {
+        sharepref = LocalSharedPreference(this)
+    }
+
+    private var sharepref: LocalSharedPreference? = null
 
 
     @BindView(R.id.textInputEditTextEmail)
@@ -125,7 +133,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginIn
         mGoogleSignInClient = GoogleSignIn.getClient(this, mGoogleSignInOptions)
     }
 
-
     override fun isalrdylogin() {
         val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
@@ -160,13 +167,16 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginIn
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
 
-                Log.d(TAG,"Name" + acct.displayName + "Email" + acct.email + "Image" +acct.photoUrl)
+                //Save User Id by google login
+                sharepref?.save(Constant.UserEmail, acct.email!!)
+
+                Log.d(TAG, "Name" + acct.displayName + "Email" + acct.email + "Image" + acct.photoUrl)
 
 
                 val mainIntent = Intent(this@LoginActivity, Home::class.java)
-                mainIntent.putExtra("email",acct.email)
-                mainIntent.putExtra("Name",acct.displayName)
-                mainIntent.putExtra("image",acct.photoUrl)
+                mainIntent.putExtra("email", acct.email)
+                mainIntent.putExtra("Name", acct.displayName)
+                mainIntent.putExtra("image", acct.photoUrl)
                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 startActivity(mainIntent)
             } else {
@@ -245,6 +255,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginIn
                     emailEditText.text.toString().trim { it <= ' ' },
                     passEditText.text.toString().trim { it <= ' ' })
             ) {
+                //save Email
+                sharepref?.save(Constant.UserEmail,emailEditText.text.toString())
+
                 Snackbar.make(nestedScrollView, getString(R.string.success_Loginmessage), Snackbar.LENGTH_SHORT).show()
 
                 val mainIntent = Intent(this@LoginActivity, Home::class.java)
