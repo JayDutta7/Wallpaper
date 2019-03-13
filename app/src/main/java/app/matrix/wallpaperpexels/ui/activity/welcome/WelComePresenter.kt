@@ -1,7 +1,6 @@
 package app.matrix.wallpaperpexels.ui.activity.welcome
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.localdatabase.Constant
 import app.matrix.wallpaperpexels.ui.fragment.SlideFragment
@@ -19,7 +18,8 @@ class WelComePresenter(private var _view: IWelcomeView, private var pageradapter
             val bundle = Bundle()
             bundle.putInt(Constant.IMAGE, drawables[i])
             fragment.arguments = bundle
-            pageradapter.addPage("", fragment)
+
+           // pageradapter.addPage("", fragment)
         }
 
         _view.setViewPagerAdapter(pageradapter)

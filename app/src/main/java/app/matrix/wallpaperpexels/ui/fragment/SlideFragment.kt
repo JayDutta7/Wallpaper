@@ -28,6 +28,8 @@ private const val ARG_PARAM2 = "param2"
 class SlideFragment : Fragment() {
 
 
+
+
     @BindView(R.id.imgSlides)
     lateinit var imgSlides: AppCompatImageView
 

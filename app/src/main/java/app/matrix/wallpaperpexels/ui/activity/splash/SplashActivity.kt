@@ -12,7 +12,6 @@ import androidx.appcompat.widget.AppCompatImageView
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.ui.activity.home.Home
 import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
-import app.matrix.wallpaperpexels.ui.activity.welcome.WecomeActivity
 import butterknife.BindView
 import butterknife.ButterKnife
 
@@ -49,7 +48,7 @@ class SplashActivity : AppCompatActivity(), ISplashView {
     }
 
     override fun moveToLoginPage() {
-        val mainIntent = Intent(this@SplashActivity, WecomeActivity::class.java)
+        val mainIntent = Intent(this@SplashActivity, LoginActivity::class.java)
         startActivity(mainIntent)
         finish()
     }

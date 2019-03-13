@@ -11,6 +11,7 @@ class WelcomePagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     private var titleList: MutableList<String> = ArrayList()
     private var fragmentList: MutableList<Fragment> = ArrayList()
 
+
     override fun getItem(position: Int): Fragment {
 
         return fragmentList[position]
@@ -28,3 +29,5 @@ class WelcomePagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     }
 
 }
+
+
