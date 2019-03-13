@@ -13,7 +13,8 @@ class Constant{
 
 
         /* Shared prefrence key's*/
-        const val UserEmail:String=""
+        const val UserEmail:String="UserEmail"
+        const val IMAGE:String="Image"
 
 
     }

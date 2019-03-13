@@ -39,4 +39,7 @@
     <string name="hint_login">Login</string>
     <string name="hint_registration">Registration</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

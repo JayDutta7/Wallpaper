@@ -1,16 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.appcompat.widget.LinearLayoutCompat
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/semiTransparent"
         tools:context=".ui.activity.welcome.WecomeActivity">
+
 
 
     <androidx.viewpager.widget.ViewPager
             android:id="@+id/welcomePager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="0dp"
+            android:layout_weight=".85"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".15"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+    <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/viewPagerCircleIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SKIP"
+            android:padding="@dimen/_20sdp"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_20sdp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:drawableRight="@android:drawable/ic_media_play"/>
 
 
-</RelativeLayout>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

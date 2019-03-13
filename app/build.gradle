@@ -118,6 +118,9 @@ dependencies {
     androidTestImplementation "androidx.test:runner:$rootProject.ext.testRunner"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.expressoCore"
 
+    //Indicator
+    implementation "me.relex:circleindicator:$rootProject.ext.circleIndicator"
+
 
 }
 
