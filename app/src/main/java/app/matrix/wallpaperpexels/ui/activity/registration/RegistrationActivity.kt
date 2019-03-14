@@ -43,11 +43,11 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
     @BindView(R.id.textInputEditTextMobile)
     lateinit var textInputEditTextMobile: TextInputEditText
 
-    @BindView(R.id.ButtonRegister)
+    /*@BindView(R.id.ButtonRegister)
     lateinit var ButtonRegister: AppCompatButton
 
     @BindView(R.id.TextViewLoginLink)
-    lateinit var TextViewLoginLink: AppCompatTextView
+    lateinit var TextViewLoginLink: AppCompatTextView*/
 
 
     @BindView(R.id.textInputLayoutName)
