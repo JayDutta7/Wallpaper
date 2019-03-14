@@ -35,7 +35,6 @@ class WallPaperApp : Application() {
         mcontext = this
         Log.e(TAG, "This is Application Class Oncreate")
 
-
         localdatabase = LocalSharedPreference(this)
 
 

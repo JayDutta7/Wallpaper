@@ -8,4 +8,5 @@
     <color name="colorTextHint">#51d8c7</color>
     <color name="semiTransparent">#CC3F3A68</color>
     <color name="Transparent">#7F000000</color>
+    <color name="TransparentLogin">#9F000000</color>
 </resources>

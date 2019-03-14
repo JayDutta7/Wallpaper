@@ -66,7 +66,7 @@ class SplashActivity : AppCompatActivity(), ISplashView {
         finish()
     }
 
-    override fun moveToWelcomePage() {
+    override fun moveToAnimatedPage() {
         animate()
     }
 

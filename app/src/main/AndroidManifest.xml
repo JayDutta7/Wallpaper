@@ -10,26 +10,28 @@
             android:name=".WallPaperApp"
             android:allowBackup="true"
             android:hardwareAccelerated="true"
-            android:icon="@drawable/kotlin_feature"
+            android:icon="@drawable/splashlogo"
             android:label="@string/app_name"
-            android:roundIcon="@drawable/kotlin_feature"
+            android:roundIcon="@drawable/splashlogo"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="app.matrix.wallpaperpexels.ui.activity.welcome.WecomeActivity">
+        <activity android:name=".ui.activity.forgotpassword.ForgotPasswordActivity">
+        </activity>
+        <activity android:name=".ui.activity.welcome.WecomeActivity">
         </activity>
         <activity
-                android:name="app.matrix.wallpaperpexels.ui.activity.imagedetails.ImageDetails"
+                android:name=".ui.activity.imagedetails.ImageDetails"
                 android:label="@string/title_activity_image_details">
         </activity>
         <activity
-                android:name="app.matrix.wallpaperpexels.ui.activity.home.Home"
+                android:name=".ui.activity.home.Home"
                 android:label="@string/title_activity_home_main"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name="app.matrix.wallpaperpexels.ui.activity.registration.RegistrationActivity">
+        <activity android:name=".ui.activity.registration.RegistrationActivity">
         </activity>
-        <activity android:name="app.matrix.wallpaperpexels.ui.activity.login.LoginActivity">
+        <activity android:name=".ui.activity.login.LoginActivity">
         </activity> <!-- Service for checking connection -->
         <receiver
                 android:name=".network.basenetwork.ConnectivityReceiver"
@@ -42,15 +44,13 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name="app.matrix.wallpaperpexels.ui.activity.aftersplash.AfterSplash"/>
-        <activity android:name="app.matrix.wallpaperpexels.ui.activity.splash.SplashActivity">
+        <activity android:name=".ui.activity.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

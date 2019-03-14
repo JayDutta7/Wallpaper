@@ -2,11 +2,9 @@
     <string name="app_name">WallPaperPexels</string>
 
     <string name="text_accounts">All Accounts</string>
-    <string name="hint_name">Name</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_password">Password</string>
+    <string name="hint_name">Enter full name</string>
     <string name="hint_confirm_password">Confirm Password</string>
-    <string name="hint_mobile">Phone</string>
+    <string name="hint_mobile">Enter your phone</string>
     <string name="text_login">Login</string>
     <string name="text_register">Register</string>
     <string name="error_message_name">Enter Full Name</string>
@@ -26,6 +24,7 @@
     <string name="text_title">Android Tutorials Hub</string>
     <string name="not_register">Not Register Yet? Click Here</string>
     <string name="forgot_password">Forgot Password ?</string>
+    <string name="skip_login">Skip</string>
     <string name="title_activity_home_main">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -45,5 +44,7 @@
     <string name="two">THIS IS PAGE TWO</string>
     <string name="three">THIS IS PAGE THREE</string>
     <string name="skip">SKIP</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
 
 </resources>

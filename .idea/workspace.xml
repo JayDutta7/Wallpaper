@@ -3,10 +3,12 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="pixel_xl" />
+        <device id="Nexus 5X" />
+        <device id="pixel_2" />
         <device id="pixel" />
         <device id="pixel_2_xl" />
         <device id="Nexus 7" />
-        <device id="pixel_xl" />
       </config>
     </shared>
   </component>
@@ -16,8 +18,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77d73c7c-ca63-4e04-b9e8-83fbbf67cde7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/forgotpassword/IForgotPasswordPresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/forgotpassword/IForgotPasswordView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_multidex_multidex_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_futuremind_recyclerfastscroll_fastscroll_0_2_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_hbb20_ccp_2_2_4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_michaelrocks_libphonenumber_android_8_10_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/forgotpassword/ForgotPasswordActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/forgotpassword/ForgotPasswordPresenter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/backgrnd.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/no_member.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/welcome_1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/welcome_2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/welcome_3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -28,24 +40,34 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_multidex_multidex_2_0_0_aar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/localdatabase/Constant.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/localdatabase/Constant.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/WallPaperApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/WallPaperApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginPreseneter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginPreseneter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/contract/ContractLoginInterface.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/ISplashView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/ISplashView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/IWelcomePresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/IWelcomePresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/IWelcomeView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/IWelcomeView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/Model.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/PagerAdapterModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WecomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WecomeActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WelComePresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WelComePresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WelcomePagerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WelcomePagerAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/SlideFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_wecome.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_wecome.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_one.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_one.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_three.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_three.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_two.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_two.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/backgrnd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/kotlin_feature.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/mountain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/no_member.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/welcome_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/welcome_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/welcome_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_registration.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -187,102 +209,100 @@
           <entry key="ToDo" value="7" />
           <entry key="class" value="1" />
           <entry key="gif" value="1" />
-          <entry key="gradle" value="17" />
+          <entry key="gradle" value="21" />
           <entry key="java" value="23" />
           <entry key="jpg" value="2" />
           <entry key="json" value="1" />
-          <entry key="kt" value="155" />
+          <entry key="kt" value="175" />
           <entry key="properties" value="1" />
-          <entry key="xml" value="51" />
+          <entry key="webp" value="1" />
+          <entry key="xml" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="Groovy" value="17" />
-          <entry key="Image" value="3" />
+          <entry key="Groovy" value="21" />
+          <entry key="Image" value="4" />
           <entry key="JAVA" value="23" />
           <entry key="JSON" value="1" />
-          <entry key="Kotlin" value="155" />
+          <entry key="Kotlin" value="175" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="Properties" value="1" />
-          <entry key="XML" value="51" />
+          <entry key="XML" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="ToDo" value="536" />
-          <entry key="gradle" value="316" />
+          <entry key="gradle" value="378" />
           <entry key="java" value="7" />
-          <entry key="kt" value="4776" />
+          <entry key="kt" value="5155" />
           <entry key="properties" value="1" />
-          <entry key="xml" value="1104" />
+          <entry key="xml" value="1475" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="316" />
+          <entry key="Groovy" value="378" />
           <entry key="JAVA" value="7" />
-          <entry key="Kotlin" value="4776" />
+          <entry key="Kotlin" value="5155" />
           <entry key="PLAIN_TEXT" value="536" />
           <entry key="Properties" value="1" />
-          <entry key="XML" value="1104" />
+          <entry key="XML" value="1475" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2002">
+              <caret line="215" column="30" selection-start-line="215" selection-start-column="30" selection-end-line="215" selection-end-column="30" />
+              <folding>
+                <element signature="e#7429#7445#0" />
+                <element signature="e#7407#7536#0" />
+                <element signature="e#7575#7708#0" />
+                <element signature="e#7740#9188#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashPresenter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/localdatabase/Constant.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="50" column="31" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="31" />
+            <state relative-caret-position="-285">
+              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/ISplashView.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginPresenter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state relative-caret-position="60">
+              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/IWelcomePresenter.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginPreseneter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="165">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WelComePresenter.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginView.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="375">
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -294,9 +314,9 @@
       <list>
         <option value="Class" />
         <option value="Kotlin Class" />
-        <option value="Kotlin File" />
         <option value="layoutResourceFile_vertical" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -305,6 +325,8 @@
       <find>toolbar</find>
       <find>default_web_client_id</find>
       <find>core:core</find>
+      <find>hint_password</find>
+      <find>multidex</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2786,15 +2808,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/aftersplash/presenter/AfterSplashPresenter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/aftersplash/contract/AfterSplashInterface.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/aftersplash/AfterSplash.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/photo_row.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_details.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/MyImageGlideModule.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/home/adapter/PhotoAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/imagedetails/ImageDetails.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/splash/presenter/SplashPresenter.kt" />
@@ -2806,27 +2819,21 @@
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/splash/SplashActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/login/LoginActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/splash/contract/ContractSplashInterface.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/WallPaperApp.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/contract/ContractSplashInterface.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/contract/ISplashView.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/contract/ISplashPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/presenter/SplashPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/Home.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_slide.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/SlideFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WelcomePagerAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_one.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_three.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_two.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_aftersplash.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_wecome.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/Model.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/PagerAdapterModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/IWelcomeView.kt" />
@@ -2834,9 +2841,24 @@
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WelComePresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WecomeActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/localdatabase/Constant.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/ISplashView.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashPresenter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/forgotpassword/ForgotPasswordActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_registration.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/WallPaperApp.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/ISplashView.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/ContractLoginInterface.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginView.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginPreseneter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginPresenter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt" />
       </list>
     </option>
   </component>
@@ -2928,6 +2950,18 @@
               <item name="wallpaperpexels" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="activity" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WallPaperPexels" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WallPaperPexels" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wallpaperpexels" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
               <item name="splash" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2994,6 +3028,7 @@
       <recent name="app.matrix.wallpaperpexels.network.basenetwork" />
     </key>
     <key name="android.template.packageName">
+      <recent name="app.matrix.wallpaperpexels.ui.activity.forgotpassword" />
       <recent name="app.matrix.wallpaperpexels.welcome" />
       <recent name="app.matrix.wallpaperpexels.imagedetails" />
       <recent name="app.matrix.wallpaperpexels.home" />
@@ -3394,72 +3429,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="174" column="33" selection-start-line="174" selection-start-column="33" selection-end-line="174" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/localdatabase/DatabaseHelper.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="222" column="8" selection-start-line="222" selection-start-column="8" selection-end-line="222" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/MyImageGlideModule.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../sutopa/Android/Sdk/sources/android-28/android/content/Context.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="127" column="28" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ToDo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/contract/ContractSplashInterface.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/utility/Utility.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/utility/InputValidation.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1065">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="259" column="68" selection-start-line="259" selection-start-column="68" selection-end-line="259" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/aftersplash/AfterSplash.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/network/basenetwork/ConnectivityReceiver.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -3481,55 +3451,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/WallPaperApp.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding>
-            <element signature="e#36#233#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginView.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginPreseneter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/Home.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1052">
           <caret line="103" column="30" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/contract/ContractLoginInterface.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="98" column="19" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -3574,20 +3499,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/placeloader.gif">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1713">
-          <caret line="121" column="78" selection-start-line="121" selection-start-column="78" selection-end-line="121" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WelcomePagerAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -3644,13 +3555,6 @@
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -3716,13 +3620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WecomeActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/IWelcomeView.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -3730,24 +3627,195 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/ISplashView.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/forgotpassword/ForgotPasswordActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="165">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <element signature="e#63#171#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashActivity.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_forgot_password.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/forgotpassword/ForgotPasswordPresenter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="50" column="31" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="31" />
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="62" lean-forward="true" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/backgrnd.webp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="75" column="72" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <element signature="e#581#599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/WallPaperApp.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_registration.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
+          <folding>
+            <element signature="e#1712#1727#0" expanded="true" />
+            <element signature="e#2551#2566#0" expanded="true" />
+            <element signature="e#3393#3408#0" expanded="true" />
+            <element signature="e#4256#4271#0" expanded="true" />
+            <element signature="e#5140#5155#0" expanded="true" />
+            <element signature="e#5624#5645#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="85" column="36" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="36" />
+          <folding>
+            <element signature="e#1214#1230#0" expanded="true" />
+            <element signature="e#1273#1289#0" expanded="true" />
+            <element signature="e#1731#1746#0" expanded="true" />
+            <element signature="e#2104#2119#0" expanded="true" />
+            <element signature="e#2637#2651#0" expanded="true" />
+            <element signature="e#3666#3680#0" expanded="true" />
+            <element signature="e#4090#4105#0" expanded="true" />
+            <element signature="e#4546#4566#0" expanded="true" />
+            <element signature="e#4846#4860#0" expanded="true" />
+            <element signature="e#5597#5611#0" expanded="true" />
+            <element signature="e#5636#5661#0" expanded="true" />
+            <element signature="e#6251#6265#0" expanded="true" />
+            <element signature="e#6291#6313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/ISplashView.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashPresenter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+        <state relative-caret-position="75">
+          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/ContractLoginInterface.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginView.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginPreseneter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginPresenter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2002">
+          <caret line="215" column="30" selection-start-line="215" selection-start-column="30" selection-end-line="215" selection-end-column="30" />
+          <folding>
+            <element signature="e#7429#7445#0" />
+            <element signature="e#7407#7536#0" />
+            <element signature="e#7575#7708#0" />
+            <element signature="e#7740#9188#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/welcome/WecomeActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/splash/SplashActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
         </state>
       </provider>
     </entry>

@@ -10,7 +10,7 @@ class SplashPresenter(private var view: ISplashView?) :  ISplashPresenter {
     override fun onAnimate() {
         Handler().postDelayed(
             {
-                view?.moveToWelcomePage()
+                view?.moveToAnimatedPage()
 
             },
             delayTime

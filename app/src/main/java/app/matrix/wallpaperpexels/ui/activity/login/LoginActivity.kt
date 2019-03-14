@@ -15,11 +15,11 @@ import app.matrix.wallpaperpexels.ui.activity.home.Home
 import app.matrix.wallpaperpexels.localdatabase.Constant
 import app.matrix.wallpaperpexels.localdatabase.DatabaseHelper
 import app.matrix.wallpaperpexels.localdatabase.pojo.UserDetailsData
-import app.matrix.wallpaperpexels.ui.activity.login.contract.ContractLoginInterface
 import app.matrix.wallpaperpexels.ui.activity.registration.RegistrationActivity
 import app.matrix.wallpaperpexels.utility.InputValidation
 import butterknife.BindView
 import butterknife.ButterKnife
+import butterknife.OnClick
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -34,10 +34,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginInterface.View {
-
-
-
+class LoginActivity : AppCompatActivity(), IloginView {
 
 
     @BindView(R.id.textInputEditTextEmail)
@@ -67,10 +64,13 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginIn
     @BindView(R.id.sign_in_button)
     lateinit var googleSignIn: SignInButton
 
+    @BindView(R.id.skipforNow)
+    lateinit var skipforNow: AppCompatTextView
+
     private lateinit var inputValidation: InputValidation
     private lateinit var databaseHelper: DatabaseHelper
 
-    private lateinit var listUsers: MutableList<UserDetailsData>
+    //private lateinit var listUsers: MutableList<UserDetailsData>
 
     private val TAG = LoginActivity::class.java.name
 
@@ -87,19 +87,10 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginIn
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        //Binding Butterknife
+        ButterKnife.bind(this)
 
         presenter = LoginPresenter(this)
-
-
-
-
-        /* var getDataFromSQLite = GetDataFromSQLite()
-         getDataFromSQLite.execute()*/
-
-    }
-
-    override fun init() {
-        ButterKnife.bind(this)
 
         //Initialization new class
         inputValidation = InputValidation(this@LoginActivity)
@@ -110,18 +101,16 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginIn
         firebaseAuth = FirebaseAuth.getInstance()
 
 
-        listUsers = ArrayList()
         //set SignIn
         googleSignIn.setSize(SignInButton.SIZE_STANDARD)
 
         //Configure Google Signin
         configureGoogleSignIn()
 
-        //Initialize onClick
-        loginButton.setOnClickListener(this)
-        textViewClick.setOnClickListener(this)
-        textViewForgotPassword.setOnClickListener(this)
-        googleSignIn.setOnClickListener(this)
+
+        /* var getDataFromSQLite = GetDataFromSQLite()
+         getDataFromSQLite.execute()*/
+
     }
 
 
@@ -202,15 +191,36 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, ContractLoginIn
 
     }*/
 
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.textViewLinkRegister -> presenter?.clickedregistration()
 
-            R.id.appCompatButtonLogin -> presenter?.loginbuttonclicked()
+    @OnClick
+        (R.id.sign_in_button)
+    fun googleSign() {
+        presenter?.googlesigninclicked()
+    }
 
-            R.id.sign_in_button -> presenter?.googlesigninclicked()
+    @OnClick
+        (R.id.appCompatButtonLogin)
+    fun buttonLogin() {
+        presenter?.loginbuttonclicked()
+    }
 
-        }
+    @OnClick
+        (R.id.textViewLinkRegister)
+    fun registration() {
+        presenter?.clickedregistration()
+    }
+
+    @OnClick
+        (R.id.skipforNow)
+    fun skip() {
+        presenter?.skipLogin()
+    }
+
+
+    override fun skipLogin() {
+        val mainIntent = Intent(this@LoginActivity, Home::class.java)
+        startActivity(mainIntent)
+        finish()
     }
 
     override fun clickToRegistrationPage() {
