@@ -19,6 +19,7 @@ import butterknife.ButterKnife
 
 class SplashActivity : AppCompatActivity(), ISplashView {
 
+
     @BindView(R.id.includeSplash2)
     lateinit var includeSplash2: View
 
@@ -47,9 +48,14 @@ class SplashActivity : AppCompatActivity(), ISplashView {
 
 
     }
+    override fun oneTimeWelcome() {
+        val mainIntent = Intent(this@SplashActivity, WecomeActivity::class.java)
+        startActivity(mainIntent)
+        finish()
+    }
 
     override fun moveToLoginPage() {
-        val mainIntent = Intent(this@SplashActivity, WecomeActivity::class.java)
+        val mainIntent = Intent(this@SplashActivity, LoginActivity::class.java)
         startActivity(mainIntent)
         finish()
     }

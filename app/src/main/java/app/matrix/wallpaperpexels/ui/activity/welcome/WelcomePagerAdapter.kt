@@ -10,7 +10,7 @@ import androidx.viewpager.widget.PagerAdapter
 class WelcomePagerAdapter(private val mContext: Context) : PagerAdapter() {
 
     override fun instantiateItem(collection: ViewGroup, position: Int): Any {
-        val modelObject = Model.values()[position]
+        val modelObject = PagerAdapterModel.values()[position]
         val inflater = LayoutInflater.from(mContext)
         val layout = inflater.inflate(modelObject.layoutResId, collection, false) as ViewGroup
         collection.addView(layout)
@@ -22,7 +22,7 @@ class WelcomePagerAdapter(private val mContext: Context) : PagerAdapter() {
     }
 
     override fun getCount(): Int {
-        return Model.values().size
+        return PagerAdapterModel.values().size
     }
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
@@ -30,7 +30,7 @@ class WelcomePagerAdapter(private val mContext: Context) : PagerAdapter() {
     }
 
     override fun getPageTitle(position: Int): CharSequence {
-        val customPagerEnum = Model.values()[position]
+        val customPagerEnum = PagerAdapterModel.values()[position]
         return mContext.getString(customPagerEnum.titleResId)
     }
 

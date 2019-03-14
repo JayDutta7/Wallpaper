@@ -5,6 +5,8 @@ class WelComePresenter(private var _view: IWelcomeView, private var pageradapter
     IWelcomePresenter {
 
 
+
+
     override fun setUpPagerAdapter() {
 
         _view.setViewPagerAdapter(pageradapter)

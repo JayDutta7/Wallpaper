@@ -4,4 +4,6 @@ interface IWelcomeView {
 
      fun setViewPagerAdapter(adapter: WelcomePagerAdapter)
 
+
+
 }

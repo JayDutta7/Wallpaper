@@ -15,6 +15,7 @@ class Constant{
         /* Shared prefrence key's*/
         const val UserEmail:String="UserEmail"
         const val IMAGE:String="Image"
+        const val WelcomeShown:String="IsSeen"
 
 
     }

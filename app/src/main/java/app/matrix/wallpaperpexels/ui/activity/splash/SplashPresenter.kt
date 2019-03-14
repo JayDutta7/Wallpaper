@@ -30,6 +30,11 @@ class SplashPresenter(private var view: ISplashView?) :  ISplashPresenter {
     override fun goToNextPage() {
 
         when {
+
+            !WallPaperApp.getPref().getValueBoolien(Constant.WelcomeShown) ->
+
+                view?.oneTimeWelcome()
+
             WallPaperApp.getPref().getValueBoolien(Constant.UserEmail) ->
 
                 view?.moveToHomePage()

@@ -44,5 +44,6 @@
     <string name="one">THIS IS PAGE ONE</string>
     <string name="two">THIS IS PAGE TWO</string>
     <string name="three">THIS IS PAGE THREE</string>
+    <string name="skip">SKIP</string>
 
 </resources>

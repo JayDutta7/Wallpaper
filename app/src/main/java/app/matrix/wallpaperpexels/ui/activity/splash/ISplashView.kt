@@ -4,4 +4,5 @@ interface ISplashView {
     fun moveToLoginPage()
     fun moveToHomePage()
     fun moveToWelcomePage()
+    fun oneTimeWelcome()
 }
