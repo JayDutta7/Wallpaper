@@ -1,32 +1,39 @@
 package app.matrix.wallpaperpexels.ui.activity.welcome
 
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
-import java.util.ArrayList
-
-class WelcomePagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
-
-
-    private var titleList: MutableList<String> = ArrayList()
-    private var fragmentList: MutableList<Fragment> = ArrayList()
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.viewpager.widget.PagerAdapter
 
 
-    override fun getItem(position: Int): Fragment {
+class WelcomePagerAdapter(private val mContext: Context) : PagerAdapter() {
 
-        return fragmentList[position]
+    override fun instantiateItem(collection: ViewGroup, position: Int): Any {
+        val modelObject = Model.values()[position]
+        val inflater = LayoutInflater.from(mContext)
+        val layout = inflater.inflate(modelObject.layoutResId, collection, false) as ViewGroup
+        collection.addView(layout)
+        return layout
+    }
+
+    override fun destroyItem(collection: ViewGroup, position: Int, view: Any) {
+        collection.removeView(view as View)
     }
 
     override fun getCount(): Int {
-
-        return fragmentList.size
+        return Model.values().size
     }
 
-
-    fun addPage(title: String, fragment: Fragment) {
-        titleList.add(title)
-        fragmentList.add(fragment)
+    override fun isViewFromObject(view: View, `object`: Any): Boolean {
+        return view === `object`
     }
+
+    override fun getPageTitle(position: Int): CharSequence {
+        val customPagerEnum = Model.values()[position]
+        return mContext.getString(customPagerEnum.titleResId)
+    }
+
 
 }
 

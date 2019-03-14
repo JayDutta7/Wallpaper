@@ -73,7 +73,7 @@ dependencies {
     kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife_version"
 
     //Multidex
-    implementation "com.android.support:multidex:$rootProject.ext.multidex"
+    implementation "androidx.multidex:multidex:$rootProject.ext.multidex"
 
     //Glide
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glidE"

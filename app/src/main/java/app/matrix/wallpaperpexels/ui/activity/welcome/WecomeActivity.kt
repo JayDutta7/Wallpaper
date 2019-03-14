@@ -26,14 +26,14 @@ class WecomeActivity : AppCompatActivity(), IWelcomeView {
         setContentView(R.layout.activity_wecome)
         ButterKnife.bind(this)
 
-        welComePresenter= WelComePresenter(this,WelcomePagerAdapter(supportFragmentManager))
+        welComePresenter = WelComePresenter(this, WelcomePagerAdapter(this))
         welComePresenter!!.setUpPagerAdapter()
 
     }
 
     override fun setViewPagerAdapter(adapter: WelcomePagerAdapter) {
 
-        welcomePager.adapter=adapter
+        welcomePager.adapter = adapter
         viewPagerCircleIndicator.setViewPager(welcomePager)
     }
 

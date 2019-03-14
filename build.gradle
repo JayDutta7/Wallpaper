@@ -56,7 +56,7 @@ ext {
 
     butterknife_version = '10.0.0'
 
-    multidex = '1.0.3'
+    multidex = '2.0.0'
 
     glidE = '4.9.0'
 
