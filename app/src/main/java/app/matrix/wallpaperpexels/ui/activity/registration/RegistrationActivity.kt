@@ -23,9 +23,9 @@ import butterknife.OnClick
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
 
 class RegistrationActivity : AppCompatActivity(), IRegistrationView {
-
 
 
     @BindView(R.id.textInputEditTextName)
@@ -94,6 +94,18 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
     }//end of oncreate
 
+    //Destroy and
+    override fun onDestroy() {
+        super.onDestroy()
+        WallPaperApp.getPref().save(Constant.RegType, "")
+    }
+
+    //System Backpressed Destroy the activity
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }
+
     @OnClick
         (R.id.TextViewLoginLink)
     fun goToLogin() {
@@ -102,7 +114,7 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
     @OnClick(R.id.ButtonRegister)
     fun registerUsingSqlLite() {
-       // registrationPresenter?.registerSqllite()
+        // registrationPresenter?.registerSqllite()
         registrationPresenter?.typeRegistration()
 
     }
@@ -116,7 +128,7 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
     @OnClick(R.id.sqllite)
     fun registerSqlLite() {
-        Toast.makeText(this, "Clicked Sqllite", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "Clicked Sqllite", Toast.LENGTH_SHORT).show()
 
         WallPaperApp.getPref().save(Constant.RegType, "Sqllite")
 
@@ -124,8 +136,18 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
     override fun registerFirebase() {
 
-    }
+        val mauth=FirebaseAuth.getInstance()
 
+        mauth.createUserWithEmailAndPassword(textInputEditTextEmail.text.toString().trim(),
+
+            textInputEditTextPassword.text.toString().trim()).addOnCompleteListener {
+
+
+        }
+
+
+
+    }
 
 
     override fun redirectLogin() {
@@ -133,6 +155,7 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
         startActivity(mainIntent)
         finish()
     }
+
     override fun showErrorToast() {
 
         Toast.makeText(this, "Please choose registration type", Toast.LENGTH_SHORT).show()
