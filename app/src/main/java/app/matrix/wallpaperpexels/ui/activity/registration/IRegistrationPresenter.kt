@@ -7,5 +7,9 @@ interface IRegistrationPresenter {
 
     fun registerSqllite()
 
+    fun registerFirebase()
+
+    fun typeRegistration()
+
 
 }

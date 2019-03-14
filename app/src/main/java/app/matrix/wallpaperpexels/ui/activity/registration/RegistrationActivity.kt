@@ -2,12 +2,17 @@ package app.matrix.wallpaperpexels.ui.activity.registration
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.widget.NestedScrollView
 import app.matrix.wallpaperpexels.R
+import app.matrix.wallpaperpexels.WallPaperApp
+import app.matrix.wallpaperpexels.localdatabase.Constant
 import app.matrix.wallpaperpexels.localdatabase.DatabaseHelper
 import app.matrix.wallpaperpexels.localdatabase.pojo.UserDetailsData
 import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
@@ -20,6 +25,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 class RegistrationActivity : AppCompatActivity(), IRegistrationView {
+
 
 
     @BindView(R.id.textInputEditTextName)
@@ -62,10 +68,15 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
     @BindView(R.id.nestedScrollView)
     lateinit var nestedScrollView: NestedScrollView
 
+
     private lateinit var inputValidation: InputValidation
     private lateinit var databaseHelper: DatabaseHelper
 
     private var registrationPresenter: RegistrationPresenter? = null
+
+    companion object {
+        private val TAG = RegistrationActivity::javaClass.name
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,14 +102,41 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
     @OnClick(R.id.ButtonRegister)
     fun registerUsingSqlLite() {
-        registrationPresenter?.registerSqllite()
+       // registrationPresenter?.registerSqllite()
+        registrationPresenter?.typeRegistration()
 
     }
+
+    @OnClick(R.id.firebase)
+    fun firebaseRadio() {
+        Toast.makeText(this, "Clicked Firebase.. Cooming Soon", Toast.LENGTH_SHORT).show()
+
+        WallPaperApp.getPref().save(Constant.RegType, "Firebase")
+    }
+
+    @OnClick(R.id.sqllite)
+    fun registerSqlLite() {
+        Toast.makeText(this, "Clicked Sqllite", Toast.LENGTH_SHORT).show()
+
+        WallPaperApp.getPref().save(Constant.RegType, "Sqllite")
+
+    }
+
+    override fun registerFirebase() {
+
+    }
+
+
 
     override fun redirectLogin() {
         val mainIntent = Intent(this@RegistrationActivity, LoginActivity::class.java)
         startActivity(mainIntent)
         finish()
+    }
+    override fun showErrorToast() {
+
+        Toast.makeText(this, "Please choose registration type", Toast.LENGTH_SHORT).show()
+
     }
 
     override fun registerSqllite() {

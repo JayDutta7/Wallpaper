@@ -6,6 +6,7 @@ import android.content.Context
 import android.util.Log
 import androidx.multidex.MultiDex
 import app.matrix.wallpaperpexels.localdatabase.LocalSharedPreference
+import com.google.firebase.FirebaseApp
 
 class WallPaperApp : Application() {
 
@@ -30,12 +31,17 @@ class WallPaperApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
+        //initialize multidex for over 65k methods in application class
         MultiDex.install(this)
+
         mcontext = this
         Log.e(TAG, "This is Application Class Oncreate")
 
+        //initialize localdatabase in the application class
         localdatabase = LocalSharedPreference(this)
+        //initialize Firebase sdk in application class
+        FirebaseApp.initializeApp(applicationContext)
+
 
 
     }//End Of Oncreate

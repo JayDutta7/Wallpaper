@@ -16,6 +16,7 @@ class Constant{
         const val UserEmail:String="UserEmail"
         const val IMAGE:String="Image"
         const val WelcomeShown:String="IsSeen"
+        const val RegType:String="Sqllite"
 
 
     }

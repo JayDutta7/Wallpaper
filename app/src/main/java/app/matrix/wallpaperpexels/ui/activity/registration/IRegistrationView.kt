@@ -5,4 +5,8 @@ interface IRegistrationView {
     fun redirectLogin()
 
     fun registerSqllite()
+
+    fun registerFirebase()
+
+    fun showErrorToast()
 }
