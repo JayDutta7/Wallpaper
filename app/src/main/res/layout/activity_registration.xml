@@ -12,11 +12,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/TransparentLogin"
-            android:padding="@dimen/_20sdp">
+            >
 
         <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:padding="@dimen/_20sdp"
                 android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -32,15 +33,18 @@
                     android:id="@+id/textInputLayoutName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_20sdp">
+                    android:layout_marginTop="@dimen/_10sdp">
 
                 <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textInputEditTextName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_name"
+                        android:textSize="@dimen/_12sdp"
                         android:inputType="text"
                         android:maxLines="1"
+                        android:drawableLeft="@android:drawable/ic_dialog_info"
+                        android:drawablePadding="@dimen/_5sdp"
                         android:textColor="@android:color/white"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -48,15 +52,19 @@
                     android:id="@+id/textInputLayoutEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_5sdp"
+                    >
 
                 <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textInputEditTextEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Enter email"
+                        android:textSize="@dimen/_12sdp"
                         android:inputType="text"
                         android:maxLines="1"
+                        android:drawableLeft="@android:drawable/ic_dialog_email"
+                        android:drawablePadding="@dimen/_5sdp"
                         android:textColor="@android:color/white"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,15 +72,19 @@
                     android:id="@+id/textInputLayoutPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_5sdp"
+                    >
 
                 <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textInputEditTextPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Enter password"
+                        android:textSize="@dimen/_12sdp"
                         android:inputType="textPassword"
                         android:maxLines="1"
+                        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+                        android:drawablePadding="@dimen/_5sdp"
                         android:textColor="@android:color/white"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,24 +92,28 @@
                     android:id="@+id/textInputLayoutConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_5sdp"
+                    >
 
                 <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textInputEditTextConfirmPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_confirm_password"
+                        android:textSize="@dimen/_12sdp"
                         android:inputType="textPassword"
                         android:maxLines="1"
+                        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+                        android:drawablePadding="@dimen/_5sdp"
                         android:textColor="@android:color/white"/>
             </com.google.android.material.textfield.TextInputLayout>
-
 
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutmobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp">
+                    android:layout_marginTop="@dimen/_5sdp"
+                    >
 
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -106,10 +122,14 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_mobile"
                         android:inputType="phone"
+                        android:textSize="@dimen/_12sdp"
                         android:maxLines="1"
                         android:maxLength="10"
+                        android:drawableLeft="@android:drawable/sym_call_incoming"
+                        android:drawablePadding="@dimen/_5sdp"
                         android:textColor="@android:color/white"/>
             </com.google.android.material.textfield.TextInputLayout>
+
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/ButtonRegister"

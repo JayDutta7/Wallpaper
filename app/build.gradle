@@ -120,8 +120,7 @@ dependencies {
 
     //Indicator
     implementation "me.relex:circleindicator:$rootProject.ext.circleIndicator"
-    //CountryPicker lIb
-    implementation "com.hbb20:ccp:$rootProject.ext.countryPicker"
+
 
 
 }

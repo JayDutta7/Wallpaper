@@ -14,11 +14,12 @@ import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
 import app.matrix.wallpaperpexels.utility.InputValidation
 import butterknife.BindView
 import butterknife.ButterKnife
+import butterknife.OnClick
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
-class RegistrationActivity : AppCompatActivity(), View.OnClickListener {
+class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
 
     @BindView(R.id.textInputEditTextName)
@@ -64,50 +65,44 @@ class RegistrationActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var inputValidation: InputValidation
     private lateinit var databaseHelper: DatabaseHelper
 
+    private var registrationPresenter: RegistrationPresenter? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
-        initialize()
-
-    }//end of oncreate
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-
-            R.id.TextViewLoginLink -> goToLogin()
-
-            R.id.ButtonRegister -> registerUsingSqlLite()
-
-
-        }
-    }
-
-    private fun initialize() {
         ButterKnife.bind(this)
 
         //Init Object
-        initObject()
-
-        //Initialization
-        TextViewLoginLink.setOnClickListener(this)
-        ButtonRegister.setOnClickListener(this)
-
-    }
-
-    private fun initObject() {
         inputValidation = InputValidation(this@RegistrationActivity)
         databaseHelper = DatabaseHelper(this@RegistrationActivity)
 
+        //Initiating presenter
+        registrationPresenter = RegistrationPresenter(this)
+
+
+    }//end of oncreate
+
+    @OnClick
+        (R.id.TextViewLoginLink)
+    fun goToLogin() {
+        registrationPresenter?.redirectLogin()
     }
 
-    private fun goToLogin() {
+    @OnClick(R.id.ButtonRegister)
+    fun registerUsingSqlLite() {
+        registrationPresenter?.registerSqllite()
+
+    }
+
+    override fun redirectLogin() {
         val mainIntent = Intent(this@RegistrationActivity, LoginActivity::class.java)
         startActivity(mainIntent)
         finish()
     }
 
-    private fun registerUsingSqlLite() {
+    override fun registerSqllite() {
+
         if (!inputValidation.isInputEditTextFilled(
                 EditTextName,
                 textInputLayoutName,
@@ -182,7 +177,6 @@ class RegistrationActivity : AppCompatActivity(), View.OnClickListener {
 
 
         }
-
     }
 
 
