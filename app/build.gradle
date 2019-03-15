@@ -113,6 +113,7 @@ dependencies {
     implementation "com.google.firebase:firebase-auth:$rootProject.ext.firebaseAuth"
     implementation "com.google.firebase:firebase-database:$rootProject.ext.firebaseDatabase"
 
+
     //Testing
     testImplementation "junit:junit:$rootProject.ext.jUnit"
     androidTestImplementation "androidx.test:runner:$rootProject.ext.testRunner"

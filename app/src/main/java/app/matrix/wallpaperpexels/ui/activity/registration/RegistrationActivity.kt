@@ -4,12 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.View
-import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.widget.NestedScrollView
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.WallPaperApp
@@ -164,19 +160,23 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
                     val userInfo = task.result?.user
 
+                    Log.e(TAG, userInfo.toString())
+
+
+
                     if (userInfo != null) {
 
                         val database = FirebaseDatabase.getInstance().getReference("users")
-                        val databasee = database.child(userInfo.uid)
+                        database.child(userInfo.uid)
 
                         val firebaseModel = RegFirebaseModel(
                             fullname = EditTextName.text.toString().trim(),
                             email = textInputEditTextEmail.text.toString().trim(),
                             phone = textInputEditTextMobile.text.toString().trim()
                         )
-                        databasee.setValue(firebaseModel)
+                        database.child(userInfo.uid).setValue(firebaseModel)
 
-                        databasee.addValueEventListener(object : ValueEventListener {
+                        database.child(userInfo.uid).addValueEventListener(object : ValueEventListener {
                             override fun onCancelled(p0: DatabaseError) {
                                 Toast.makeText(this@RegistrationActivity, "Registration Failed.", Toast.LENGTH_LONG)
                                     .show()
