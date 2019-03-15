@@ -2,6 +2,7 @@ package app.matrix.wallpaperpexels.ui.activity.registration
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.RadioGroup
@@ -24,6 +25,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
@@ -136,15 +141,73 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
     override fun registerFirebase() {
 
-        val mauth=FirebaseAuth.getInstance()
+        val mauth = FirebaseAuth.getInstance()
 
-        mauth.createUserWithEmailAndPassword(textInputEditTextEmail.text.toString().trim(),
+        when {
+            TextUtils.isEmpty(textInputEditTextEmail.text.toString()) -> {
+                textInputEditTextEmail.error = "Please fill Email"
+                textInputEditTextEmail.requestFocus()
+                return
+            }
+            TextUtils.isEmpty(textInputEditTextPassword.text.toString()) -> {
+                textInputEditTextPassword.error = "Please fill Password"
+                textInputEditTextPassword.requestFocus()
+                return
+            }
+            else -> mauth.createUserWithEmailAndPassword(
+                textInputEditTextEmail.text.toString().trim(),
 
-            textInputEditTextPassword.text.toString().trim()).addOnCompleteListener {
+                textInputEditTextPassword.text.toString().trim()
+            ).addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+
+                    val userInfo = task.result?.user
+
+                    if (userInfo != null) {
+
+                        val database = FirebaseDatabase.getInstance().getReference("users")
+                        val databasee = database.child(userInfo.uid)
+
+                        val firebaseModel = RegFirebaseModel(
+                            fullname = EditTextName.text.toString().trim(),
+                            email = textInputEditTextEmail.text.toString().trim(),
+                            phone = textInputEditTextMobile.text.toString().trim()
+                        )
+                        databasee.setValue(firebaseModel)
+
+                        databasee.addValueEventListener(object : ValueEventListener {
+                            override fun onCancelled(p0: DatabaseError) {
+                                Toast.makeText(this@RegistrationActivity, "Registration Failed.", Toast.LENGTH_LONG)
+                                    .show()
+
+                            }
+
+                            override fun onDataChange(p0: DataSnapshot) {
+
+                                val user = FirebaseAuth.getInstance().currentUser
+                                if (user != null) {
+
+                                    Toast.makeText(
+                                        this@RegistrationActivity,
+                                        "Your registration has been successfully done.",
+                                        Toast.LENGTH_LONG
+                                    ).show()
 
 
+                                }
+                            }
+
+                        })
+
+                    }
+
+
+                }
+
+
+            }
         }
-
 
 
     }

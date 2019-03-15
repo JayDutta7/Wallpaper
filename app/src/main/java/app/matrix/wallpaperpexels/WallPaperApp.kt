@@ -42,8 +42,6 @@ class WallPaperApp : Application() {
         //initialize Firebase sdk in application class
         FirebaseApp.initializeApp(applicationContext)
 
-
-
     }//End Of Oncreate
 
 
