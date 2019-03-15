@@ -18,8 +18,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77d73c7c-ca63-4e04-b9e8-83fbbf67cde7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_registration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -219,53 +218,41 @@
         <counts>
           <entry key="gradle" value="3" />
           <entry key="json" value="1" />
-          <entry key="kt" value="9" />
-          <entry key="xml" value="4" />
+          <entry key="kt" value="11" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="3" />
           <entry key="JSON" value="1" />
-          <entry key="Kotlin" value="9" />
-          <entry key="XML" value="4" />
+          <entry key="Kotlin" value="11" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="2" />
-          <entry key="kt" value="1166" />
-          <entry key="xml" value="81" />
+          <entry key="kt" value="1323" />
+          <entry key="xml" value="115" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="Kotlin" value="1166" />
-          <entry key="XML" value="81" />
+          <entry key="Kotlin" value="1323" />
+          <entry key="XML" value="115" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="258" lean-forward="true" selection-start-line="257" selection-end-line="258" />
-              <folding>
-                <element signature="e#61#1230#0" expanded="true" />
-                <element signature="e#4607#4645#1" expanded="true" />
-                <element signature="e#4828#4867#1" expanded="true" />
-                <element signature="e#5049#5095#1" expanded="true" />
-                <element signature="e#5284#5326#1" expanded="true" />
-                <element signature="e#5529#5571#1" expanded="true" />
-                <element signature="e#5818#5858#1" expanded="true" />
-                <element signature="e#6040#6071#1" expanded="true" />
-                <element signature="e#8266#8305#1" expanded="true" />
-                <element signature="e#8902#8940#1" expanded="true" />
-              </folding>
+            <state relative-caret-position="848">
+              <caret line="249" column="75" selection-start-line="249" selection-start-column="75" selection-end-line="249" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -273,36 +260,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="11" column="37" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="150">
+              <caret line="11" column="94" selection-start-line="11" selection-start-column="94" selection-end-line="11" selection-end-column="94" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_registration.xml">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegFirebaseModel.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="81" selection-start-line="2" selection-start-column="81" selection-end-line="2" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationPresenter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            <state relative-caret-position="307">
+              <caret line="278" column="54" lean-forward="true" selection-start-line="278" selection-start-column="54" selection-end-line="278" selection-end-column="54" />
+              <folding>
+                <element signature="e#9433#9473#1" expanded="true" />
+                <element signature="e#9839#9872#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2845,7 +2817,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/ContractLoginInterface.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginView.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginPreseneter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/adapter/PhotoAdapter.kt" />
         <option value="$PROJECT_DIR$/build.gradle" />
@@ -2857,9 +2828,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegFirebaseModel.kt" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/localdatabase/Constant.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_registration.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt" />
       </list>
     </option>
   </component>
@@ -2948,7 +2920,7 @@
               <item name="wallpaperpexels" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="activity" type="462c0819:PsiDirectoryNode" />
-              <item name="registration" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WallPaperPexels" type="b2602c69:ProjectViewProjectNode" />
@@ -2988,7 +2960,7 @@
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="device.picker.selection" value="Android_9_Pie" />
+    <property name="device.picker.selection" value="525112a" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Backupspace/OldCodeBackup" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
@@ -3336,7 +3308,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info content_ui="combo" id="Project" order="1" weight="0.32828686" />
@@ -3350,9 +3321,9 @@
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Logcat" order="2" sideWeight="0.49960223" weight="0.3416149" />
       <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32142857" />
-      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49880478" weight="0.32142857" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5011952" side_tool="true" weight="0.32142857" />
+      <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.4996016" weight="0.32919255" />
       <window_info anchor="bottom" id="Flutter Performance" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.32142857" />
       <window_info anchor="bottom" id="Android Profiler" order="9" />
@@ -3641,13 +3612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1642">
-          <caret line="215" column="30" selection-start-line="215" selection-start-column="30" selection-end-line="215" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/IloginPreseneter.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -3719,31 +3683,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegFirebaseModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="81" selection-start-line="2" selection-start-column="81" selection-end-line="2" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/localdatabase/Constant.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="25" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -3762,21 +3705,41 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegFirebaseModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="81" selection-start-line="2" selection-start-column="81" selection-end-line="2" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationPresenter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="94" selection-start-line="11" selection-start-column="94" selection-end-line="11" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/registration/RegistrationActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="258" lean-forward="true" selection-start-line="257" selection-end-line="258" />
+        <state relative-caret-position="848">
+          <caret line="249" column="75" selection-start-line="249" selection-start-column="75" selection-end-line="249" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/login/LoginActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="278" column="54" lean-forward="true" selection-start-line="278" selection-start-column="54" selection-end-line="278" selection-end-column="54" />
           <folding>
-            <element signature="e#61#1230#0" expanded="true" />
-            <element signature="e#4607#4645#1" expanded="true" />
-            <element signature="e#4828#4867#1" expanded="true" />
-            <element signature="e#5049#5095#1" expanded="true" />
-            <element signature="e#5284#5326#1" expanded="true" />
-            <element signature="e#5529#5571#1" expanded="true" />
-            <element signature="e#5818#5858#1" expanded="true" />
-            <element signature="e#6040#6071#1" expanded="true" />
-            <element signature="e#8266#8305#1" expanded="true" />
-            <element signature="e#8902#8940#1" expanded="true" />
+            <element signature="e#9433#9473#1" expanded="true" />
+            <element signature="e#9839#9872#1" expanded="true" />
           </folding>
         </state>
       </provider>

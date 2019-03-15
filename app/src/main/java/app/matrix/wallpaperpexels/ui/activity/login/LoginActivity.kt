@@ -26,10 +26,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
@@ -261,23 +263,48 @@ class LoginActivity : AppCompatActivity(), IloginView {
             return
         } else {
 
-            if (databaseHelper.checkUserExits(
-                    emailEditText.text.toString().trim { it <= ' ' },
-                    passEditText.text.toString().trim { it <= ' ' })
-            ) {
-                //save Email
-                WallPaperApp.getPref().save(Constant.UserEmail, true)
+            val mAuth = FirebaseAuth.getInstance()
 
-                Snackbar.make(nestedScrollView, getString(R.string.success_Loginmessage), Snackbar.LENGTH_SHORT).show()
+            mAuth.signInWithEmailAndPassword(emailEditText.text.toString().trim { it <= ' ' },
+                passEditText.text.toString().trim { it <= ' ' })
+                .addOnCompleteListener(
+                    this
+                ) { p0 ->
+                    when {
+                        p0.isSuccessful -> {
 
-                val mainIntent = Intent(this@LoginActivity, Home::class.java)
-                startActivity(mainIntent)
-                finish()
+                            val user = FirebaseAuth.getInstance().currentUser
 
-            } else {
+                            if (user != null)
+                                presenter?.skipLogin()
 
-                Snackbar.make(nestedScrollView, getString(R.string.user_notexits), Snackbar.LENGTH_SHORT).show()
-            }
+
+                        }
+                        databaseHelper.checkUserExits(
+                            emailEditText.text.toString().trim { it <= ' ' },
+                            passEditText.text.toString().trim { it <= ' ' }) -> {
+                            //save Email
+                            WallPaperApp.getPref().save(Constant.UserEmail, true)
+
+                            Snackbar.make(
+                                nestedScrollView,
+                                getString(R.string.success_Loginmessage),
+                                Snackbar.LENGTH_SHORT
+                            ).show()
+
+                            val mainIntent = Intent(this@LoginActivity, Home::class.java)
+                            startActivity(mainIntent)
+                            finish()
+
+                        }
+                        else -> Snackbar.make(
+                            nestedScrollView,
+                            getString(R.string.user_notexits),
+                            Snackbar.LENGTH_SHORT
+                        )
+                            .show()
+                    }
+                }
 
 
         }

@@ -9,7 +9,7 @@
     <string name="text_register">Register</string>
     <string name="error_message_name">Enter Full Name</string>
     <string name="error_message_email">Enter Valid Email</string>
-    <string name="error_message_gmail">Please enter valid email or password</string>
+    <string name="error_message_gmail">Please enter valid email or password for using firebase[Gmail]</string>
     <string name="error_message_age">Enter Age</string>
     <string name="error_message_password">Enter Password</string>
     <string name="success_message">Registration Successful</string>
