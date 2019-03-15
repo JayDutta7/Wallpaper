@@ -5,6 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/backgrnd"
+        android:id="@+id/root_layout"
         tools:context=".ui.activity.registration.RegistrationActivity">
 
     <androidx.core.widget.NestedScrollView

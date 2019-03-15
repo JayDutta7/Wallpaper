@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.NestedScrollView
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.WallPaperApp
@@ -68,6 +69,9 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
     @BindView(R.id.nestedScrollView)
     lateinit var nestedScrollView: NestedScrollView
+
+    @BindView(R.id.root_layout)
+    lateinit var root_layout:ConstraintLayout
 
 
     private lateinit var inputValidation: InputValidation
@@ -238,6 +242,12 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
                         })
                     }
 
+
+                } else {
+
+
+
+                    Snackbar.make(root_layout,getString(R.string.error_message_gmail),Snackbar.LENGTH_SHORT)
 
                 }
 
