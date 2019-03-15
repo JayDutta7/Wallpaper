@@ -30,7 +30,7 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
 
     @BindView(R.id.textInputEditTextName)
-    lateinit var EditTextName: TextInputEditText
+    lateinit var textInputEditTextName: TextInputEditText
 
     @BindView(R.id.textInputEditTextEmail)
     lateinit var textInputEditTextEmail: TextInputEditText
@@ -95,6 +95,7 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
     }//end of oncreate
 
+
     //Destroy and
     override fun onDestroy() {
         super.onDestroy()
@@ -111,7 +112,9 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
         (R.id.TextViewLoginLink)
     fun goToLogin() {
         registrationPresenter?.redirectLogin()
+
     }
+
 
     @OnClick(R.id.ButtonRegister)
     fun registerUsingSqlLite() {
@@ -122,59 +125,93 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
     @OnClick(R.id.firebase)
     fun firebaseRadio() {
-        Toast.makeText(this, "Clicked Firebase.. Cooming Soon", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "Clicked Firebase.. Cooming Soon", Toast.LENGTH_SHORT).show()
 
-        WallPaperApp.getPref().save(Constant.RegType, "Firebase")
+        WallPaperApp.getPref().save(Constant.RegType, Constant.Firebase)
+
+
     }
 
     @OnClick(R.id.sqllite)
     fun registerSqlLite() {
         //Toast.makeText(this, "Clicked Sqllite", Toast.LENGTH_SHORT).show()
-
-        WallPaperApp.getPref().save(Constant.RegType, "Sqllite")
+        WallPaperApp.getPref().save(Constant.RegType, Constant.Sqllite)
 
     }
 
     override fun registerFirebase() {
 
         val mauth = FirebaseAuth.getInstance()
-
         when {
-            TextUtils.isEmpty(textInputEditTextEmail.text.toString()) -> {
-                textInputEditTextEmail.error = "Please fill Email"
-                textInputEditTextEmail.requestFocus()
-                return
-            }
-            TextUtils.isEmpty(textInputEditTextPassword.text.toString()) -> {
-                textInputEditTextPassword.error = "Please fill Password"
-                textInputEditTextPassword.requestFocus()
-                return
-            }
-            else -> mauth.createUserWithEmailAndPassword(
-                textInputEditTextEmail.text.toString().trim(),
+            !inputValidation.isInputEditTextFilled(
+                textInputEditTextName,
+                textInputLayoutName,
+                getString(R.string.error_message_name)
+            )
+            -> return
+            !inputValidation.isInputEditTextFilled(
+                textInputEditTextEmail,
+                textInputLayoutEmail,
+                getString(R.string.error_message_email)
+            )
+            -> return
+            !inputValidation.isInputEditTextEmail(
+                textInputEditTextEmail,
+                textInputLayoutEmail,
+                getString(R.string.error_valid_email_password)
+            )
+            -> return
+            !inputValidation.isInputEditTextFilled(
+                textInputEditTextPassword,
+                textInputLayoutPassword,
+                getString(R.string.error_message_password)
+            )
+            -> return
+            !inputValidation.isInputEditTextFilled(
+                textInputEditTextConfirmPassword,
+                textInputLayoutConfirmPassword,
+                getString(R.string.error_message_password)
+            )
+            -> return
+            !inputValidation.isInputEditTextMatches(
+                textInputEditTextPassword,
+                textInputEditTextConfirmPassword,
+                textInputLayoutConfirmPassword,
+                getString(R.string.error_password_match)
+            )
+            -> return
+            !inputValidation.isPhoneNumberValid(
+                textInputEditTextMobile,
+                textInputLayoutmobile,
+                getString(R.string.hint_mobile)
+            )
+            -> return
 
-                textInputEditTextPassword.text.toString().trim()
+            else -> mauth.createUserWithEmailAndPassword(
+                textInputEditTextEmail.text.toString().trim(),//Email
+                textInputEditTextPassword.text.toString().trim()//Password
             ).addOnCompleteListener { task ->
 
                 if (task.isSuccessful) {
 
                     val userInfo = task.result?.user
-
                     Log.e(TAG, userInfo.toString())
-
-
 
                     if (userInfo != null) {
 
                         val database = FirebaseDatabase.getInstance().getReference("users")
                         database.child(userInfo.uid)
 
+
                         val firebaseModel = RegFirebaseModel(
-                            fullname = EditTextName.text.toString().trim(),
+
+                            fullname = textInputEditTextName.text.toString().trim(),
                             email = textInputEditTextEmail.text.toString().trim(),
                             phone = textInputEditTextMobile.text.toString().trim()
                         )
                         database.child(userInfo.uid).setValue(firebaseModel)
+
+
 
                         database.child(userInfo.uid).addValueEventListener(object : ValueEventListener {
                             override fun onCancelled(p0: DatabaseError) {
@@ -199,7 +236,6 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
                             }
 
                         })
-
                     }
 
 
@@ -207,6 +243,7 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
 
 
             }
+
         }
 
 
@@ -228,7 +265,7 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
     override fun registerSqllite() {
 
         if (!inputValidation.isInputEditTextFilled(
-                EditTextName,
+                textInputEditTextName,
                 textInputLayoutName,
                 getString(R.string.error_message_name)
             )
@@ -285,7 +322,7 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
             if (!databaseHelper.checkUserEmail(textInputEditTextEmail.text.toString().trim())) {
 
                 val user = UserDetailsData(
-                    name = EditTextName.text.toString().trim(),
+                    name = textInputEditTextName.text.toString().trim(),
                     email = textInputEditTextEmail.text.toString().trim(),
                     password = textInputEditTextPassword.text.toString().trim(),
                     phonenumber = textInputEditTextMobile.text.toString().trim()

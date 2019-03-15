@@ -18,6 +18,10 @@ class Constant{
         const val WelcomeShown:String="IsSeen"
         const val RegType:String="Sqllite"
 
+        //*******//
+        const val Firebase:String="Firebase"
+        const val Sqllite:String="Sqllite"
+
 
     }
 }
