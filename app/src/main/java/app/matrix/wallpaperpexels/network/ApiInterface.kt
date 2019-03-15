@@ -1,5 +1,6 @@
 package app.matrix.wallpaperpexels.network
 
+import app.matrix.wallpaperpexels.BuildConfig
 import app.matrix.wallpaperpexels.ui.activity.home.pojo.Random
 import app.matrix.wallpaperpexels.localdatabase.Constant
 import app.matrix.wallpaperpexels.network.basenetwork.RetroClass
@@ -9,6 +10,9 @@ import retrofit2.http.Headers
 
 
 interface ApiInterface {
+
+
+
 
     @GET("curated?per_page=20&page=1")
     @Headers(

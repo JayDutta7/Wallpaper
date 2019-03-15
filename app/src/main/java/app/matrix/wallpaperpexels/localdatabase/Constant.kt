@@ -1,11 +1,13 @@
 package app.matrix.wallpaperpexels.localdatabase
 
+import app.matrix.wallpaperpexels.BuildConfig
+
 class Constant{
     companion object {
         //Application class name
         const val application:String="WallPaperPexels"
         //ApiKey
-        const val apiKey:String="563492ad6f91700001000001dc458bd0c69244b7838514cd61678dca"
+        const val apiKey:String=BuildConfig.ApiKey
         //baseUrl
         val baseUrl:String="https://api.pexels.com/v1/"
 
