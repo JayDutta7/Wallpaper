@@ -229,12 +229,8 @@ class RegistrationActivity : AppCompatActivity(), IRegistrationView {
                                 val user = FirebaseAuth.getInstance().currentUser
                                 if (user != null) {
 
-                                    Toast.makeText(
-                                        this@RegistrationActivity,
-                                        "Your registration has been successfully done.",
-                                        Toast.LENGTH_LONG
-                                    ).show()
-
+                                    Snackbar.make(nestedScrollView, getString(R.string.success_message), Snackbar.LENGTH_SHORT).show()
+                                    registrationPresenter?.redirectLogin()
 
                                 }
                             }

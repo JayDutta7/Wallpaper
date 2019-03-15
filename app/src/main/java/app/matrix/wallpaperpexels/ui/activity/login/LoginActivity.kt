@@ -34,6 +34,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.intuit.sdp.BuildConfig
 
 
 class LoginActivity : AppCompatActivity(), IloginView {
@@ -118,7 +119,7 @@ class LoginActivity : AppCompatActivity(), IloginView {
 
     override fun configureGoogleSignIn() {
         mGoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("741256386904-8cv1alu7qvflus1mhtitejqn2g6qs2mi.apps.googleusercontent.com")
+            .requestIdToken(app.matrix.wallpaperpexels.BuildConfig.Token)
             .requestEmail()
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(this, mGoogleSignInOptions)
