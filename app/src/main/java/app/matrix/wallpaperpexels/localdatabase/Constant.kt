@@ -9,7 +9,7 @@ class Constant{
         //ApiKey
         const val apiKey:String=BuildConfig.ApiKey
         //baseUrl
-        val baseUrl:String="https://api.pexels.com/v1/"
+        const val baseUrl:String="https://api.pexels.com/v1/"
 
 
 
