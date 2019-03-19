@@ -18,18 +18,18 @@ class PhotoAdapter(
     private val context: FragmentActivity,
     private val dataList: MutableList<Photos>,
     private val clickPos: ClickedItem
-) : RecyclerView.Adapter<PhotoAdapter.viewholder>() {
+) : RecyclerView.Adapter<PhotoAdapter.Viewholder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewholder {
-        return viewholder(LayoutInflater.from(context).inflate(R.layout.photo_row, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
+        return Viewholder(LayoutInflater.from(context).inflate(R.layout.photo_row, parent, false))
     }
 
     override fun getItemCount(): Int {
         return dataList.size
     }
 
-    override fun onBindViewHolder(holder: viewholder, position: Int) {
+    override fun onBindViewHolder(holder: Viewholder, position: Int) {
 
         holder.photoView.setOnClickListener {
             clickPos.clickpostion(position)
@@ -51,6 +51,10 @@ class PhotoAdapter(
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.photoView)
 
+        holder.favorite.setOnClickListener {
+
+        }
+
         /*Glide.with(context)
             .applyDefaultRequestOptions(
                 RequestOptions()
@@ -68,11 +72,12 @@ class PhotoAdapter(
     }
 
 
-    class viewholder(view: View) : RecyclerView.ViewHolder(view) {
+    class Viewholder(view: View) : RecyclerView.ViewHolder(view) {
 
         val photoView = view.photo_view!!
         val photographerName = view.photographer_name!!
         val imageSize = view.image_size!!
+        val favorite=view.click_favorite!!
 
 
     }

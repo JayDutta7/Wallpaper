@@ -10,6 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.viewpager.widget.ViewPager
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.WallPaperApp
+import app.matrix.wallpaperpexels.ui.activity.home.adapter.MainAdapter
 import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
 import app.matrix.wallpaperpexels.ui.fragment.CategoryFragment
 import app.matrix.wallpaperpexels.ui.fragment.LatestFragment
@@ -49,10 +50,10 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         ButterKnife.bind(this@Home)
 
 
-        fab.setOnClickListener { view ->
+       /* fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
-        }
+        }*/
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close

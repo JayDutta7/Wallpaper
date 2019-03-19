@@ -1,4 +1,4 @@
-package app.matrix.wallpaperpexels.ui.activity.home
+package app.matrix.wallpaperpexels.ui.activity.home.adapter
 
 
 import androidx.fragment.app.*
