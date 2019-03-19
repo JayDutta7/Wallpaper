@@ -12,20 +12,19 @@ import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.WallPaperApp
 import app.matrix.wallpaperpexels.ui.activity.home.adapter.MainAdapter
 import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
-import app.matrix.wallpaperpexels.ui.fragment.CategoryFragment
-import app.matrix.wallpaperpexels.ui.fragment.LatestFragment
-import app.matrix.wallpaperpexels.ui.fragment.SavedFragment
+import app.matrix.wallpaperpexels.ui.fragment.category.CategoryFragment
+import app.matrix.wallpaperpexels.ui.fragment.latest.LatestFragment
+import app.matrix.wallpaperpexels.ui.fragment.saved.SavedFragment
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home_main.*
 import kotlinx.android.synthetic.main.app_bar_home_main.*
 
 
-class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,iHomeView {
 
 
     private val TAG: String = Home::class.java.simpleName

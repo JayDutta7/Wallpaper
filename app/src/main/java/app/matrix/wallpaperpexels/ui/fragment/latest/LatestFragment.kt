@@ -1,4 +1,4 @@
-package app.matrix.wallpaperpexels.ui.fragment
+package app.matrix.wallpaperpexels.ui.fragment.latest
 
 
 import android.content.Intent
