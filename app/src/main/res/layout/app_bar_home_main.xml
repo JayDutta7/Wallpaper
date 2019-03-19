@@ -23,7 +23,11 @@
                 app:layout_constraintBottom_toTopOf="@+id/recyclerView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent">
+
+
+
+        </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"

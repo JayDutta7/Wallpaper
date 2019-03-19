@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
 import androidx.viewpager.widget.ViewPager
 import app.matrix.wallpaperpexels.R
@@ -40,6 +41,8 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_main)
         setSupportActionBar(toolbar)
+
+
 
         initialize()
     }//end of oncreate
@@ -88,7 +91,6 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(mainIntent)
 
-
     }
 
 
@@ -103,6 +105,8 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.home_main, menu)
+        val searchItem =  menu.findItem(R.id.action_search)
+        val searchView = searchItem.actionView as SearchView
         return true
     }
 
@@ -112,9 +116,14 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> true
+
+            R.id.action_search-> true
+
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    private fun searchAction(){}
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
