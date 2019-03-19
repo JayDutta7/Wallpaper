@@ -1,6 +1,5 @@
 package app.matrix.wallpaperpexels.network
 
-import app.matrix.wallpaperpexels.BuildConfig
 import app.matrix.wallpaperpexels.ui.activity.home.pojo.Random
 import app.matrix.wallpaperpexels.localdatabase.Constant
 import app.matrix.wallpaperpexels.network.basenetwork.RetroClass
