@@ -1,9 +1,9 @@
 package app.matrix.wallpaperpexels.ui.activity.home.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import app.matrix.wallpaperpexels.GlideApp
 import app.matrix.wallpaperpexels.R
@@ -15,7 +15,7 @@ import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.photo_row.view.*
 
 class PhotoAdapter(
-    private val context: Context,
+    private val context: FragmentActivity,
     private val dataList: MutableList<Photos>,
     private val clickPos: ClickedItem
 ) : RecyclerView.Adapter<PhotoAdapter.viewholder>() {

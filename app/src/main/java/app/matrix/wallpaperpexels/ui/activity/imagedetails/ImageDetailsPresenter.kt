@@ -5,10 +5,4 @@ class ImageDetailsPresenter(private var views:IimageDetailsView):IimageDetailsPr
     override fun getImages() {
         views.getImages()
     }
-
-    override fun showImages() {
-       views.showImages()
-    }
-
-
 }

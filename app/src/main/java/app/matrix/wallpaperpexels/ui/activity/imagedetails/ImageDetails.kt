@@ -1,9 +1,7 @@
 package app.matrix.wallpaperpexels.ui.activity.imagedetails
 
-import android.content.Context
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import app.matrix.wallpaperpexels.GlideApp
@@ -28,8 +26,6 @@ class ImageDetails : AppCompatActivity(), IimageDetailsView {
     lateinit var photo_view: PhotoView
 
     private var imgDetailsPresenter: ImageDetailsPresenter? = null
-
-    private var imgLink: String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,17 +59,14 @@ class ImageDetails : AppCompatActivity(), IimageDetailsView {
     }
 
     override fun getImages() {
-        if (!TextUtils.isEmpty(intent.getStringExtra("link")))
-            imgLink = intent.getStringExtra("link")
-        GlideApp.with(this)
-            .applyDefaultRequestOptions(RequestOptions().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC))
-            .load(imgLink)
-            .transition(DrawableTransitionOptions.withCrossFade())
-            .into(photo_view)
+        if (!TextUtils.isEmpty(intent.getStringExtra("link"))) {
+            GlideApp.with(this)
+                .applyDefaultRequestOptions(RequestOptions().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC))
+                .load(intent.getStringExtra("link"))
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(photo_view)
+        }
     }
-
-
-
 
 
 }

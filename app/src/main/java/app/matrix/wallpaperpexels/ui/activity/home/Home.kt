@@ -2,52 +2,38 @@ package app.matrix.wallpaperpexels.ui.activity.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.viewpager.widget.ViewPager
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.WallPaperApp
-import app.matrix.wallpaperpexels.ui.activity.home.adapter.PhotoAdapter
-import app.matrix.wallpaperpexels.ui.activity.home.interfaces.ClickedItem
-import app.matrix.wallpaperpexels.ui.activity.home.pojo.Photos
-import app.matrix.wallpaperpexels.ui.activity.home.pojo.Random
-import app.matrix.wallpaperpexels.ui.activity.imagedetails.ImageDetails
 import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
-import app.matrix.wallpaperpexels.network.ApiInterface
+import app.matrix.wallpaperpexels.ui.fragment.CategoryFragment
+import app.matrix.wallpaperpexels.ui.fragment.LatestFragment
+import app.matrix.wallpaperpexels.ui.fragment.SavedFragment
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home_main.*
 import kotlinx.android.synthetic.main.app_bar_home_main.*
-import retrofit2.Call
-import retrofit2.Response
 
 
-
-class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, ClickedItem {
-
-
-    @BindView(R.id.recyclerView)
-    lateinit var recyclerView: RecyclerView
-
-    @BindView(R.id.swipeRefresh)
-    lateinit var swipeRefresh: SwipeRefreshLayout
-
-    private var imgList: MutableList<MutableList<Photos>>? = null
-
-    private var mAPIService: ApiInterface? = null
+class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
     private val TAG: String = Home::class.java.simpleName
 
+    @BindView(R.id.viewPager)
+    lateinit var viewPager: ViewPager
+
+    @BindView(R.id.tabs)
+    lateinit var tabLayout: TabLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,16 +44,10 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         initialize()
     }//end of oncreate
 
-    fun initialize() {
+    private fun initialize() {
         //ButterKnife Binding
         ButterKnife.bind(this@Home)
-        //initialize retrofit
-        mAPIService = ApiInterface.CreateRetrofit.apiService
-        //initiate Unspalsh
 
-
-        //intiate arraylist
-        imgList = ArrayList()
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -82,16 +62,16 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        //RecyclerView Binding
-        recyclerView.layoutManager = GridLayoutManager(this, 2)
+        val adapter = MainAdapter(supportFragmentManager)
 
-        showData()
+        adapter.addFragment(LatestFragment(), "Latest")
+        adapter.addFragment(CategoryFragment(), "Category")
+        adapter.addFragment(SavedFragment(), "Favorite")
+        viewPager.adapter = adapter
+        tabLayout.setupWithViewPager(viewPager)
 
-        /*signOut.setOnClickListener {
-            signOut()
-        }*/
+
     }
-
 
 
     private fun signOut() {
@@ -109,37 +89,6 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         startActivity(mainIntent)
 
 
-    }
-
-    private fun showData() {
-
-
-        mAPIService!!.getDetails().enqueue(object : retrofit2.Callback<Random> {
-
-            override fun onFailure(call: Call<Random>, t: Throwable) {
-
-                Log.e(TAG, "Failure" + t.message)
-
-            }
-
-            override fun onResponse(call: Call<Random>, response: Response<Random>) {
-
-                Log.e(TAG, "Sucess" + response.body()?.photos?.size!!)
-
-                when {
-                    !imgList.isNullOrEmpty() -> imgList!!.clear()
-                    response.body()?.photos?.size!! > 0 -> imgList!!.add(response.body()!!.photos!!)
-                    else -> Log.e(TAG, "API NO_RESAPONSE")
-                }
-
-                when {
-                    response.body()?.photos?.size!! > 0 -> recyclerView.adapter =
-                        PhotoAdapter(this@Home, response.body()!!.photos!!, this@Home)
-                    else -> Log.e(TAG, "Some Error Occured")
-                }
-            }
-
-        })
     }
 
 
@@ -195,25 +144,6 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
-    }
-
-    //Interface
-    override fun clickpostion(Position: Int) {
-        for (i in 0 until imgList!!.size) {
-
-
-            //Move
-            movetoDetail(imgList?.get(i)?.get(Position)?.src?.original)
-        }
-    }
-
-    private fun movetoDetail(imgpath: String?) {
-
-        val mainIntent = Intent(this@Home, ImageDetails::class.java)
-        mainIntent.putExtra("link", imgpath)
-        startActivity(mainIntent)
-
-
     }
 
 
