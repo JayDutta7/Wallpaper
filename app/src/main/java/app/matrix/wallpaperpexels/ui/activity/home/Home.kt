@@ -1,9 +1,12 @@
 package app.matrix.wallpaperpexels.ui.activity.home
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -18,6 +21,7 @@ import app.matrix.wallpaperpexels.ui.fragment.latest.LatestFragment
 import app.matrix.wallpaperpexels.ui.fragment.saved.SavedFragment
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.example.bottomappbar.BottomNavigationDrawerFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -25,7 +29,8 @@ import kotlinx.android.synthetic.main.activity_home_main.*
 import kotlinx.android.synthetic.main.app_bar_home_main.*
 
 
-class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,iHomeView {
+class Home : AppCompatActivity(),iHomeView {
+
 
 
     private val TAG: String = Home::class.java.simpleName
@@ -40,7 +45,7 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_main)
-        setSupportActionBar(toolbar)
+
 
 
 
@@ -51,19 +56,6 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         //ButterKnife Binding
         ButterKnife.bind(this@Home)
 
-
-       /* fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }*/
-
-        val toggle = ActionBarDrawerToggle(
-            this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
-        )
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        nav_view.setNavigationItemSelectedListener(this)
 
         val adapter = MainAdapter(supportFragmentManager)
 
@@ -77,21 +69,7 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
     }
 
 
-    private fun signOut() {
 
-
-        if (FirebaseAuth.getInstance() != null)
-        //Logout from Firebase
-            FirebaseAuth.getInstance().signOut()
-
-        //Clear Local Database
-        WallPaperApp.getPref().clearSharedPreference()
-
-        val mainIntent = Intent(this@Home, LoginActivity::class.java)
-        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        startActivity(mainIntent)
-
-    }
 
 
     override fun onBackPressed() {
@@ -104,9 +82,9 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.home_main, menu)
-        val searchItem =  menu.findItem(R.id.action_search)
-        val searchView = searchItem.actionView as SearchView
+        menuInflater.inflate(R.menu.bottomappbar_menu, menu)
+
+
         return true
     }
 
@@ -114,46 +92,29 @@ class Home : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListene
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-
-            R.id.action_search-> true
-
+         when (item.itemId) {
+            R.id.app_bar_fav -> toast(getString(R.string.fav_clicked))
+            R.id.app_bar_search -> toast(getString(R.string.search_clicked))
+            R.id.app_bar_settings -> toast(getString(R.string.settings_clicked))
+             android.R.id.home -> {
+                 val bottomNavDrawerFragment = BottomNavigationDrawerFragment()
+                 bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
+             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun searchAction(){}
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        when (item.itemId) {
-            R.id.nav_camera -> {
-                // Handle the camera action
-            }
-            R.id.nav_gallery -> {
-
-            }
-            R.id.nav_slideshow -> {
-
-            }
-            R.id.nav_manage -> {
-
-            }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
-            }
-            R.id.nav_signout -> {
-                signOut()
-            }
-        }
-
-        drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+    // This is an extension method for easy Toast call
+    private fun Context.toast(message: CharSequence) {
+        val toast = Toast.makeText(this, message, Toast.LENGTH_SHORT)
+        toast.setGravity(Gravity.BOTTOM, 0, 325)
+        toast.show()
+    }
+
+
+
+
 
 
 }

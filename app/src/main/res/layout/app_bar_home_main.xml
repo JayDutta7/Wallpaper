@@ -12,22 +12,9 @@
             android:id="@+id/appBarLayout"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_gravity="top"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorPrimaryDark"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-
-        </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
@@ -36,20 +23,14 @@
                 app:tabBackground="@color/colorPrimaryDark"
                 app:tabGravity="fill"
                 app:tabMode="fixed"
-                app:tabTextColor="@android:color/white" />
+                app:tabTextColor="@android:color/white"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
 
+
     <include layout="@layout/content_home_main"/>
 
-    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            app:backgroundTint="@color/semiTransparent"
-            app:srcCompat="@android:drawable/ic_menu_send"/>-->
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
