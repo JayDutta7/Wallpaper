@@ -1,36 +1,28 @@
 package app.matrix.wallpaperpexels.ui.activity.home
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
 import androidx.viewpager.widget.ViewPager
 import app.matrix.wallpaperpexels.R
-import app.matrix.wallpaperpexels.WallPaperApp
 import app.matrix.wallpaperpexels.ui.activity.home.adapter.MainAdapter
-import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
 import app.matrix.wallpaperpexels.ui.fragment.category.CategoryFragment
 import app.matrix.wallpaperpexels.ui.fragment.latest.LatestFragment
 import app.matrix.wallpaperpexels.ui.fragment.saved.SavedFragment
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.bottomappbar.BottomNavigationDrawerFragment
-import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
-import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home_main.*
-import kotlinx.android.synthetic.main.app_bar_home_main.*
+import kotlinx.android.synthetic.main.content_home_main.*
 
 
-class Home : AppCompatActivity(),iHomeView {
-
+class Home : AppCompatActivity(), iHomeView {
 
 
     private val TAG: String = Home::class.java.simpleName
@@ -45,6 +37,7 @@ class Home : AppCompatActivity(),iHomeView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_main)
+        setSupportActionBar(bottom_app_bar)
 
 
 
@@ -69,9 +62,6 @@ class Home : AppCompatActivity(),iHomeView {
     }
 
 
-
-
-
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
@@ -92,14 +82,13 @@ class Home : AppCompatActivity(),iHomeView {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-         when (item.itemId) {
-            R.id.app_bar_fav -> toast(getString(R.string.fav_clicked))
-            R.id.app_bar_search -> toast(getString(R.string.search_clicked))
+        when (item.itemId) {
             R.id.app_bar_settings -> toast(getString(R.string.settings_clicked))
-             android.R.id.home -> {
-                 val bottomNavDrawerFragment = BottomNavigationDrawerFragment()
-                 bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
-             }
+            android.R.id.home -> {
+                val bottomNavDrawerFragment = BottomNavigationDrawerFragment()
+                bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
+            }
+
             else -> super.onOptionsItemSelected(item)
         }
         return true
@@ -111,10 +100,6 @@ class Home : AppCompatActivity(),iHomeView {
         toast.setGravity(Gravity.BOTTOM, 0, 325)
         toast.show()
     }
-
-
-
-
 
 
 }

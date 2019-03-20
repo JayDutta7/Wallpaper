@@ -49,8 +49,7 @@
     <string name="hint_email">Email</string>
     <string name="action_search">Search</string>
     <string name="action_favorite">favorite</string>
-    <string name="fav_clicked">Favorite Clicked</string>
-    <string name="search_clicked">Search Clicked</string>
+
     <string name="settings_clicked">Setting CLicked</string>
     <string name="nav1_clicked">coming soon</string>
 
