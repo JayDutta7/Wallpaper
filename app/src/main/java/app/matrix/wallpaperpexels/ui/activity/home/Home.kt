@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.viewpager.widget.ViewPager
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.ui.activity.home.adapter.MainAdapter
@@ -18,7 +17,6 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.bottomappbar.BottomNavigationDrawerFragment
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_home_main.*
 import kotlinx.android.synthetic.main.content_home_main.*
 
 
@@ -63,11 +61,11 @@ class Home : AppCompatActivity(), iHomeView {
 
 
     override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+/*        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
+        } else {*/
+        super.onBackPressed()
+        // }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

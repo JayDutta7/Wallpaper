@@ -30,6 +30,7 @@
                 app:fabAlignmentMode="center"
                 app:backgroundTint="@color/Transparent"
                 app:hideOnScroll="true"
+                app:fabCradleRoundedCornerRadius="@dimen/_20sdp"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:navigationIcon="@drawable/baseline_menu_white_24"/>
 
