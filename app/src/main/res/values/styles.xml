@@ -10,6 +10,8 @@
         <item name="android:textColorHint">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
         <item name="colorControlActivated">@color/white</item>
+        <!--Item menu color change text-->
+        <item name="android:actionMenuTextColor">@color/white</item>
         <!--Status Bar & Navigation Bar Transparent-->
         <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
         <item name="android:windowTranslucentStatus">true</item>
