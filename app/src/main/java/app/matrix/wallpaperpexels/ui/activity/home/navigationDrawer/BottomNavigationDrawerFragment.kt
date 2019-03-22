@@ -1,6 +1,5 @@
-package com.example.bottomappbar
+package app.matrix.wallpaperpexels.ui.activity.home.navigationDrawer
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
@@ -15,9 +14,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_bottomsheet.*
 
-class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
+class BottomNavigationDrawerFragment: BottomSheetDialogFragment(),iNavigationDrawerView {
 
-
+    private var navpresenter:NavigationDrawerPresenter?=null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_bottomsheet, container, false)
@@ -26,31 +25,50 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        navpresenter= NavigationDrawerPresenter(this)
+
         navigation_view.setNavigationItemSelectedListener { menuItem ->
             // Bottom Navigation Drawer menu item clicks
             when (menuItem.itemId) {
-                R.id.settings -> toast(getString(R.string.nav1_clicked))
-                R.id.account -> toast(getString(R.string.nav1_clicked))
-                R.id.share -> toast(getString(R.string.nav1_clicked))
-                R.id.about -> toast(getString(R.string.nav1_clicked))
-                R.id.signOut -> signOut()
+                R.id.settings -> settings()
+                R.id.account -> account()
+                R.id.share -> share()
+                R.id.about -> about()
+                R.id.signOut -> SignOut()
             }
             // Add code here to update the UI based on the item selected
             // For example, swap UI fragments here
             true
         }
+
     }
 
     // This is an extension method for easy Toast call
     private fun toast(message: CharSequence) {
         val toast = Toast.makeText(context, message, Toast.LENGTH_SHORT)
-        toast.setGravity(Gravity.BOTTOM, 0, 600)
+       // toast.setGravity(Gravity.BOTTOM, 0, 600)
         toast.show()
     }
 
-    private fun signOut() {
 
 
+    override fun settings() {
+        toast(getString(R.string.nav1_clicked))
+    }
+
+    override fun account() {
+        toast(getString(R.string.nav1_clicked))
+    }
+
+    override fun share() {
+        toast(getString(R.string.nav1_clicked))
+    }
+
+    override fun about() {
+        toast(getString(R.string.nav1_clicked))
+    }
+
+    override fun SignOut() {
         if (FirebaseAuth.getInstance() != null)
         //Logout from Firebase
             FirebaseAuth.getInstance().signOut()
@@ -61,7 +79,6 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment() {
         val mainIntent = Intent(activity, LoginActivity::class.java)
         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         activity!!.startActivity(mainIntent)
-
     }
 
 }

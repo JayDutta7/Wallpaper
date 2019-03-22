@@ -15,7 +15,7 @@ import app.matrix.wallpaperpexels.ui.fragment.latest.LatestFragment
 import app.matrix.wallpaperpexels.ui.fragment.saved.SavedFragment
 import butterknife.BindView
 import butterknife.ButterKnife
-import com.example.bottomappbar.BottomNavigationDrawerFragment
+import app.matrix.wallpaperpexels.ui.activity.home.navigationDrawer.BottomNavigationDrawerFragment
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.content_home_main.*
 
