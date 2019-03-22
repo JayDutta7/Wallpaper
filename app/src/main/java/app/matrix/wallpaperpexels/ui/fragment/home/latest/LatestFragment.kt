@@ -40,6 +40,7 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
 
 
 
+
     @BindView(R.id.recyclerView)
     lateinit var recyclerView: RecyclerView
 
@@ -121,6 +122,9 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
 
         })
     }
+
+
+
 
     override fun clickpostion(Position: Int) {
         for (i in 0 until imgList!!.size) {
