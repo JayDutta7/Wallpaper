@@ -15,7 +15,7 @@ import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.network.ApiInterface
 import app.matrix.wallpaperpexels.ui.activity.home.Home
 import app.matrix.wallpaperpexels.ui.activity.imagedetails.ImageDetails
-import app.matrix.wallpaperpexels.ui.fragment.home.PhotoAdapter
+import app.matrix.wallpaperpexels.ui.fragment.home.adapter.PhotoAdapter
 import app.matrix.wallpaperpexels.ui.fragment.home.interfaces.ClickedItem
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Photos
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Random
