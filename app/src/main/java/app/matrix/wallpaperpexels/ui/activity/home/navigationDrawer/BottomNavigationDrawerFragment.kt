@@ -2,7 +2,6 @@ package app.matrix.wallpaperpexels.ui.activity.home.navigationDrawer
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,9 +13,10 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_bottomsheet.*
 
-class BottomNavigationDrawerFragment: BottomSheetDialogFragment(),iNavigationDrawerView {
+class BottomNavigationDrawerFragment : BottomSheetDialogFragment(), iNavigationDrawerView {
 
-    private var navpresenter:NavigationDrawerPresenter?=null
+
+    private var navpresenter: NavigationDrawerPresenter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_bottomsheet, container, false)
@@ -25,8 +25,13 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment(),iNavigationDra
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        navpresenter= NavigationDrawerPresenter(this)
+        navpresenter = NavigationDrawerPresenter(this)
+        navpresenter!!.initView()
 
+
+    }
+
+    override fun initView() {
         navigation_view.setNavigationItemSelectedListener { menuItem ->
             // Bottom Navigation Drawer menu item clicks
             when (menuItem.itemId) {
@@ -40,16 +45,14 @@ class BottomNavigationDrawerFragment: BottomSheetDialogFragment(),iNavigationDra
             // For example, swap UI fragments here
             true
         }
-
     }
 
     // This is an extension method for easy Toast call
     private fun toast(message: CharSequence) {
         val toast = Toast.makeText(context, message, Toast.LENGTH_SHORT)
-       // toast.setGravity(Gravity.BOTTOM, 0, 600)
+        // toast.setGravity(Gravity.BOTTOM, 0, 600)
         toast.show()
     }
-
 
 
     override fun settings() {

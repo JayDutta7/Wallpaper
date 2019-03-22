@@ -1,6 +1,10 @@
 package app.matrix.wallpaperpexels.ui.activity.home.navigationDrawer
 
 class NavigationDrawerPresenter(private var _view:iNavigationDrawerView):iNavigationDrawerPresenter {
+    override fun initView() {
+        _view.initView()
+    }
+
     override fun settings() {
         _view.settings()
     }
