@@ -56,7 +56,7 @@ class PhotoAdapter(
                     .error(getRandomDrawbleColor())
                     .dontAnimate()
             )
-            .load(dataList[position].src.large2x)
+            .load(dataList[position].src.portrait)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.photoView)
 
