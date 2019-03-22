@@ -1,6 +1,6 @@
 package app.matrix.wallpaperpexels.ui.activity.home
 
-import android.content.Context
+
 import android.os.Bundle
 import android.view.Gravity
 import android.view.Menu
@@ -23,6 +23,7 @@ import kotlinx.android.synthetic.main.content_home_main.*
 class Home : AppCompatActivity(), iHomeView {
 
 
+
     private val TAG: String = Home::class.java.simpleName
 
     @BindView(R.id.viewPager)
@@ -31,42 +32,35 @@ class Home : AppCompatActivity(), iHomeView {
     @BindView(R.id.tabs)
     lateinit var tabLayout: TabLayout
 
+    private var homePresenter: HomePresenter? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_main)
         setSupportActionBar(bottom_app_bar)
-
-
-
-
-        initialize()
-    }//end of oncreate
-
-    private fun initialize() {
         //ButterKnife Binding
         ButterKnife.bind(this@Home)
 
+        homePresenter= HomePresenter(this,MainAdapter(supportFragmentManager))
+        //Main Adapter
+        homePresenter!!.setupViewPager()
 
-        val adapter = MainAdapter(supportFragmentManager)
+       // initialize()
 
+
+    }//end of oncreate
+
+
+
+    override fun setupViewPager(adapter: MainAdapter) {
         adapter.addFragment(LatestFragment(), "Latest")
         adapter.addFragment(CategoryFragment(), "Category")
         adapter.addFragment(SavedFragment(), "Favorite")
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
-
-
     }
 
-
-    override fun onBackPressed() {
-/*        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
-        } else {*/
-        super.onBackPressed()
-        // }
-    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -93,7 +87,7 @@ class Home : AppCompatActivity(), iHomeView {
     }
 
     // This is an extension method for easy Toast call
-    private fun Context.toast(message: CharSequence) {
+    private fun toast(message: CharSequence) {
         val toast = Toast.makeText(this, message, Toast.LENGTH_SHORT)
         toast.setGravity(Gravity.BOTTOM, 0, 325)
         toast.show()

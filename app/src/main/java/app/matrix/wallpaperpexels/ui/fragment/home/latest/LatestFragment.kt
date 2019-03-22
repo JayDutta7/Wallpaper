@@ -14,10 +14,10 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.network.ApiInterface
 import app.matrix.wallpaperpexels.ui.activity.home.Home
-import app.matrix.wallpaperpexels.ui.activity.home.adapter.PhotoAdapter
-import app.matrix.wallpaperpexels.ui.activity.home.interfaces.ClickedItem
-import app.matrix.wallpaperpexels.ui.activity.home.pojo.Photos
-import app.matrix.wallpaperpexels.ui.activity.home.pojo.Random
+import app.matrix.wallpaperpexels.ui.fragment.home.PhotoAdapter
+import app.matrix.wallpaperpexels.ui.fragment.home.interfaces.ClickedItem
+import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Photos
+import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Random
 import app.matrix.wallpaperpexels.ui.activity.imagedetails.ImageDetails
 import butterknife.BindView
 import butterknife.ButterKnife
@@ -104,7 +104,11 @@ class LatestFragment : Fragment(), ClickedItem {
                 when {
                     response.body()?.photos?.size!! > 0 ->
 
-                        recyclerView.adapter = PhotoAdapter(activity!!, response.body()!!.photos!!, this@LatestFragment)
+                        recyclerView.adapter = PhotoAdapter(
+                            activity!!,
+                            response.body()!!.photos!!,
+                            this@LatestFragment
+                        )
 
                     else -> Log.e(TAG, "Some Error Occured")
                 }
