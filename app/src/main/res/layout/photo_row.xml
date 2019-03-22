@@ -6,14 +6,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/_4sdp"
+            app:cardCornerRadius="@dimen/_5sdp"
             android:layout_margin="@dimen/_1sdp"
             android:clipToPadding="false"
             android:clipChildren="false"
-            app:cardElevation="@dimen/_3sdp"
+            app:cardElevation="@dimen/_5sdp"
             app:cardPreventCornerOverlap="false">
 
         <FrameLayout
@@ -50,8 +50,8 @@
                         android:scaleType="fitXY"
                         android:adjustViewBounds="true"
                         android:padding="@dimen/_5sdp"
-                        android:layout_width="@dimen/_30sdp"
-                        android:layout_height="@dimen/_30sdp"/>
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"/>
 
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -61,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="2"
-                    android:background="@color/semiTransparent"
+                    android:background="@color/TransparentLogin"
                     android:layout_gravity="bottom">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -95,7 +95,7 @@
 
         </FrameLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 
 </RelativeLayout>
