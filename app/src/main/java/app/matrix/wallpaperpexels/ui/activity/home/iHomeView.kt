@@ -1,10 +1,10 @@
 package app.matrix.wallpaperpexels.ui.activity.home
 
-import app.matrix.wallpaperpexels.ui.activity.home.adapter.MainAdapter
+import app.matrix.wallpaperpexels.ui.activity.home.adapter.SlideAdapter
 
 interface iHomeView {
 
-    fun setupViewPager(adapter:MainAdapter)
+    fun setupViewPager(adapter:SlideAdapter)
 
 
 

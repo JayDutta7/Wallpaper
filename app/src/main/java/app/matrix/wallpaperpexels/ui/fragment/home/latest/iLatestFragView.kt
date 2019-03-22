@@ -1,4 +1,8 @@
-package app.matrix.wallpaperpexels.ui.fragment.latest
+package app.matrix.wallpaperpexels.ui.fragment.home.latest
 
 interface iLatestFragView {
+
+    fun initView()
+
+
 }

@@ -1,4 +1,4 @@
-package app.matrix.wallpaperpexels.ui.fragment.latest
+package app.matrix.wallpaperpexels.ui.fragment.home.latest
 
 
 import android.content.Intent
@@ -14,11 +14,11 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.network.ApiInterface
 import app.matrix.wallpaperpexels.ui.activity.home.Home
+import app.matrix.wallpaperpexels.ui.activity.imagedetails.ImageDetails
 import app.matrix.wallpaperpexels.ui.fragment.home.PhotoAdapter
 import app.matrix.wallpaperpexels.ui.fragment.home.interfaces.ClickedItem
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Photos
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Random
-import app.matrix.wallpaperpexels.ui.activity.imagedetails.ImageDetails
 import butterknife.BindView
 import butterknife.ButterKnife
 import retrofit2.Call
@@ -36,7 +36,8 @@ private const val ARG_PARAM2 = "param2"
  */
 
 
-class LatestFragment : Fragment(), ClickedItem {
+class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLayout.OnRefreshListener {
+
 
 
     @BindView(R.id.recyclerView)
@@ -78,14 +79,18 @@ class LatestFragment : Fragment(), ClickedItem {
         return inflater.inflate(R.layout.fragment_latest, container, false)
     }
 
+    override fun initView() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     private fun showData() {
 
+        swipeRefresh.isRefreshing = true
 
         mAPIService!!.getDetails().enqueue(object : retrofit2.Callback<Random> {
 
             override fun onFailure(call: Call<Random>, t: Throwable) {
-
+                swipeRefresh.isRefreshing = false
                 Log.e(TAG, "Failure" + t.message)
 
             }
@@ -93,7 +98,7 @@ class LatestFragment : Fragment(), ClickedItem {
             override fun onResponse(call: Call<Random>, response: Response<Random>) {
 
                 Log.e(TAG, "Sucess" + response.body()?.photos?.size!!)
-
+                swipeRefresh.isRefreshing = false
                 when {
                     !imgList.isNullOrEmpty() -> imgList!!.clear()
                     response.body()?.photos?.size!! > 0 -> imgList!!.add(response.body()!!.photos!!)
@@ -119,20 +124,22 @@ class LatestFragment : Fragment(), ClickedItem {
 
     override fun clickpostion(Position: Int) {
         for (i in 0 until imgList!!.size) {
-
-
             //Move
-            movetoDetail(imgList?.get(i)?.get(Position)?.src?.original)
+            val mainIntent = Intent(activity, ImageDetails::class.java)
+            mainIntent.putExtra("link", imgList?.get(i)?.get(Position)?.src?.original)
+            startActivity(mainIntent)
         }
-
     }
 
-    private fun movetoDetail(imgpath: String?) {
 
-        val mainIntent = Intent(activity, ImageDetails::class.java)
-        mainIntent.putExtra("link", imgpath)
-        startActivity(mainIntent)
+    override fun onRefresh() {
+        when {
+            swipeRefresh.isRefreshing -> {
+                swipeRefresh.isRefreshing = true
 
+            }
+
+        }
 
     }
 

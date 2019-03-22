@@ -6,11 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatTextView
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.WallPaperApp
 import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
+import butterknife.BindView
+import butterknife.ButterKnife
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.auth.FirebaseAuth
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.fragment_bottomsheet.*
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment(), iNavigationDrawerView {
@@ -18,12 +22,21 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment(), iNavigationD
 
     private var navpresenter: NavigationDrawerPresenter? = null
 
+
+    @BindView(R.id.member_pic)
+    lateinit var member_pic: CircleImageView
+
+    @BindView(R.id.name_profile)
+    lateinit var name_profile: AppCompatTextView
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_bottomsheet, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        activity?.let { ButterKnife.bind(it) }
 
         navpresenter = NavigationDrawerPresenter(this)
         navpresenter!!.initView()

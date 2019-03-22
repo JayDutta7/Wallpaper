@@ -1,4 +1,12 @@
-package app.matrix.wallpaperpexels.ui.fragment.latest
+package app.matrix.wallpaperpexels.ui.fragment.home.latest
 
-class LatestFragPresenter {
+import app.matrix.wallpaperpexels.ui.fragment.latest.iLatestFragPresenter
+
+class LatestFragPresenter(private var view: iLatestFragView,private var repository:LatestFragRepository): iLatestFragPresenter {
+
+
+
+
+
+
 }
