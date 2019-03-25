@@ -18,24 +18,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77d73c7c-ca63-4e04-b9e8-83fbbf67cde7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/CategoryAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/CategoryPresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/iCategoryPresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/iCategoryView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/pojo/categoryData/CategoryData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_abstract.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_animals.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_art.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_car.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_city.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_dance.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_flowers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_food.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_music.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_nature.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_space.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_sports.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/category_row.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -46,22 +28,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ToDo" beforeDir="false" afterPath="$PROJECT_DIR$/app/ToDo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/network/ApiInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/network/ApiInterface.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/Home.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/Home.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/PhotoAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/latestPhoto/PhotoAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/PhotoDetailsPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/latestPhoto/PhotoDetailsPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/iPhotoDetailsPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/latestPhoto/iPhotoDetailsPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/iPhotoDetailsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/latestPhoto/iPhotoDetailsView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/adapter/SlideAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/adapter/SlideAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/CategoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/CategoryAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/category/CategoryFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/category/CategoryFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/latest/LatestFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/latest/LatestFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/pojo/Photos.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/pojo/latestPhotoRes/Photos.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/pojo/Random.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/pojo/latestPhotoRes/Random.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/pojo/Src.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/pojo/latestPhotoRes/Src.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_category.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_category.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/category_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/category_row.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,10 +112,10 @@
           <entry key="gradle" value="17" />
           <entry key="java" value="15" />
           <entry key="json" value="1" />
-          <entry key="kt" value="209" />
+          <entry key="kt" value="214" />
           <entry key="png" value="3" />
           <entry key="properties" value="1" />
-          <entry key="xml" value="202" />
+          <entry key="xml" value="205" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -153,10 +124,10 @@
           <entry key="Image" value="3" />
           <entry key="JAVA" value="15" />
           <entry key="JSON" value="1" />
-          <entry key="Kotlin" value="209" />
+          <entry key="Kotlin" value="214" />
           <entry key="PLAIN_TEXT" value="11" />
           <entry key="Properties" value="1" />
-          <entry key="XML" value="202" />
+          <entry key="XML" value="205" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -165,17 +136,17 @@
           <entry key="dummy" value="10" />
           <entry key="gradle" value="287" />
           <entry key="java" value="203" />
-          <entry key="kt" value="5559" />
-          <entry key="xml" value="2964" />
+          <entry key="kt" value="5704" />
+          <entry key="xml" value="2979" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="287" />
           <entry key="JAVA" value="203" />
-          <entry key="Kotlin" value="5559" />
+          <entry key="Kotlin" value="5704" />
           <entry key="PLAIN_TEXT" value="788" />
-          <entry key="XML" value="2964" />
+          <entry key="XML" value="2979" />
         </counts>
       </usages-collector>
     </session>
@@ -311,8 +282,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/latest/LatestFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="53" column="32" selection-start-line="53" selection-end-line="54" />
+            <state relative-caret-position="260">
+              <caret line="37" column="46" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="46" />
               <folding>
                 <element signature="e#61#1029#0" expanded="true" />
               </folding>
@@ -323,39 +294,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/Home.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="197">
+              <caret line="46" column="79" selection-start-line="46" selection-start-column="79" selection-end-line="46" selection-end-column="79" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/HomePresenter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_latest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/latestPhoto/PhotoAdapter.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1118">
+              <caret line="91" column="55" lean-forward="true" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/category/CategoryFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="59" column="11" selection-start-line="48" selection-start-column="7" selection-end-line="59" selection-end-column="11" />
-              <folding>
-                <element signature="e#63#569#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="379">
+              <caret line="107" column="42" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="67" column="32" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -363,8 +330,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/CategoryAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+            <state relative-caret-position="299">
+              <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
               <folding>
                 <element signature="e#79#513#0" expanded="true" />
               </folding>
@@ -373,13 +340,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/category_row.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+            <state relative-caret-position="140">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="30" />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -2890,8 +2856,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/category/CategoryFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/home_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/network/ApiInterface.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/NavigationDrawerFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/nav_header.xml" />
@@ -2929,18 +2893,20 @@
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/iPhotoDetailsView.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/PhotoDetailsPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ToDo" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/Home.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/photo_row.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/PhotoAdapter.kt" />
         <option value="$PROJECT_DIR$/app/ToDo" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/pojo/categoryData/CategoryData.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/CategoryAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_latest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_category.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/latest/LatestFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/category_row.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/Home.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/adapter/SlideAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/category/CategoryFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/category_row.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/CategoryAdapter.kt" />
       </list>
     </option>
   </component>
@@ -3089,6 +3055,22 @@
               <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="adapter" type="462c0819:PsiDirectoryNode" />
               <item name="categoryWisePhoto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WallPaperPexels" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WallPaperPexels" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="matrix" type="462c0819:PsiDirectoryNode" />
+              <item name="wallpaperpexels" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="fragment" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="adapter" type="462c0819:PsiDirectoryNode" />
+              <item name="latestPhoto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WallPaperPexels" type="b2602c69:ProjectViewProjectNode" />
@@ -3554,6 +3536,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.35322195" />
@@ -3625,9 +3608,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/twotone_star_white_18.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
@@ -3800,13 +3780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/adapter/SlideAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/adapter/SlideAdapterPresenter.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -3899,23 +3872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/latestPhoto/PhotoAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1799">
-          <caret line="91" column="55" lean-forward="true" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
-          <folding>
-            <element signature="e#61#792#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_city.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -3933,14 +3889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_latest.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_category.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -3952,37 +3900,13 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/Home.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/CategoryAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding>
-            <element signature="e#79#513#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/category_row.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_latest.xml">
       <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/HomePresenter.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -3991,23 +3915,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/Home.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="46" column="79" selection-start-line="46" selection-start-column="79" selection-end-line="46" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/activity/home/adapter/SlideAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+          <folding>
+            <element signature="e#62#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="67" column="32" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/interfaces/ClickedItem.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/category/CategoryFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="107" column="42" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/category_row.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/categoryWisePhoto/CategoryAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+          <folding>
+            <element signature="e#79#513#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/latest/LatestFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="53" column="32" selection-start-line="53" selection-end-line="54" />
+        <state relative-caret-position="260">
+          <caret line="37" column="46" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="46" />
           <folding>
             <element signature="e#61#1029#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/category/CategoryFragment.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/app/matrix/wallpaperpexels/ui/fragment/home/adapter/latestPhoto/PhotoAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="59" column="11" selection-start-line="48" selection-start-column="7" selection-end-line="59" selection-end-column="11" />
-          <folding>
-            <element signature="e#63#569#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1118">
+          <caret line="91" column="55" lean-forward="true" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
         </state>
       </provider>
     </entry>

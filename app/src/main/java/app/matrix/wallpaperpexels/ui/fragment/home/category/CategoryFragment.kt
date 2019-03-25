@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.ui.fragment.category.iCategoryFragView
 import app.matrix.wallpaperpexels.ui.fragment.home.adapter.categoryWisePhoto.CategoryAdapter
+import app.matrix.wallpaperpexels.ui.fragment.home.interfaces.ClickedItem
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.categoryData.CategoryData
 import butterknife.BindView
 import butterknife.ButterKnife
@@ -25,10 +27,16 @@ private const val ARG_PARAM2 = "param2"
  * A simple [Fragment] subclass.
  *
  */
-class CategoryFragment : Fragment(), iCategoryFragView {
+class CategoryFragment : Fragment(), iCategoryFragView , ClickedItem {
+
+    override fun clickpostion(Position: Int) {
+        Toast.makeText(activity!!,list[Position].catname,Toast.LENGTH_SHORT).show()
+    }
 
     @BindView(R.id.recyclerView)
     lateinit var recyclerView: RecyclerView
+
+    private val list = ArrayList<CategoryData>()
 
     private val myCategoryList = intArrayOf(
         R.drawable.ic_abstract,
@@ -46,18 +54,18 @@ class CategoryFragment : Fragment(), iCategoryFragView {
     )
 
     private val categoryNameList = arrayOf(
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "L"
+        "Abstract",
+        "Animals",
+        "Art",
+        "Car",
+        "City",
+        "Dance",
+        "Flower",
+        "Food",
+        "Music",
+        "Nature",
+        "Space",
+        "Sports"
         /*getString(R.string.cat_1),
         getString(R.string.cat_2),
         getString(R.string.cat_3),
@@ -74,7 +82,6 @@ class CategoryFragment : Fragment(), iCategoryFragView {
 
 
     private fun populateCategoryList(): ArrayList<CategoryData> {
-        val list = ArrayList<CategoryData>()
 
         for (i in 0..11) {
             list.add(CategoryData(categoryNameList[i], myCategoryList[i]))
@@ -98,7 +105,7 @@ class CategoryFragment : Fragment(), iCategoryFragView {
         ButterKnife.bind(this, view)
         //RecyclerView Binding
         recyclerView.layoutManager = GridLayoutManager(activity!!, 2)
-        recyclerView.adapter = CategoryAdapter(activity!!, populateCategoryList())
+        recyclerView.adapter = CategoryAdapter(activity!!, populateCategoryList(),this@CategoryFragment)
 
     }
 }
