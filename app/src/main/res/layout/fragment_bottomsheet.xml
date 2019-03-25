@@ -2,29 +2,11 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 >
 
-   <!-- <androidx.drawerlayout.widget.DrawerLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/drawer_layout"
-            tools:openDrawer="start">
 
-
-
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-        <include layout="@layout/content_home_main"/>
-
-
-    </androidx.appcompat.widget.LinearLayoutCompat>-->
 
 
 
@@ -43,7 +25,7 @@
             app:menu="@menu/activity_home_main_drawer"/>
 
 
-   <!-- </androidx.drawerlayout.widget.DrawerLayout>-->
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
