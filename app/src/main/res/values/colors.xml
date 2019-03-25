@@ -5,6 +5,7 @@
     <color name="colorAccent">#035599</color>
     <color name="white">#FFFFFF</color>
     <color name="colorBackground">#413e4f</color>
+    <color name="catBackground">#454546</color>
     <color name="colorTextHint">#51d8c7</color>
     <color name="semiTransparent">#CC3F3A68</color>
     <color name="Transparent">#7F000000</color>

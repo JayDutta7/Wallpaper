@@ -1,6 +1,6 @@
 package app.matrix.wallpaperpexels.network
 
-import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Random
+import app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes.Random
 import app.matrix.wallpaperpexels.localdatabase.Constant
 import app.matrix.wallpaperpexels.network.basenetwork.RetroClass
 import retrofit2.Call

@@ -10,7 +10,7 @@ import androidx.viewpager.widget.ViewPager
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.ui.activity.home.adapter.SlideAdapter
 import app.matrix.wallpaperpexels.ui.activity.home.navigationDrawer.BottomNavigationDrawerFragment
-import app.matrix.wallpaperpexels.ui.fragment.category.CategoryFragment
+import app.matrix.wallpaperpexels.ui.fragment.home.category.CategoryFragment
 import app.matrix.wallpaperpexels.ui.fragment.home.latest.LatestFragment
 import app.matrix.wallpaperpexels.ui.fragment.saved.SavedFragment
 import butterknife.BindView
