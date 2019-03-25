@@ -53,4 +53,18 @@
     <string name="settings_clicked">Setting CLicked</string>
     <string name="nav1_clicked">coming soon</string>
 
+    <!--Category Name-->
+    <string name="cat_1">Abstract</string>
+    <string name="cat_2">Animals</string>
+    <string name="cat_3">Art</string>
+    <string name="cat_4">Car</string>
+    <string name="cat_5">City</string>
+    <string name="cat_6">Dance</string>
+    <string name="cat_7">Flower</string>
+    <string name="cat_8">Food</string>
+    <string name="cat_9">Music</string>
+    <string name="cat_10">Nature</string>
+    <string name="cat_11">Space</string>
+    <string name="cat_12">Sports</string>
+
 </resources>

@@ -4,27 +4,28 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       >
+>
 
-   <!-- <androidx.drawerlayout.widget.DrawerLayout
+
+
+
+
+
+
+    <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/drawer_layout"
+            android:layout_gravity="start"
             android:fitsSystemWindows="true"
-            tools:openDrawer="start">-->
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"
+            android:background="@android:color/black"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/activity_home_main_drawer"/>
 
-        <com.google.android.material.navigation.NavigationView
-                android:id="@+id/navigation_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                app:itemTextColor="@color/white"
-                app:itemIconTint="@color/white"
-                android:background="@android:color/black"
-                app:headerLayout="@layout/nav_header"
-                app:menu="@menu/activity_home_main_drawer"/>
 
-   <!-- </androidx.drawerlayout.widget.DrawerLayout>-->
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

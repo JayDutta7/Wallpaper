@@ -1,4 +1,4 @@
-package app.matrix.wallpaperpexels.ui.fragment.category
+package app.matrix.wallpaperpexels.ui.fragment.home.category
 
 interface iCategoryFragView {
 }

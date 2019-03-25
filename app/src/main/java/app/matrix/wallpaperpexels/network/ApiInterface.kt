@@ -1,6 +1,6 @@
 package app.matrix.wallpaperpexels.network
 
-import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Random
+import app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes.Random
 import app.matrix.wallpaperpexels.localdatabase.Constant
 import app.matrix.wallpaperpexels.network.basenetwork.RetroClass
 import retrofit2.Call
@@ -12,8 +12,7 @@ interface ApiInterface {
 
 
 
-
-    @GET("curated?per_page=20&page=1")
+    @GET("curated?per_page=100&page=1")
     @Headers(
         "Authorization:" + Constant.apiKey,
         "Content-type:application/json"
@@ -21,9 +20,11 @@ interface ApiInterface {
     fun getDetails(): Call<Random>
 
 
+
+
     object CreateRetrofit {
         val apiService: ApiInterface
-            get() = RetroClass.getClient(Constant.baseUrl)!!.create(ApiInterface::class.java)
+            get() = RetroClass.getClient(Constant.PexelsbaseUrl)!!.create(ApiInterface::class.java)
     }
 
 

@@ -1,4 +1,4 @@
-package app.matrix.wallpaperpexels.ui.fragment.home.adapter
+package app.matrix.wallpaperpexels.ui.fragment.home.adapter.latestPhoto
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import app.matrix.wallpaperpexels.GlideApp
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.ui.fragment.home.interfaces.ClickedItem
-import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Photos
+import app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes.Photos
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
@@ -41,7 +41,7 @@ class PhotoAdapter(
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
 
         holder.photoView.setOnClickListener {
-            clickPos.clickpostion(position)
+            clickPos.clickpostion(position,"Details")
         }
 
         holder.imageSize.text =
@@ -56,12 +56,13 @@ class PhotoAdapter(
                     .error(getRandomDrawbleColor())
                     .dontAnimate()
             )
-            .load(dataList[position].src.portrait)
+            .load(dataList[position].src?.large)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.photoView)
 
         holder.favorite.setOnClickListener {
-
+            clickPos.clickpostion(position,"Favorite")
+            holder.favorite.setImageResource(R.drawable.ic_like)
         }
 
         /*Glide.with(context)
@@ -92,8 +93,6 @@ class PhotoAdapter(
         val photographerName = view.photographer_name!!
         val imageSize = view.image_size!!
         val favorite = view.click_favorite!!
-
-
     }
 
 }

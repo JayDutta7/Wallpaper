@@ -7,18 +7,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.network.ApiInterface
-import app.matrix.wallpaperpexels.ui.activity.home.Home
 import app.matrix.wallpaperpexels.ui.activity.imagedetails.ImageDetails
-import app.matrix.wallpaperpexels.ui.fragment.home.adapter.PhotoAdapter
+import app.matrix.wallpaperpexels.ui.fragment.home.adapter.latestPhoto.PhotoAdapter
 import app.matrix.wallpaperpexels.ui.fragment.home.interfaces.ClickedItem
-import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Photos
-import app.matrix.wallpaperpexels.ui.fragment.home.pojo.Random
+import app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes.Photos
+import app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes.Random
 import butterknife.BindView
 import butterknife.ButterKnife
 import retrofit2.Call
@@ -39,8 +39,6 @@ private const val ARG_PARAM2 = "param2"
 class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLayout.OnRefreshListener {
 
 
-
-
     @BindView(R.id.recyclerView)
     lateinit var recyclerView: RecyclerView
 
@@ -52,7 +50,7 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
     private var mAPIService: ApiInterface? = null
 
 
-    private val TAG: String = Home::class.java.simpleName
+    private val TAG: String = LatestFragment::class.java.simpleName
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -66,7 +64,8 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
         imgList = ArrayList()
 
         //RecyclerView Binding
-        recyclerView.layoutManager = GridLayoutManager(activity, 2)
+        recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        recyclerView.setHasFixedSize(true)
 
         showData()
     }
@@ -110,11 +109,12 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
                 when {
                     response.body()?.photos?.size!! > 0 ->
 
-                        recyclerView.adapter = PhotoAdapter(
-                            activity!!,
-                            response.body()!!.photos!!,
-                            this@LatestFragment
-                        )
+                        recyclerView.adapter =
+                            PhotoAdapter(
+                                activity!!,
+                                response.body()!!.photos!!,
+                                this@LatestFragment
+                            )
 
                     else -> Log.e(TAG, "Some Error Occured")
                 }
@@ -124,14 +124,17 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
     }
 
 
-
-
-    override fun clickpostion(Position: Int) {
-        for (i in 0 until imgList!!.size) {
-            //Move
-            val mainIntent = Intent(activity, ImageDetails::class.java)
-            mainIntent.putExtra("link", imgList?.get(i)?.get(Position)?.src?.original)
-            startActivity(mainIntent)
+    override fun clickpostion(Position: Int, Msg: String) {
+        when (Msg) {
+            "Details" -> for (i in 0 until imgList!!.size) {
+                //Move
+                val mainIntent = Intent(activity, ImageDetails::class.java)
+                mainIntent.putExtra("link", imgList?.get(i)?.get(Position)?.src?.portrait)
+                startActivity(mainIntent)
+            }
+            else -> {
+                    Toast.makeText(context,"Added To Favorites",Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

@@ -10,8 +10,9 @@ import androidx.viewpager.widget.ViewPager
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.ui.activity.home.adapter.SlideAdapter
 import app.matrix.wallpaperpexels.ui.activity.home.navigationDrawer.BottomNavigationDrawerFragment
-import app.matrix.wallpaperpexels.ui.fragment.category.CategoryFragment
+import app.matrix.wallpaperpexels.ui.fragment.home.category.CategoryFragment
 import app.matrix.wallpaperpexels.ui.fragment.home.latest.LatestFragment
+import app.matrix.wallpaperpexels.ui.fragment.home.random.RandomPhotoFragment
 import app.matrix.wallpaperpexels.ui.fragment.saved.SavedFragment
 import butterknife.BindView
 import butterknife.ButterKnife
@@ -47,11 +48,12 @@ class Home : AppCompatActivity(), iHomeView {
         homePresenter = HomePresenter(this, SlideAdapter(supportFragmentManager))
         //Main Adapter
         homePresenter!!.setupViewPager()
-
-        // initialize()
+       // setupTabIcons()
 
 
     }//end of oncreate
+
+
 
     @OnClick(R.id.fab)
     fun search(){
@@ -61,6 +63,7 @@ class Home : AppCompatActivity(), iHomeView {
 
     override fun setupViewPager(adapter: SlideAdapter) {
         adapter.addFragment(LatestFragment(), "Latest")
+        adapter.addFragment(RandomPhotoFragment(), "Random")
         adapter.addFragment(CategoryFragment(), "Category")
         adapter.addFragment(SavedFragment(), "Favorite")
         viewPager.adapter = adapter
