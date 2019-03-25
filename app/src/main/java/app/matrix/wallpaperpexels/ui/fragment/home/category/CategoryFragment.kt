@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import app.matrix.wallpaperpexels.R
-import app.matrix.wallpaperpexels.ui.fragment.category.iCategoryFragView
 import app.matrix.wallpaperpexels.ui.fragment.home.adapter.categoryWisePhoto.CategoryAdapter
 import app.matrix.wallpaperpexels.ui.fragment.home.interfaces.ClickedItem
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.categoryData.CategoryData
@@ -27,10 +25,10 @@ private const val ARG_PARAM2 = "param2"
  * A simple [Fragment] subclass.
  *
  */
-class CategoryFragment : Fragment(), iCategoryFragView , ClickedItem {
+class CategoryFragment : Fragment(), iCategoryFragView, ClickedItem {
 
     override fun clickpostion(Position: Int) {
-        Toast.makeText(activity!!,list[Position].catname,Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity!!, list[Position].catname, Toast.LENGTH_SHORT).show()
     }
 
     @BindView(R.id.recyclerView)
@@ -104,8 +102,9 @@ class CategoryFragment : Fragment(), iCategoryFragView , ClickedItem {
         //ButterKnife Binding
         ButterKnife.bind(this, view)
         //RecyclerView Binding
-        recyclerView.layoutManager = GridLayoutManager(activity!!, 2)
-        recyclerView.adapter = CategoryAdapter(activity!!, populateCategoryList(),this@CategoryFragment)
+        recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.adapter = CategoryAdapter(activity!!, populateCategoryList(), this@CategoryFragment)
 
     }
 }

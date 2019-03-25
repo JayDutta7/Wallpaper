@@ -11,6 +11,7 @@
         tools:context=".ui.activity.home.Home">
 
 
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/coordinator"
             android:layout_width="match_parent"
@@ -23,13 +24,16 @@
                 android:background="@android:color/black"
         />
 
+
+
+
         <com.google.android.material.bottomappbar.BottomAppBar
                 android:id="@+id/bottom_app_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 app:fabAlignmentMode="center"
-                app:backgroundTint="@color/Transparent"
+                app:backgroundTint="@android:color/black"
                 app:hideOnScroll="true"
                 app:fabCradleRoundedCornerRadius="@dimen/_20sdp"
                 app:layout_scrollFlags="scroll|enterAlways"
@@ -45,6 +49,8 @@
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

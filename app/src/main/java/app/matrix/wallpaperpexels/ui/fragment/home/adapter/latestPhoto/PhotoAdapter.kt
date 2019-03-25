@@ -56,7 +56,7 @@ class PhotoAdapter(
                     .error(getRandomDrawbleColor())
                     .dontAnimate()
             )
-            .load(dataList[position].src.portrait)
+            .load(dataList[position].src.large)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.photoView)
 
@@ -92,8 +92,6 @@ class PhotoAdapter(
         val photographerName = view.photographer_name!!
         val imageSize = view.image_size!!
         val favorite = view.click_favorite!!
-
-
     }
 
 }

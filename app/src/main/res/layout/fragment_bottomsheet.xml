@@ -2,27 +2,46 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       >
+>
 
    <!-- <androidx.drawerlayout.widget.DrawerLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/drawer_layout"
-            android:fitsSystemWindows="true"
-            tools:openDrawer="start">-->
+            tools:openDrawer="start">
 
-        <com.google.android.material.navigation.NavigationView
-                android:id="@+id/navigation_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                app:itemTextColor="@color/white"
-                app:itemIconTint="@color/white"
-                android:background="@android:color/black"
-                app:headerLayout="@layout/nav_header"
-                app:menu="@menu/activity_home_main_drawer"/>
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <include layout="@layout/content_home_main"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+
+
+
+    <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"
+            android:background="@android:color/black"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/activity_home_main_drawer"/>
+
 
    <!-- </androidx.drawerlayout.widget.DrawerLayout>-->
 

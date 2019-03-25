@@ -11,10 +11,8 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="@dimen/_5sdp"
             android:layout_margin="@dimen/_1sdp"
-            android:clipToPadding="false"
-            android:clipChildren="false"
             app:cardElevation="@dimen/_5sdp"
-            app:cardPreventCornerOverlap="false">
+            >
 
         <FrameLayout
                 android:layout_width="match_parent"
@@ -23,9 +21,9 @@
             <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/photo_view"
                     android:layout_width="@dimen/_180sdp"
-                    android:layout_height="@dimen/_190sdp"
+                    android:layout_height="@dimen/_180sdp"
                     android:src="@drawable/no_member"
-                    android:scaleType="fitXY"
+                    android:scaleType="centerCrop"
                     android:adjustViewBounds="true"
             />
 

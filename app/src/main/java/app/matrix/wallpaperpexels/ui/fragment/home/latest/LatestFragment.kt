@@ -8,8 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.network.ApiInterface
@@ -38,8 +38,6 @@ private const val ARG_PARAM2 = "param2"
 class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLayout.OnRefreshListener {
 
 
-
-
     @BindView(R.id.recyclerView)
     lateinit var recyclerView: RecyclerView
 
@@ -65,7 +63,8 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
         imgList = ArrayList()
 
         //RecyclerView Binding
-        recyclerView.layoutManager = GridLayoutManager(activity, 2)
+        recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        recyclerView.setHasFixedSize(true)
 
         showData()
     }
@@ -124,13 +123,11 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
     }
 
 
-
-
     override fun clickpostion(Position: Int) {
         for (i in 0 until imgList!!.size) {
             //Move
             val mainIntent = Intent(activity, ImageDetails::class.java)
-            mainIntent.putExtra("link", imgList?.get(i)?.get(Position)?.src?.original)
+            mainIntent.putExtra("link", imgList?.get(i)?.get(Position)?.src?.portrait)
             startActivity(mainIntent)
         }
     }
