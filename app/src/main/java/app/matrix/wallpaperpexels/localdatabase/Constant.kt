@@ -8,8 +8,10 @@ class Constant{
         const val application:String="WallPaperPexels"
         //ApiKey
         const val apiKey:String=BuildConfig.ApiKey
-        //baseUrl
-        const val baseUrl:String="https://api.pexels.com/v1/"
+        //Pexels-baseUrl
+        const val PexelsbaseUrl:String="https://api.pexels.com/v1/"
+        //PexelsbaseUrl-Unspalsh
+        const val UnsplashBaseUrl:String="https://api.unsplash.com/"
 
 
 

@@ -19,24 +19,17 @@
         <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="?actionBarSize"
                 app:tabBackground="@android:color/black"
+                app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
                 app:tabGravity="fill"
                 app:tabMode="fixed"
                 app:tabTextColor="@android:color/white"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
-                                                  android:layout_height="wrap_content"
-                                                  android:orientation="vertical">
 
-
-        <include layout="@layout/content_home_main"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
+    <include layout="@layout/content_home_main"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

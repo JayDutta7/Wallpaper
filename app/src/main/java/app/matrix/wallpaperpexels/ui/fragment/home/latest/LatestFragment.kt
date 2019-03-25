@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -123,12 +124,17 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
     }
 
 
-    override fun clickpostion(Position: Int) {
-        for (i in 0 until imgList!!.size) {
-            //Move
-            val mainIntent = Intent(activity, ImageDetails::class.java)
-            mainIntent.putExtra("link", imgList?.get(i)?.get(Position)?.src?.portrait)
-            startActivity(mainIntent)
+    override fun clickpostion(Position: Int, Msg: String) {
+        when (Msg) {
+            "Details" -> for (i in 0 until imgList!!.size) {
+                //Move
+                val mainIntent = Intent(activity, ImageDetails::class.java)
+                mainIntent.putExtra("link", imgList?.get(i)?.get(Position)?.src?.portrait)
+                startActivity(mainIntent)
+            }
+            else -> {
+                    Toast.makeText(context,"Added To Favorites",Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

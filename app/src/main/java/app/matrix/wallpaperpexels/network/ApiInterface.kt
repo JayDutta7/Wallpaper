@@ -20,9 +20,11 @@ interface ApiInterface {
     fun getDetails(): Call<Random>
 
 
+
+
     object CreateRetrofit {
         val apiService: ApiInterface
-            get() = RetroClass.getClient(Constant.baseUrl)!!.create(ApiInterface::class.java)
+            get() = RetroClass.getClient(Constant.PexelsbaseUrl)!!.create(ApiInterface::class.java)
     }
 
 

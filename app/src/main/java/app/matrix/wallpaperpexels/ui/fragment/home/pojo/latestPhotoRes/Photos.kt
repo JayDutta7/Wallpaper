@@ -25,6 +25,6 @@ data class Photos(
     val photographer_url: String?,
     @SerializedName("src")
     @Expose
-    val src: Src
+    val src: Src?
 )
 

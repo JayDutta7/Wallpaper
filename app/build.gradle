@@ -40,11 +40,16 @@ android {
         debug {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             //  signingConfig signingConfigs.config
+            //Pexles key
             buildConfigField 'String', "ApiKey", WallPaperPexels_apiKey
             resValue 'string', "api_key", WallPaperPexels_apiKey
-
+            //googletoken
             buildConfigField 'String', "Token", Requested_token
             resValue 'string', "token", Requested_token
+            //unspalsh access key
+            buildConfigField 'String','AccessKey',Unsplash_AccessKey
+            resValue 'String','accesskey',Unsplash_AccessKey
+
         }
 
     }

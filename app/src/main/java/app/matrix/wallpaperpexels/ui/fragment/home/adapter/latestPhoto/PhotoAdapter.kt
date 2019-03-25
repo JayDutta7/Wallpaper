@@ -41,7 +41,7 @@ class PhotoAdapter(
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
 
         holder.photoView.setOnClickListener {
-            clickPos.clickpostion(position)
+            clickPos.clickpostion(position,"Details")
         }
 
         holder.imageSize.text =
@@ -56,12 +56,13 @@ class PhotoAdapter(
                     .error(getRandomDrawbleColor())
                     .dontAnimate()
             )
-            .load(dataList[position].src.large)
+            .load(dataList[position].src?.large)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.photoView)
 
         holder.favorite.setOnClickListener {
-
+            clickPos.clickpostion(position,"Favorite")
+            holder.favorite.setImageResource(R.drawable.ic_like)
         }
 
         /*Glide.with(context)

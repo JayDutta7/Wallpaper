@@ -36,7 +36,7 @@ class CategoryAdapter(
         holder.categoryphotoView.setImageResource(dataList[position].catImage!!)
 
         holder.categoryCardClick.setOnClickListener {
-            clickPos.clickpostion(position)
+            clickPos.clickpostion(position, dataList[position].catname!!)
         }
 
     }

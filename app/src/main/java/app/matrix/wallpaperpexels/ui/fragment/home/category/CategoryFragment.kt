@@ -27,8 +27,8 @@ private const val ARG_PARAM2 = "param2"
  */
 class CategoryFragment : Fragment(), iCategoryFragView, ClickedItem {
 
-    override fun clickpostion(Position: Int) {
-        Toast.makeText(activity!!, list[Position].catname, Toast.LENGTH_SHORT).show()
+    override fun clickpostion(Position: Int,Msg:String) {
+        Toast.makeText(activity!!, Msg, Toast.LENGTH_SHORT).show()
     }
 
     @BindView(R.id.recyclerView)
