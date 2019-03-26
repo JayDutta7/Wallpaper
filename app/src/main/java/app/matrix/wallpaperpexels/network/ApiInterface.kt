@@ -3,6 +3,7 @@ package app.matrix.wallpaperpexels.network
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes.Random
 import app.matrix.wallpaperpexels.localdatabase.Constant
 import app.matrix.wallpaperpexels.network.basenetwork.RetroClass
+import io.reactivex.Observable
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -18,6 +19,8 @@ interface ApiInterface {
         "Content-type:application/json"
     )
     fun getDetails(): Call<Random>
+    /*With Rx*/
+    //fun getDetails(): Observable<Random>
 
 
 

@@ -38,7 +38,6 @@ class WecomeActivity : AppCompatActivity(), IWelcomeView {
     }
 
     override fun setViewPagerAdapter(adapter: WelcomePagerAdapter) {
-
         welcomePager.adapter = adapter
         viewPagerCircleIndicator.setViewPager(welcomePager)
     }
