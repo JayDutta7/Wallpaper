@@ -11,19 +11,26 @@ import com.google.firebase.FirebaseApp
 class WallPaperApp : Application() {
 
 
+    init {
+        instance = this
+    }
+
     companion object {
         private val TAG: String = WallPaperApp::class.java.simpleName
 
-        @SuppressLint("StaticFieldLeak")
-        private var mcontext: Context? = null
+        private var instance: WallPaperApp? = null
 
-        @SuppressLint("StaticFieldLeak")
+
         private var localdatabase: LocalSharedPreference? = null
+
+        fun applicationContext() : Context {
+            return instance!!.applicationContext
+        }
 
 
         fun getPref(): LocalSharedPreference {
             if (localdatabase == null)
-                localdatabase = LocalSharedPreference(mcontext!!)
+                localdatabase = LocalSharedPreference(applicationContext())
             return localdatabase as LocalSharedPreference
         }
 
@@ -34,7 +41,9 @@ class WallPaperApp : Application() {
         //initialize multidex for over 65k methods in application class
         MultiDex.install(this)
 
-        mcontext = this
+
+        val context: Context = WallPaperApp.applicationContext()
+
         Log.e(TAG, "This is Application Class Oncreate")
 
         //initialize localdatabase in the application class
