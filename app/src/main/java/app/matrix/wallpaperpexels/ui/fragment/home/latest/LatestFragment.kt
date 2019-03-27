@@ -64,7 +64,7 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
         imgList = ArrayList()
 
         //RecyclerView Binding
-        recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        recyclerView.layoutManager = StaggeredGridLayoutManager(calculateNoOfColumns(290f), StaggeredGridLayoutManager.VERTICAL)
         recyclerView.setHasFixedSize(true)
 
         showData()
@@ -80,7 +80,9 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
     }
 
     override fun initView() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+
+
     }
 
     private fun showData() {
@@ -124,6 +126,13 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
     }
 
 
+    fun calculateNoOfColumns( columnWidthDp: Float): Int { // For example columnWidthdp=180
+        val displayMetrics = resources.displayMetrics
+        val screenWidthDp = displayMetrics.widthPixels / displayMetrics.density
+        return (screenWidthDp / columnWidthDp + 0.5).toInt()
+    }
+
+
     override fun clickpostion(Position: Int, Msg: String) {
         when (Msg) {
             "Details" -> for (i in 0 until imgList!!.size) {
@@ -143,7 +152,6 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
         when {
             swipeRefresh.isRefreshing -> {
                 swipeRefresh.isRefreshing = true
-
             }
 
         }

@@ -4,6 +4,4 @@ interface iHomePresenter{
 
     fun setupViewPager()
 
-
-
 }

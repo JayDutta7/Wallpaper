@@ -27,7 +27,9 @@
         <activity
                 android:name=".ui.activity.home.Home"
                 android:label="@string/title_activity_home_main"
+                android:configChanges="orientation|screenSize"
                 android:theme="@style/AppTheme">
+            <!--android:configChanges="orientation|screenSize"--><!--For Holding Activity Sate-->
         </activity>
         <activity android:name=".ui.activity.registration.RegistrationActivity">
         </activity>

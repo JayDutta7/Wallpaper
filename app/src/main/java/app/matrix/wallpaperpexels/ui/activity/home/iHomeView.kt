@@ -6,7 +6,4 @@ interface iHomeView {
 
     fun setupViewPager(adapter:SlideAdapter)
 
-
-
-
 }
