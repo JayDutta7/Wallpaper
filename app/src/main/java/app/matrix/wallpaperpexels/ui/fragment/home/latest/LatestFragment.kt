@@ -64,7 +64,7 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
         imgList = ArrayList()
 
         //RecyclerView Binding
-        recyclerView.layoutManager = StaggeredGridLayoutManager(calculateNoOfColumns(290f), StaggeredGridLayoutManager.VERTICAL)
+        recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.setHasFixedSize(true)
 
         showData()
