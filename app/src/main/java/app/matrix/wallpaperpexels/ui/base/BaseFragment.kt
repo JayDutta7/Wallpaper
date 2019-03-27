@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
 abstract class BaseFragment : Fragment(), iBaseView {
 
@@ -43,13 +44,13 @@ abstract class BaseFragment : Fragment(), iBaseView {
         baseActivity!!.setSubTitle(msg)
     }
 
-    /*override fun onAttachSwipeRefreshLayout(swipeRefreshLayout: SwipeRefreshLayout) {
+    override fun onAttachSwipeRefreshLayout(swipeRefreshLayout: SwipeRefreshLayout) {
 
     }
 
     override fun setSwipeListener(listener: SwipeRefreshLayout.OnRefreshListener) {
 
-    }*/
+    }
 
     override fun initializeSnackBar(view: View) {
         baseActivity!!.initializeSnackBar(view)

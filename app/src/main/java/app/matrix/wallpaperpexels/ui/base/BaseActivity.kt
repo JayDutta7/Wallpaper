@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.snackbar.Snackbar
 
 abstract class BaseActivity : AppCompatActivity(), iBaseView {
@@ -18,7 +19,7 @@ abstract class BaseActivity : AppCompatActivity(), iBaseView {
     abstract fun getFragmentContainerId(): Int
 
     private var snackbar: Snackbar? = null
-    private var context: Context? = applicationContext
+    private var context: Context? = this
 
 
     override fun onSuccess(msg: String) {
@@ -52,13 +53,13 @@ abstract class BaseActivity : AppCompatActivity(), iBaseView {
         supportActionBar?.title = msg
     }
 
-   /* override fun onAttachSwipeRefreshLayout(swipeRefreshLayout: SwipeRefreshLayout) {
+    override fun onAttachSwipeRefreshLayout(swipeRefreshLayout: SwipeRefreshLayout) {
 
     }
 
     override fun setSwipeListener(listener: SwipeRefreshLayout.OnRefreshListener) {
 
-    }*/
+    }
 
     override fun initializeSnackBar(view: View) {
         snackbar = Snackbar.make(view, "Please try again", Snackbar.LENGTH_LONG)
