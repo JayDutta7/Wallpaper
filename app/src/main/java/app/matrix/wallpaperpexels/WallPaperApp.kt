@@ -1,6 +1,5 @@
 package app.matrix.wallpaperpexels
 
-import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.util.Log
@@ -11,9 +10,7 @@ import com.google.firebase.FirebaseApp
 class WallPaperApp : Application() {
 
 
-    init {
-        instance = this
-    }
+    private var localdatabase: LocalSharedPreference? = null
 
     companion object {
         private val TAG: String = WallPaperApp::class.java.simpleName
@@ -21,19 +18,20 @@ class WallPaperApp : Application() {
         private var instance: WallPaperApp? = null
 
 
-        private var localdatabase: LocalSharedPreference? = null
-
-        fun applicationContext() : Context {
+        fun applicationContext(): Context {
             return instance!!.applicationContext
         }
 
 
         fun getPref(): LocalSharedPreference {
-            if (localdatabase == null)
-                localdatabase = LocalSharedPreference(applicationContext())
-            return localdatabase as LocalSharedPreference
+            Log.e(TAG, "LocalDatabase Initialized")
+            return instance!!.localdatabase as LocalSharedPreference
         }
 
+    }
+
+    init {
+        instance = this
     }
 
     override fun onCreate() {
@@ -41,13 +39,12 @@ class WallPaperApp : Application() {
         //initialize multidex for over 65k methods in application class
         MultiDex.install(this)
 
-
         val context: Context = WallPaperApp.applicationContext()
 
         Log.e(TAG, "This is Application Class Oncreate")
 
         //initialize localdatabase in the application class
-        localdatabase = LocalSharedPreference(this)
+        localdatabase = LocalSharedPreference(context)
         //initialize Firebase sdk in application class
         FirebaseApp.initializeApp(applicationContext)
 
