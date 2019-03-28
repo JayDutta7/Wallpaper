@@ -134,6 +134,10 @@ dependencies {
     //Indicator
     implementation "me.relex:circleindicator:$rootProject.ext.circleIndicator"
 
+    //FlexBoxLayout(Google)
+    /*implementation "com.google.android:flexbox:$rootProject.ext.flexbox"*/
+
+
     //ViewModel & LiveData
     /*implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.lifecycle_version"*/
 

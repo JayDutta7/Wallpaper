@@ -63,12 +63,15 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
         //intiate arraylist
         imgList = ArrayList()
 
+
         //RecyclerView Binding
         recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.setHasFixedSize(true)
 
         showData()
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

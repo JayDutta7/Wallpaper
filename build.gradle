@@ -105,4 +105,6 @@ ext {
     countryPicker='2.2.4'
 
     lifecycle_version='2.0.0'
+
+    flexbox='1.1.0'
 }
