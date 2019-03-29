@@ -31,9 +31,11 @@
                 android:theme="@style/AppTheme">
             <!--android:configChanges="orientation|screenSize"--><!--For Holding Activity Sate-->
         </activity>
-        <activity android:name=".ui.activity.registration.RegistrationActivity">
+        <activity android:name=".ui.activity.registration.RegistrationActivity"
+                  android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".ui.activity.login.LoginActivity">
+        <activity android:name=".ui.activity.login.LoginActivity"
+                  android:theme="@style/AppTheme">
         </activity> <!-- Service for checking connection -->
         <receiver
                 android:name=".network.basenetwork.ConnectivityReceiver"
@@ -46,7 +48,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.activity.splash.SplashActivity">
+        <activity android:name=".ui.activity.splash.SplashActivity"
+                  android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

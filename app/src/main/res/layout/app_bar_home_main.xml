@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
+        android:background="@android:color/black"
         tools:context=".ui.activity.home.Home">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -13,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_gravity="top"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            >
 
 
         <com.google.android.material.tabs.TabLayout

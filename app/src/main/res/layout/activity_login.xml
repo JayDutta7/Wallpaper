@@ -4,7 +4,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backgrnd"
+        android:fitsSystemWindows="true"
+        android:background="@color/semiTransparent"
         tools:context=".ui.activity.login.LoginActivity">
 
 
@@ -39,41 +40,49 @@
                     android:padding="@dimen/_30sdp"
                     android:orientation="vertical">
 
-                <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputLayoutEmail"
+                <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_20sdp">
+                        android:orientation="vertical">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/textInputEditTextEmail"
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutEmail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Email"
-                            android:inputType="text"
-                            android:drawableLeft="@android:drawable/sym_action_email"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:maxLines="1"
-                            android:textColor="@android:color/white"/>
-                </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_marginTop="@dimen/_20sdp">
 
-                <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputLayoutPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp">
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/textInputEditTextEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Email"
+                                android:inputType="text"
+                                android:drawableLeft="@android:drawable/sym_action_email"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:maxLines="1"
+                                android:textColor="@android:color/white"/>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/textInputEditTextPassword"
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutPassword"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Password"
-                            android:drawableLeft="@android:drawable/ic_lock_idle_lock"
-                            android:drawablePadding="@dimen/_5sdp"
-                            android:inputType="textPassword"
-                            android:maxLines="1"
-                            android:textColor="@android:color/white"/>
-                </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_marginTop="@dimen/_10sdp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/textInputEditTextPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Password"
+                                android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:textColor="@android:color/white"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
                 <com.google.android.material.button.MaterialButton
                         android:id="@+id/appCompatButtonLogin"
