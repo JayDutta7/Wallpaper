@@ -12,8 +12,8 @@
         <item name="colorControlActivated">@color/white</item>
         <!--Item menu color change text-->
         <item name="android:actionMenuTextColor">@color/white</item>
-
         <item name="android:windowTranslucentStatus">true</item>
+
 
     </style>
     <style name="AppTheme.NoActionBar">

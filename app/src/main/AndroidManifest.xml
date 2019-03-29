@@ -16,26 +16,33 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="app.matrix.wallpaperpexels.ui.activity.search_category.SearchAndCategory">
+        </activity>
         <activity android:name=".ui.activity.forgotpassword.ForgotPasswordActivity">
         </activity>
         <activity android:name=".ui.activity.welcome.WecomeActivity">
         </activity>
         <activity
                 android:name=".ui.activity.imagedetails.ImageDetails"
-                android:label="@string/title_activity_image_details">
+                android:label="@string/title_activity_image_details"
+                android:theme="@style/AppTheme">
         </activity>
         <activity
                 android:name=".ui.activity.home.Home"
-                android:label="@string/title_activity_home_main"
                 android:configChanges="orientation|screenSize"
+                android:label="@string/title_activity_home_main"
                 android:theme="@style/AppTheme">
-            <!--android:configChanges="orientation|screenSize"--><!--For Holding Activity Sate-->
+
+            <!-- android:configChanges="orientation|screenSize" -->
+            <!-- For Holding Activity Sate -->
         </activity>
-        <activity android:name=".ui.activity.registration.RegistrationActivity"
-                  android:theme="@style/AppTheme">
+        <activity
+                android:name=".ui.activity.registration.RegistrationActivity"
+                android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".ui.activity.login.LoginActivity"
-                  android:theme="@style/AppTheme">
+        <activity
+                android:name=".ui.activity.login.LoginActivity"
+                android:theme="@style/AppTheme">
         </activity> <!-- Service for checking connection -->
         <receiver
                 android:name=".network.basenetwork.ConnectivityReceiver"
@@ -48,8 +55,9 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.activity.splash.SplashActivity"
-                  android:theme="@style/AppTheme">
+        <activity
+                android:name=".ui.activity.splash.SplashActivity"
+                android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

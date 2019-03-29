@@ -46,7 +46,7 @@ class WallPaperApp : Application() {
         //initialize localdatabase in the application class
         localdatabase = LocalSharedPreference(context)
         //initialize Firebase sdk in application class
-        FirebaseApp.initializeApp(applicationContext)
+        FirebaseApp.initializeApp(context)
 
     }//End Of Oncreate
 

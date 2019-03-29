@@ -62,7 +62,7 @@ class PhotoAdapter(
                     .error(getRandomDrawbleColor())
                     .dontAnimate()
             )
-            .load(dataList[position].src?.large)
+            .load(dataList[position].src?.large2x)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.photoView)
 
@@ -71,16 +71,6 @@ class PhotoAdapter(
             holder.favorite.setImageResource(R.drawable.ic_like)
         }
 
-        /*Glide.with(context)
-            .applyDefaultRequestOptions(
-                RequestOptions()
-                    .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-                    .placeholder(R.drawable.placeloader)
-                    .error(R.mipmap.ic_launcher)
-                    .dontAnimate()
-            ).load(dataList[position].src.original)
-            .transition(DrawableTransitionOptions.withCrossFade())
-            .into(holder.photoView)*/
 
         holder.photographerName.text = dataList[position].photographer
 
