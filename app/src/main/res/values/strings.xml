@@ -66,5 +66,6 @@
     <string name="cat_10">Nature</string>
     <string name="cat_11">Space</string>
     <string name="cat_12">Sports</string>
+    <string name="welcomeNext">Next</string>
 
 </resources>
