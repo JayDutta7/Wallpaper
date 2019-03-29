@@ -39,7 +39,6 @@ class SplashPresenter(private var view: ISplashView?) :  ISplashPresenter {
 
                 view?.moveToHomePage()
 
-
             else ->
 
                 view?.moveToLoginPage()

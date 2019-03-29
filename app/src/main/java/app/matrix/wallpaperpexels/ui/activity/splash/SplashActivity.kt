@@ -5,7 +5,6 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
@@ -48,6 +47,7 @@ class SplashActivity : AppCompatActivity(), ISplashView {
 
 
     }
+
     override fun oneTimeWelcome() {
         val mainIntent = Intent(this@SplashActivity, WecomeActivity::class.java)
         startActivity(mainIntent)
@@ -101,12 +101,8 @@ class SplashActivity : AppCompatActivity(), ISplashView {
             override fun onAnimationEnd(animation: Animator) {
 
 
-                try {
-                    presenter?.goToNextPage()
-                } catch (e: Exception) {
-                    Log.e(TAG, e.message)
-                    e.printStackTrace()
-                }
+                presenter?.goToNextPage()
+
 
             }
 
