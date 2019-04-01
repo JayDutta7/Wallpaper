@@ -72,7 +72,7 @@ ext {
 
     rxKotlin = '2.2.0'
 
-    rxAndroid = '2.0.2'
+    rxAndroid = '2.1.0'
 
     dimenLib = '1.0.6'
 
