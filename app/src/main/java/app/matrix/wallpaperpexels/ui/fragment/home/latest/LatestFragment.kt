@@ -44,11 +44,6 @@ class LatestFragment : BaseFragment(), ClickedItem, LatestFragMvp.iLatestFragVie
         return R.layout.fragment_latest
     }
 
-    override fun fetchRandomApi() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-
     @BindView(R.id.recyclerView)
     lateinit var recyclerView: RecyclerView
 
@@ -57,68 +52,66 @@ class LatestFragment : BaseFragment(), ClickedItem, LatestFragMvp.iLatestFragVie
 
     private var imgList: MutableList<MutableList<Photos>>? = null
 
-
-
-
     private val TAG: String = LatestFragment::class.java.simpleName
 
-
     private var presenter: LatestFragPresenter<*>? = null
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //     super.onViewCreated(view, savedInstanceState)
         //ButterKnife Binding
         ButterKnife.bind(this, view)
 
-
-
         //intiate arraylist
         imgList = ArrayList()
 
         presenter = LatestFragPresenter<LatestFragMvp.iLatestFragView>(LatestFragRepository())
 
-
         //RecyclerView Binding
         recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.setHasFixedSize(true)
 
-
-
-
         showData()
+
+        presenter!!.fetchRandomApi()
+
+    }
+    override  fun fetchRandomApi() {
+
     }
 
-     private  fun showData() {
+     private fun showData() {
 
-        GlobalScope.launch(Dispatchers.Main) {
+         GlobalScope.launch(Dispatchers.Main) {
 
-            val res = RetroClass.getClient.getDetails().await()
+             swipeRefresh.isRefreshing = true
 
-            if (!imgList.isNullOrEmpty())
-                imgList!!.clear()
+             val res = RetroClass.getClient.getDetails().await()
 
-            if (res.isSuccessful) {
+             if (!imgList.isNullOrEmpty())
+                 imgList!!.clear()
 
-                //Add Photo to list
-                imgList!!.add(res.body()!!.photos!!)
+             if (res.isSuccessful) {
+                 swipeRefresh.isRefreshing = false
+                 //Add Photo to list
+                 imgList!!.add(res.body()!!.photos!!)
 
-                recyclerView.adapter =
-                    PhotoAdapter(
-                        activity!!,
-                        res.body()!!.photos!!,
-                        this@LatestFragment
-                    )
-
-
-            } else {
-
-                Log.e(TAG, "Error Occured")
-
-            }
+                 recyclerView.adapter =
+                     PhotoAdapter(
+                         activity!!,
+                         res.body()!!.photos!!,
+                         this@LatestFragment
+                     )
 
 
-        }
+             } else {
+                 swipeRefresh.isRefreshing = true
+
+                 Log.e(TAG, "Error Occured")
+
+             }
+
+
+         }
     }
 
 
@@ -132,41 +125,6 @@ class LatestFragment : BaseFragment(), ClickedItem, LatestFragMvp.iLatestFragVie
     }*/
 
 
-    /* private fun showData(): DisposableSingleObserver<Random> {
-
-         swipeRefresh.isRefreshing = true
-
-         return object : DisposableSingleObserver<Random>() {
-             override fun onSuccess(t: Random) {
-
-                 swipeRefresh.isRefreshing = false
-
-                 if (!imgList.isNullOrEmpty())
-                     imgList!!.clear()
-
-
-                 if (t.photos?.size!! > 0) {
-
-                     imgList!!.add(t.photos)
-
-                     recyclerView.adapter =
-                         PhotoAdapter(
-                             activity!!,
-                             t.photos,
-                             this@LatestFragment
-                         )
-                 } else Log.e(TAG, "Some Error Occured")
-
-             }
-
-             override fun onError(e: Throwable) {
-
-                 swipeRefresh.isRefreshing = false
-
-
-             }
-         }
-     }*/
 
 
     fun calculateNoOfColumns(columnWidthDp: Float): Int { // For example columnWidthdp=180
