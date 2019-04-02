@@ -15,7 +15,8 @@ class Constant{
 
         /*RandomPhoto*/
         const val randomPhoto= PexelsbaseUrl+"curated?per_page=80&page=1"//curated?per_page=100&page=1
-
+        /*Get A Photo*/
+        const val getAPhoto= PexelsbaseUrl+"photos"
 
 
 

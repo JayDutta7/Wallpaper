@@ -18,7 +18,6 @@ class SplashPresenter(private var view: ISplashView?) :  ISplashPresenter {
     }
 
     override fun onDestroy() {
-
     }
 
 

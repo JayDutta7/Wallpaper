@@ -62,8 +62,8 @@ class Home : AppCompatActivity(), iHomeView {
 
 
     override fun setupViewPager(adapter: SlideAdapter) {
-        adapter.addFragment(LatestFragment(), "Latest")
-        adapter.addFragment(RandomPhotoFragment(), "Random")
+        adapter.addFragment(LatestFragment(), "Image")
+        adapter.addFragment(RandomPhotoFragment(), "Video")
         adapter.addFragment(CategoryFragment(), "Category")
         adapter.addFragment(SavedFragment(), "Favorite")
         viewPager.adapter = adapter
@@ -74,8 +74,6 @@ class Home : AppCompatActivity(), iHomeView {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.bottomappbar_menu, menu)
-
-
         return true
     }
 

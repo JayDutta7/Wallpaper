@@ -1,6 +1,6 @@
 package app.matrix.wallpaperpexels.network
 
-import java.lang.Exception
+
 
 sealed class Response<out T:Any> {
 
