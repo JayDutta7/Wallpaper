@@ -23,6 +23,12 @@
 //Menu page share application option
 
 
+//////corotines and retrofit 2
+https://proandroiddev.com/forget-rxjava-kotlin-coroutines-are-all-you-need-part-1-2-4f62ecc4f99b
+https://medium.com/@raghunandan2005/retrofit2-and-koltin-coroutines-sample-938a6842b0a1
+https://medium.com/exploring-android/android-networking-with-coroutines-and-retrofit-a2f20dd40a83
+
+
 ///////////Material Design Search and bottomnavigation
 https://medium.com/material-design-in-action/implementing-bottomappbar-menu-and-navigation-c4f069e579ec
 
@@ -40,8 +46,6 @@ https://github.com/rahulpr27git/Imago/blob/master/app/src/main/java/com/dev/rahu
 https://github.com/rahulpr27git/Imago/blob/master/app/src/main/java/com/dev/rahul/imago/data/network/UnsplashAPI.kt
 https://unsplash.com/documentation#list-photos
 
-//Viewmodel mvp
-https://github.com/armcha/MVP-Architecture-Components
 
 
 https://medium.com/@husayn.hakeem

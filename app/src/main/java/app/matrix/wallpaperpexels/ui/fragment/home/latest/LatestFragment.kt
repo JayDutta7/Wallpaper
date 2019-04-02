@@ -4,9 +4,7 @@ package app.matrix.wallpaperpexels.ui.fragment.home.latest
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -14,15 +12,18 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.network.ApiInterface
+import app.matrix.wallpaperpexels.network.basenetwork.RetroClass
 import app.matrix.wallpaperpexels.ui.activity.imagedetails.ImageDetails
+import app.matrix.wallpaperpexels.ui.base.BaseFragment
 import app.matrix.wallpaperpexels.ui.fragment.home.adapter.latestPhoto.PhotoAdapter
 import app.matrix.wallpaperpexels.ui.fragment.home.interfaces.ClickedItem
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes.Photos
-import app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes.Random
 import butterknife.BindView
 import butterknife.ButterKnife
-import retrofit2.Call
-import retrofit2.Response
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,7 +37,16 @@ private const val ARG_PARAM2 = "param2"
  */
 
 
-class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLayout.OnRefreshListener {
+class LatestFragment : BaseFragment(), ClickedItem, LatestFragMvp.iLatestFragView,
+    SwipeRefreshLayout.OnRefreshListener {
+
+    override fun getLayoutRes(): Int {
+        return R.layout.fragment_latest
+    }
+
+    override fun fetchRandomApi() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
 
     @BindView(R.id.recyclerView)
@@ -47,89 +57,119 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
 
     private var imgList: MutableList<MutableList<Photos>>? = null
 
-    private var mAPIService: ApiInterface? = null
+
 
 
     private val TAG: String = LatestFragment::class.java.simpleName
 
+
+    private var presenter: LatestFragPresenter<*>? = null
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+//     super.onViewCreated(view, savedInstanceState)
         //ButterKnife Binding
         ButterKnife.bind(this, view)
 
-        //initialize retrofit
-        mAPIService = ApiInterface.CreateRetrofit.apiService
+
 
         //intiate arraylist
         imgList = ArrayList()
+
+        presenter = LatestFragPresenter<LatestFragMvp.iLatestFragView>(LatestFragRepository())
 
 
         //RecyclerView Binding
         recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.setHasFixedSize(true)
 
+
+
+
         showData()
     }
 
+     private  fun showData() {
+
+        GlobalScope.launch(Dispatchers.Main) {
+
+            val res = RetroClass.getClient.getDetails().await()
+
+            if (!imgList.isNullOrEmpty())
+                imgList!!.clear()
+
+            if (res.isSuccessful) {
+
+                //Add Photo to list
+                imgList!!.add(res.body()!!.photos!!)
+
+                recyclerView.adapter =
+                    PhotoAdapter(
+                        activity!!,
+                        res.body()!!.photos!!,
+                        this@LatestFragment
+                    )
 
 
-    override fun onCreateView(
+            } else {
+
+                Log.e(TAG, "Error Occured")
+
+            }
+
+
+        }
+    }
+
+
+    /*override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
 
         return inflater.inflate(R.layout.fragment_latest, container, false)
-    }
-
-    override fun initView() {
+    }*/
 
 
+    /* private fun showData(): DisposableSingleObserver<Random> {
 
-    }
+         swipeRefresh.isRefreshing = true
 
-    private fun showData() {
+         return object : DisposableSingleObserver<Random>() {
+             override fun onSuccess(t: Random) {
 
-        swipeRefresh.isRefreshing = true
+                 swipeRefresh.isRefreshing = false
 
-        mAPIService!!.getDetails().enqueue(object : retrofit2.Callback<Random> {
-
-            override fun onFailure(call: Call<Random>, t: Throwable) {
-                swipeRefresh.isRefreshing = false
-                Log.e(TAG, "Failure" + t.message)
-
-            }
-
-            override fun onResponse(call: Call<Random>, response: Response<Random>) {
-
-                Log.e(TAG, "Sucess" + response.body()?.photos?.size!!)
-                swipeRefresh.isRefreshing = false
-                when {
-                    !imgList.isNullOrEmpty() -> imgList!!.clear()
-                    response.body()?.photos?.size!! > 0 -> imgList!!.add(response.body()!!.photos!!)
-                    else -> Log.e(TAG, "API NO_RESAPONSE")
-                }
+                 if (!imgList.isNullOrEmpty())
+                     imgList!!.clear()
 
 
-                when {
-                    response.body()?.photos?.size!! > 0 ->
+                 if (t.photos?.size!! > 0) {
 
-                        recyclerView.adapter =
-                            PhotoAdapter(
-                                activity!!,
-                                response.body()!!.photos!!,
-                                this@LatestFragment
-                            )
+                     imgList!!.add(t.photos)
 
-                    else -> Log.e(TAG, "Some Error Occured")
-                }
-            }
+                     recyclerView.adapter =
+                         PhotoAdapter(
+                             activity!!,
+                             t.photos,
+                             this@LatestFragment
+                         )
+                 } else Log.e(TAG, "Some Error Occured")
 
-        })
-    }
+             }
+
+             override fun onError(e: Throwable) {
+
+                 swipeRefresh.isRefreshing = false
 
 
-    fun calculateNoOfColumns( columnWidthDp: Float): Int { // For example columnWidthdp=180
+             }
+         }
+     }*/
+
+
+    fun calculateNoOfColumns(columnWidthDp: Float): Int { // For example columnWidthdp=180
         val displayMetrics = resources.displayMetrics
         val screenWidthDp = displayMetrics.widthPixels / displayMetrics.density
         return (screenWidthDp / columnWidthDp + 0.5).toInt()
@@ -145,7 +185,7 @@ class LatestFragment : Fragment(), ClickedItem, iLatestFragView, SwipeRefreshLay
                 startActivity(mainIntent)
             }
             else -> {
-                    Toast.makeText(context,"Added To Favorites",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Added To Favorites", Toast.LENGTH_SHORT).show()
             }
         }
     }

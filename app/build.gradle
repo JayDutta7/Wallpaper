@@ -65,17 +65,27 @@ android {
         experimental = true
     }
 
+    packagingOptions {
+        pickFirst 'META-INF/kotlinx-io.kotlin_module'
+        pickFirst 'META-INF/atomicfu.kotlin_module'
+        pickFirst 'META-INF/kotlinx-coroutines-io.kotlin_module'
+    }
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //Kotlin & Coroutines
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.ext.coroutinesCore"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.ext.coroutinesCore"
+
     implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompatX"
     implementation "androidx.core:core:$rootProject.ext.appCompatCoreKtx"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.ext.constainLayout"
-    implementation "com.google.android.material:material:$rootProject.ext.materialDesign"
     implementation "androidx.viewpager:viewpager:$rootProject.ext.appCompatXviewPager"
     /*Material Components*/
+    implementation "com.google.android.material:material:$rootProject.ext.materialDesign"
 
     //ButterKnife
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknife_version"
@@ -90,15 +100,15 @@ dependencies {
     kapt "com.github.bumptech.glide:annotations:$rootProject.ext.glidE"
     implementation "com.github.bumptech.glide:okhttp3-integration:$rootProject.ext.glidE"
 
-    //RxKotlin & RxAndroid
-    implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.ext.rxKotlin"
-    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroid"
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.adapterrx"
     implementation "com.google.code.gson:gson:$rootProject.ext.googleGson"
-    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit2Gson"
+    implementation "com.squareup.retrofit2:converter-moshi:$rootProject.ext.retrofit"
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi:$rootProject.ext.moshi"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$rootProject.ext.moshi"
     //debug
     implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.httpIntaceptor"
@@ -141,6 +151,8 @@ dependencies {
     //ViewModel & LiveData
     /*implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.lifecycle_version"*/
 
+    /////Coroutines
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
 
 
 }

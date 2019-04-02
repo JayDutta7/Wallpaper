@@ -3,6 +3,8 @@ package app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
+
+
 data class Random(
     @SerializedName("page")
     @Expose

@@ -1,12 +1,32 @@
 package app.matrix.wallpaperpexels.ui.fragment.home.latest
 
-class LatestFragPresenter(private var view: iLatestFragView,private var repository:LatestFragRepository):iLatestFragPresenter {
+
+import app.matrix.wallpaperpexels.ui.base.BasePresenter
 
 
+class LatestFragPresenter<V:LatestFragMvp.iLatestFragView>(private val repository: LatestFragMvp.iLatestFragRepository):
+    BasePresenter<V>(),LatestFragMvp.iLatestFragPresenter<V> {
 
-    override fun saveDataList() {
+
+    /*MVPPresenter(=)*/
+    override fun fetchRandomApi() {
 
     }
+
+    /*Base(=)Presenter*/
+    override fun onDestroy() {
+        onDetach()
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 }

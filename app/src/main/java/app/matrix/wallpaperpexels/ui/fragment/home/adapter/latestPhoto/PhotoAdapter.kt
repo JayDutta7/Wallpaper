@@ -42,10 +42,6 @@ class PhotoAdapter(
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
 
-
-
-
-
         holder.photoView.setOnClickListener {
             clickPos.clickpostion(position,"Details")
         }

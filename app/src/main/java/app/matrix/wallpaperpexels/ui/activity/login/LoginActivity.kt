@@ -207,6 +207,7 @@ class LoginActivity : AppCompatActivity(), IloginView {
         presenter?.loginbuttonclicked()
     }
 
+
     @OnClick
         (R.id.textViewLinkRegister)
     fun registration() {

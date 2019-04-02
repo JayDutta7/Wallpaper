@@ -13,6 +13,9 @@ class Constant{
         //PexelsbaseUrl-Unspalsh
         const val UnsplashBaseUrl:String="https://api.unsplash.com/"
 
+        /*RandomPhoto*/
+        const val randomPhoto= PexelsbaseUrl+"curated?per_page=80&page=1"//curated?per_page=100&page=1
+
 
 
 
