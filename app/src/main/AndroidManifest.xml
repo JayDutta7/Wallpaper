@@ -46,6 +46,7 @@
         </activity> <!-- Service for checking connection -->
         <receiver
                 android:name=".network.basenetwork.ConnectivityReceiver"
+                android:exported="false"
                 android:label="NetworkChangeReceiver">
             <intent-filter>
                 <action

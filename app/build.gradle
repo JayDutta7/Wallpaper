@@ -17,8 +17,8 @@ android {
             storePassword 'testtest'*/
         }
     }
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdkVersion rootProject.ext.targetSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "app.matrix.wallpaperpexels"
         minSdkVersion rootProject.ext.minSdkVersion//MinSdk
@@ -65,11 +65,6 @@ android {
         experimental = true
     }
 
-    packagingOptions {
-        pickFirst 'META-INF/kotlinx-io.kotlin_module'
-        pickFirst 'META-INF/atomicfu.kotlin_module'
-        pickFirst 'META-INF/kotlinx-coroutines-io.kotlin_module'
-    }
 
 }
 
