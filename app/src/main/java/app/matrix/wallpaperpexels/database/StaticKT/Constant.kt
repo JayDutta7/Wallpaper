@@ -1,4 +1,4 @@
-package app.matrix.wallpaperpexels.localdatabase
+package app.matrix.wallpaperpexels.database.StaticKT
 
 import app.matrix.wallpaperpexels.BuildConfig
 
@@ -14,9 +14,9 @@ class Constant{
         const val UnsplashBaseUrl:String="https://api.unsplash.com/"
 
         /*RandomPhoto*/
-        const val randomPhoto= PexelsbaseUrl+"curated?per_page=80&page=1"//curated?per_page=100&page=1
+        const val randomPhoto= PexelsbaseUrl +"curated?per_page=80&page=1"//curated?per_page=100&page=1
         /*Get A Photo*/
-        const val getAPhoto= PexelsbaseUrl+"photos"
+        const val getAPhoto= PexelsbaseUrl +"photos"
 
 
 

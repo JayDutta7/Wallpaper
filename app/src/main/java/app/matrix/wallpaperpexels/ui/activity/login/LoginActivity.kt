@@ -3,7 +3,6 @@ package app.matrix.wallpaperpexels.ui.activity.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -12,9 +11,8 @@ import androidx.core.widget.NestedScrollView
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.WallPaperApp
 import app.matrix.wallpaperpexels.ui.activity.home.Home
-import app.matrix.wallpaperpexels.localdatabase.Constant
-import app.matrix.wallpaperpexels.localdatabase.DatabaseHelper
-import app.matrix.wallpaperpexels.localdatabase.pojo.UserDetailsData
+import app.matrix.wallpaperpexels.database.StaticKT.Constant
+import app.matrix.wallpaperpexels.database.DatabaseHelper
 import app.matrix.wallpaperpexels.ui.activity.registration.RegistrationActivity
 import app.matrix.wallpaperpexels.utility.InputValidation
 import butterknife.BindView
@@ -26,15 +24,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.intuit.sdp.BuildConfig
 
 
 class LoginActivity : AppCompatActivity(), IloginView {

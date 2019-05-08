@@ -2,7 +2,7 @@ package app.matrix.wallpaperpexels.ui.activity.splash
 
 import android.os.Handler
 import app.matrix.wallpaperpexels.WallPaperApp
-import app.matrix.wallpaperpexels.localdatabase.Constant
+import app.matrix.wallpaperpexels.database.StaticKT.Constant
 
 
 class SplashPresenter(private var view: ISplashView?) :  ISplashPresenter {

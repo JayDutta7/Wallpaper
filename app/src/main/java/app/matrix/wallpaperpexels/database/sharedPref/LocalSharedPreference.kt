@@ -1,7 +1,8 @@
-package app.matrix.wallpaperpexels.localdatabase
+package app.matrix.wallpaperpexels.database.sharedPref
 
 import android.content.Context
 import android.content.SharedPreferences
+import app.matrix.wallpaperpexels.database.StaticKT.Constant
 
 class LocalSharedPreference(val context: Context) {
 

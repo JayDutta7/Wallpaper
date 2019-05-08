@@ -71,7 +71,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //Kotlin & Coroutines
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     /*implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.ext.coroutinesCore"*/
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.ext.coroutinesCore"
 
@@ -83,11 +83,18 @@ dependencies {
     implementation "com.google.android.material:material:$rootProject.ext.materialDesign"
 
     //ButterKnife
-    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknife_version"
-    kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife_version"
+   /* implementation "com.jakewharton:butterknife:$rootProject.ext.butterknife_version"
+    kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife_version"*/
 
     //Multidex
     implementation "androidx.multidex:multidex:$rootProject.ext.multidex"
+
+    // Room dependencies(Database)
+    implementation "androidx.room:room-runtime:$rootProject.ext.roomDatabase"
+    kapt "androidx.room:room-compiler:$rootProject.ext.roomDatabase"
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$rootProject.ext.roomDatabase"
+
 
     //Glide
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glidE"

@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.util.Log
 import androidx.multidex.MultiDex
-import app.matrix.wallpaperpexels.localdatabase.LocalSharedPreference
+import app.matrix.wallpaperpexels.database.sharedPref.LocalSharedPreference
 import com.google.firebase.FirebaseApp
 
 class WallPaperApp : Application() {

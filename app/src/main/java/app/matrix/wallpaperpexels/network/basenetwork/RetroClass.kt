@@ -1,7 +1,7 @@
 package app.matrix.wallpaperpexels.network.basenetwork
 
 import android.util.Log
-import app.matrix.wallpaperpexels.localdatabase.Constant
+import app.matrix.wallpaperpexels.database.StaticKT.Constant
 import app.matrix.wallpaperpexels.network.ApiInterface
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient

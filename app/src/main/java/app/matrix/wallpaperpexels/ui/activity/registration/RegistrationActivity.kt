@@ -2,7 +2,6 @@ package app.matrix.wallpaperpexels.ui.activity.registration
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -10,9 +9,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.NestedScrollView
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.WallPaperApp
-import app.matrix.wallpaperpexels.localdatabase.Constant
-import app.matrix.wallpaperpexels.localdatabase.DatabaseHelper
-import app.matrix.wallpaperpexels.localdatabase.pojo.UserDetailsData
+import app.matrix.wallpaperpexels.database.StaticKT.Constant
+import app.matrix.wallpaperpexels.database.DatabaseHelper
+import app.matrix.wallpaperpexels.database.rooMDb.model.UserDetailsData
 import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
 import app.matrix.wallpaperpexels.utility.InputValidation
 import butterknife.BindView

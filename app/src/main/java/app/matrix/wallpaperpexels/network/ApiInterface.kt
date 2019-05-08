@@ -1,6 +1,6 @@
 package app.matrix.wallpaperpexels.network
 
-import app.matrix.wallpaperpexels.localdatabase.Constant
+import app.matrix.wallpaperpexels.database.StaticKT.Constant
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes.Random
 import kotlinx.coroutines.Deferred
 import retrofit2.Response

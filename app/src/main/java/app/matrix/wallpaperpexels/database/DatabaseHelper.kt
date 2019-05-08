@@ -1,10 +1,10 @@
-package app.matrix.wallpaperpexels.localdatabase
+package app.matrix.wallpaperpexels.database
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import app.matrix.wallpaperpexels.localdatabase.pojo.UserDetailsData
+import app.matrix.wallpaperpexels.database.rooMDb.model.UserDetailsData
 import java.util.*
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {

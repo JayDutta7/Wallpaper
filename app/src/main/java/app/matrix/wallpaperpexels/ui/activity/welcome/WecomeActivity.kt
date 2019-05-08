@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.viewpager.widget.ViewPager
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.WallPaperApp
-import app.matrix.wallpaperpexels.localdatabase.Constant
+import app.matrix.wallpaperpexels.database.StaticKT.Constant
 import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
 import butterknife.BindView
 import butterknife.ButterKnife

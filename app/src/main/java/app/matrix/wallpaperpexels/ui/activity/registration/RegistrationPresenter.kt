@@ -1,7 +1,7 @@
 package app.matrix.wallpaperpexels.ui.activity.registration
 
 import app.matrix.wallpaperpexels.WallPaperApp
-import app.matrix.wallpaperpexels.localdatabase.Constant
+import app.matrix.wallpaperpexels.database.StaticKT.Constant
 
 class RegistrationPresenter(private var regview: IRegistrationView) : IRegistrationPresenter {
 
