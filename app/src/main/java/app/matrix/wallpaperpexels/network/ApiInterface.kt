@@ -28,7 +28,7 @@ interface ApiInterface {
 
 
     //unknown amount of parameters to pass in GET---@FieldMap Map<String, String> params
-    fun SearchAndCategoryDetails(@Query() value: String?): Deferred<Random>
+  // fun SearchAndCategoryDetails(@Query() value: String?): Deferred<Random>
 
 
 }

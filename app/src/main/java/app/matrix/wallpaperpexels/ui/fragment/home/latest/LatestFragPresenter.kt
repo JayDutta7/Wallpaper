@@ -1,7 +1,7 @@
 package app.matrix.wallpaperpexels.ui.fragment.home.latest
 
 
-import app.matrix.wallpaperpexels.network.Response
+import app.matrix.wallpaperpexels.network.sealedClass.Response
 import app.matrix.wallpaperpexels.network.basenetwork.RetroClass
 import app.matrix.wallpaperpexels.ui.base.BasePresenter
 import kotlinx.coroutines.Dispatchers
