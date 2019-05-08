@@ -39,29 +39,5 @@ object RetroClass {
         return@lazy retrofit.create(ApiInterface::class.java)
     }
 
-   /* fun getClient(baseurl:String): Retrofit? {
-        if (retrofit == null) {
-            //TODO While release in Google Play Change the Level to NONE
-            val interceptor = HttpLoggingInterceptor()
-            interceptor.level = HttpLoggingInterceptor.Level.BODY
-            val client = OkHttpClient.Builder()
-                    .addInterceptor(interceptor)
-                    .connectTimeout(30, TimeUnit.SECONDS)
-                    .readTimeout(30, TimeUnit.SECONDS)
-                    .writeTimeout(30, TimeUnit.SECONDS)
-                    .build()
-
-            retrofit = Retrofit.Builder()
-                    .client(client)
-                    .baseUrl(baseurl)
-                    .addConverterFactory(MoshiConverterFactory.create())
-                    .addCallAdapterFactory(CoroutineCallAdapterFactory())//Corotines
-                    .build()
-        }
-
-        return retrofit
-
-    }*/
-
 
 }

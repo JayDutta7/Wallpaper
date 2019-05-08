@@ -17,7 +17,7 @@ interface ApiInterface {
         "Content-type:application/json"
     )
             /*Response--Retrofit2 default response class--[[[Sealed Class]]]-Response*/
-    fun getDetails(): Deferred<Response<Random>>
+    fun getDetails(): Deferred<Response<Random>>//Corotine added intial
 
     @GET(Constant.getAPhoto)
     @Headers(

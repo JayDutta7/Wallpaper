@@ -72,7 +72,9 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //Kotlin & Coroutines
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    /*implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.ext.coroutinesCore"*/
+    /*Main interface for using coroutines in Kotlin*/
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.ext.coroutinesCore"
+    /*Support for the Android Main thread in coroutines*/
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.ext.coroutinesCore"
 
     implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompatX"
