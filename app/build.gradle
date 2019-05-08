@@ -77,7 +77,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //Kotlin & Coroutines
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.ext.coroutinesCore"
+    /*implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.ext.coroutinesCore"*/
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.ext.coroutinesCore"
 
     implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompatX"
@@ -105,10 +105,13 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
     implementation "com.google.code.gson:gson:$rootProject.ext.googleGson"
     implementation "com.squareup.retrofit2:converter-moshi:$rootProject.ext.retrofit"
+    ///Coroutines Adapter
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$rootProject.ext.retroFitCorotineAdapter"
+
 
     // Moshi
-    implementation "com.squareup.moshi:moshi:$rootProject.ext.moshi"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:$rootProject.ext.moshi"
+    /*implementation "com.squareup.moshi:moshi:$rootProject.ext.moshi"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$rootProject.ext.moshi"*/
     //debug
     implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.httpIntaceptor"
@@ -151,8 +154,6 @@ dependencies {
     //ViewModel & LiveData
     /*implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.lifecycle_version"*/
 
-    /////Coroutines
-    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
 
 
 }
