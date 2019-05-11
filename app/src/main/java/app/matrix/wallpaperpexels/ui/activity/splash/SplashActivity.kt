@@ -7,24 +7,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatImageView
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.ui.activity.home.Home
 import app.matrix.wallpaperpexels.ui.activity.login.LoginActivity
 import app.matrix.wallpaperpexels.ui.activity.welcome.WecomeActivity
-import butterknife.BindView
-import butterknife.ButterKnife
+import kotlinx.android.synthetic.main.activity_splash.*
 
 
 class SplashActivity : AppCompatActivity(), ISplashView {
-
-
-    @BindView(R.id.includeSplash2)
-    lateinit var includeSplash2: View
-
-    @BindView(R.id.splashLogo)
-    lateinit var splashLogo: AppCompatImageView
-
 
     companion object {
         private val TAG = SplashActivity::javaClass.name
@@ -38,7 +28,7 @@ class SplashActivity : AppCompatActivity(), ISplashView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        ButterKnife.bind(this)
+
 
         presenter = SplashPresenter(this)
 

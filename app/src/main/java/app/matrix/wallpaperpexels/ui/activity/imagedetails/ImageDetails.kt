@@ -4,26 +4,21 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import app.matrix.wallpaperpexels.GlideApp
 import app.matrix.wallpaperpexels.R
-import butterknife.BindView
-import butterknife.ButterKnife
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
-import com.github.chrisbanes.photoview.PhotoView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_details.*
 
-class ImageDetails : AppCompatActivity(), IimageDetailsView {
+class ImageDetails : AppCompatActivity(), ImageDetailsMVP.IimageDetailsView {
 
 
     companion object {
         private val TAG = ImageDetails::class.java.simpleName
     }
 
-    @BindView(R.id.photo_view)
-    lateinit var photo_view: PhotoView
+
 
     private var imgDetailsPresenter: ImageDetailsPresenter? = null
 
@@ -32,8 +27,6 @@ class ImageDetails : AppCompatActivity(), IimageDetailsView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
-        //Binding ButterKnife
-        ButterKnife.bind(this@ImageDetails)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 

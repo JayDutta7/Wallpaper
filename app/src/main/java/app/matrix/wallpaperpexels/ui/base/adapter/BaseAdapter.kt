@@ -1,9 +1,10 @@
-package app.matrix.wallpaperpexels.ui.base
+package app.matrix.ticketingsystem.ui.base.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import app.matrix.wallpaperpexels.ui.base.adapter.BaseHolder
 
-abstract class BaseAdapter<T:BaseHolder,E:Any,P:iBaseAdapterPresneter<T,E>>: RecyclerView.Adapter<T>() {
+abstract class BaseAdapter<T: BaseHolder,E:Any,P: iBaseAdapterPresneter<T, E>>: RecyclerView.Adapter<T>() {
 
     abstract fun getHolder(parent: ViewGroup, viewType: Int): T
     abstract fun getViewType(position: Int): Int

@@ -7,19 +7,16 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import app.matrix.ticketingsystem.ui.base.BaseFragment
 import app.matrix.wallpaperpexels.R
-import app.matrix.wallpaperpexels.network.ApiInterface
 import app.matrix.wallpaperpexels.network.basenetwork.RetroClass
 import app.matrix.wallpaperpexels.ui.activity.imagedetails.ImageDetails
-import app.matrix.wallpaperpexels.ui.base.BaseFragment
 import app.matrix.wallpaperpexels.ui.fragment.home.adapter.latestPhoto.PhotoAdapter
 import app.matrix.wallpaperpexels.ui.fragment.home.interfaces.ClickedItem
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.latestPhotoRes.Photos
-import butterknife.BindView
-import butterknife.ButterKnife
+import kotlinx.android.synthetic.main.fragment_latest.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -44,11 +41,7 @@ class LatestFragment : BaseFragment(), ClickedItem, LatestFragMvp.iLatestFragVie
         return R.layout.fragment_latest
     }
 
-    @BindView(R.id.recyclerView)
-    lateinit var recyclerView: RecyclerView
 
-    @BindView(R.id.swipeRefresh)
-    lateinit var swipeRefresh: SwipeRefreshLayout
 
     private var imgList: MutableList<MutableList<Photos>>? = null
 
@@ -58,8 +51,7 @@ class LatestFragment : BaseFragment(), ClickedItem, LatestFragMvp.iLatestFragVie
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //     super.onViewCreated(view, savedInstanceState)
-        //ButterKnife Binding
-        ButterKnife.bind(this, view)
+
 
         //intiate arraylist
         imgList = ArrayList()

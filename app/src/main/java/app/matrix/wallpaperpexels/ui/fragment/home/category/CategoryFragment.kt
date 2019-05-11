@@ -7,14 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import app.matrix.wallpaperpexels.R
 import app.matrix.wallpaperpexels.ui.fragment.home.adapter.categoryWisePhoto.CategoryAdapter
 import app.matrix.wallpaperpexels.ui.fragment.home.interfaces.ClickedItem
 import app.matrix.wallpaperpexels.ui.fragment.home.pojo.categoryData.CategoryData
-import butterknife.BindView
-import butterknife.ButterKnife
+
+import kotlinx.android.synthetic.main.fragment_category.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,8 +30,7 @@ class CategoryFragment : Fragment(), iCategoryFragView, ClickedItem {
         Toast.makeText(activity!!, Msg, Toast.LENGTH_SHORT).show()
     }
 
-    @BindView(R.id.recyclerView)
-    lateinit var recyclerView: RecyclerView
+
 
     private val list = ArrayList<CategoryData>()
 
@@ -99,8 +97,6 @@ class CategoryFragment : Fragment(), iCategoryFragView, ClickedItem {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //ButterKnife Binding
-        ButterKnife.bind(this, view)
         //RecyclerView Binding
         recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.setHasFixedSize(true)

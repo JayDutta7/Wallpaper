@@ -65,6 +65,12 @@ android {
         experimental = true
     }
 
+    kotlin {
+        experimental {
+            coroutines "enable"
+        }
+    }
+
 
 }
 
@@ -83,10 +89,7 @@ dependencies {
     implementation "androidx.viewpager:viewpager:$rootProject.ext.appCompatXviewPager"
     /*Material Components*/
     implementation "com.google.android.material:material:$rootProject.ext.materialDesign"
-
-    //ButterKnife
-   /* implementation "com.jakewharton:butterknife:$rootProject.ext.butterknife_version"
-    kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife_version"*/
+    
 
     //Multidex
     implementation "androidx.multidex:multidex:$rootProject.ext.multidex"
@@ -113,9 +116,6 @@ dependencies {
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$rootProject.ext.retroFitCorotineAdapter"
 
 
-    // Moshi
-    /*implementation "com.squareup.moshi:moshi:$rootProject.ext.moshi"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:$rootProject.ext.moshi"*/
     //debug
     implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.httpIntaceptor"

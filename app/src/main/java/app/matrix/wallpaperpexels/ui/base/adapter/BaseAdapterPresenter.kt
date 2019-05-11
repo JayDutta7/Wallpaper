@@ -1,11 +1,12 @@
-package app.matrix.wallpaperpexels.ui.base
+package app.matrix.ticketingsystem.ui.base.adapter
 
-import java.util.*
+import app.matrix.wallpaperpexels.ui.base.adapter.BaseHolder
 
-abstract class BaseAdapterPresenter<T:BaseHolder,E:Any>:iBaseAdapterPresneter<T,E> {
+class BaseAdapterPresenter<T: BaseHolder,E:Any>:
+    iBaseAdapterPresneter<T, E> {
 
     private var list: MutableList<E>? = null
-    private var adapter: BaseAdapter<*,*,*>? = null
+    private var adapter: BaseAdapter<*, *, *>? = null
 
     override fun addNewItems(listNewItems: List<E>) {
         val currentSize = getCount()

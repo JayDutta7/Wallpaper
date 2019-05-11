@@ -1,15 +1,15 @@
-package app.matrix.wallpaperpexels.ui.base
+package app.matrix.ticketingsystem.ui.base
 
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import app.matrix.wallpaperpexels.utility.GlobalViewMessage
 import com.google.android.material.snackbar.Snackbar
 
 abstract class BaseActivity : AppCompatActivity(), iBaseView {
@@ -19,19 +19,20 @@ abstract class BaseActivity : AppCompatActivity(), iBaseView {
     abstract fun getFragmentContainerId(): Int
 
     private var snackbar: Snackbar? = null
-    private var context: Context? = this
+    private var context: Context? = applicationContext
 
 
+    /*Total Displayed Message Status*/
     override fun onSuccess(msg: String) {
-        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+        GlobalViewMessage.showShortToast(msg, context)
     }
 
     override fun onError(msg: String) {
-        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+        GlobalViewMessage.showShortToast(msg, context)
     }
 
     override fun onFailed(msg: String) {
-        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+        GlobalViewMessage.showShortToast(msg, context)
     }
 
 
@@ -69,7 +70,7 @@ abstract class BaseActivity : AppCompatActivity(), iBaseView {
     override fun showSnackBarMessage(message: String) {
         snackbar?.setText(message)
         snackbar?.setAction("Dismiss") {
-
+            snackbar?.dismiss()
         }
         snackbar?.show()
     }

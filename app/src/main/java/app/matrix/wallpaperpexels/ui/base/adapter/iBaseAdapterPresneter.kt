@@ -1,8 +1,8 @@
-package app.matrix.wallpaperpexels.ui.base
+package app.matrix.ticketingsystem.ui.base.adapter
 
-import java.util.*
+import app.matrix.wallpaperpexels.ui.base.adapter.BaseHolder
 
-interface iBaseAdapterPresneter<T:BaseHolder,E:Any> {
+interface iBaseAdapterPresneter<T: BaseHolder,E:Any> {
 
      fun getCount(): Int
      fun onAttachAdapter(adapter: BaseAdapter<*, *, *>)

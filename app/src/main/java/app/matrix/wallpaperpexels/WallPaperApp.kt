@@ -21,7 +21,7 @@ class WallPaperApp : Application() {
         private var instance: WallPaperApp? = null
 
 
-        fun applicationContext(): Context {
+        fun getApplicationContext(): Context {
             return instance!!.applicationContext
         }
 
@@ -51,11 +51,11 @@ class WallPaperApp : Application() {
         Log.e(TAG, "This is Application Class Oncreate")
 
         //initialize localdatabase in the application class
-        localdatabase = LocalSharedPreference(applicationContext())
+        localdatabase = LocalSharedPreference(applicationContext)
         //initialize Firebase sdk in application class
-        FirebaseApp.initializeApp(applicationContext())
+        FirebaseApp.initializeApp(applicationContext)
         //initialize Roomdatabase in the application class
-        roomDB=WallPaperDB.getDatabase(applicationContext())
+        roomDB=WallPaperDB.getDatabase(applicationContext)
 
     }//End Of Oncreate
 

@@ -1,4 +1,4 @@
-package app.matrix.wallpaperpexels.ui.base
+package app.matrix.ticketingsystem.ui.base
 
 import android.content.Context
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 abstract class BaseFragment : Fragment(), iBaseView {
 
     private var baseActivity: BaseActivity? = null
+
     abstract fun getLayoutRes(): Int
 
 
