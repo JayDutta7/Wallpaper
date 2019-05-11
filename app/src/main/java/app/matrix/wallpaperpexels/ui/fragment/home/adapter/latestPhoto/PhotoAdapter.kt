@@ -1,9 +1,7 @@
 package app.matrix.wallpaperpexels.ui.fragment.home.adapter.latestPhoto
 
-import android.app.Activity
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

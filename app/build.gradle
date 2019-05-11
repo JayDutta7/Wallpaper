@@ -64,7 +64,7 @@ android {
     androidExtensions {
         experimental = true
     }
-
+    /*To ignore the warning that coroutines are experimental, mark them as enabled.*/
     kotlin {
         experimental {
             coroutines "enable"
@@ -89,7 +89,7 @@ dependencies {
     implementation "androidx.viewpager:viewpager:$rootProject.ext.appCompatXviewPager"
     /*Material Components*/
     implementation "com.google.android.material:material:$rootProject.ext.materialDesign"
-    
+
 
     //Multidex
     implementation "androidx.multidex:multidex:$rootProject.ext.multidex"
